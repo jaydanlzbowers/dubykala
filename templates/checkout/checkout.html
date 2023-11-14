@@ -1,0 +1,373 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+
+
+<div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX">
+    <div class="styles_PageLoader--hasPageContainer__gPBo1 hidden"></div>
+    <div>
+        <ul class="flex relative border-complete-b-200">
+            <li class="relative px-4 py-2 flex flex-row items-center grow justify-center lg:grow-0 text-primary-500 text-subtitle-strong cursor-pointer">
+                <div class="flex items-center select-none" data-cro-id="cart-main-cart">
+                    <span class="text-subtitle-strong">سبد خرید</span>
+                    <span class="rounded-small text-neutral-000 mr-1 flex items-center justify-center text-body2-strong styles_TabTitle--active__rzfBE styles_TabTitle__bgsKt">۱</span>
+                </div>
+                <div class="absolute bottom-0 styles_Tab__border__6fH9m"></div>
+            </li>
+        </ul>
+        <ul class="lg:pt-3">
+            <li>
+                <div>
+                    <div style="flex-direction: column;" class="lg:flex">
+                        <!-- //////////////////////////////////////product//////////////////////////////// -->
+
+                        <section class="mb-3 lg:mb-0 grow border-complete-b-200 lg:border-none lg:pl-3">
+
+                            <div class="lg:rounded-medium relative styles_Frame__Lu_I7 p-0">
+                                <div class="overflow-hidden">
+
+
+                                    <div class="styles_SimpleList__4Oxc9 px-6">
+                                        <div class="w-full flex items-start">
+                                            <div class="flex grow items-center">
+                                                <div class="flex items-start grow">
+                                                    <div class="grow text-right">
+                                                        <div class="break-words py-3">
+                                                            <div class="flex items-center grow">
+                                                                <p class="grow text-h5 text-neutral-900"><span class="relative">سبد خرید شما</span></p>
+
+                                                            </div>
+                                                            <div class="text-body-2 text-neutral-500">{{numberofp}} کالا</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    {% for product in productlist %}
+
+                                    <div class="relative br-list-vertical-no-padding-200">
+                                        <div class="absolute top-0 left-0 bg-neutral-000 w-full h-full flex items-center justify-center pointer-events-none opacity-0">
+                                            <div class="flex flex-col justify-center items-center py-4">
+                                                <div style="width: 36px; height: 36px; line-height: 0;">
+                                                    <picture>
+
+                                                        <img class="w-full inline-block" src="{{ product.getmainpicture }}" width="36" height="36" style="object-fit: contain;color: #006efd;">
+                                                    </picture>
+                                                </div>
+
+                                                <div class="bg-neutral-200 rounded styles_RemovingItemBox__progressBarContainer__9Y2LV">
+                                                    <div class="bg-neutral-400 rounded"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="bg-neutral-000 py-4 mx-5 lg:pr-4" data-testid="cart-item">
+                                            <div class="styles_CartItem__grid__rZXPE">
+                                                <div class="flex flex-col items-center">
+                                                    <a class="relative" href="">
+                                                        <div style="width: 114px; height: 114px; line-height: 0;">
+                                                            <picture>
+                                                                <source type="image/webp" srcset="">
+                                                                <source type="image/jpeg" srcset="">
+                                                                <img class="w-full inline-block" src="{{ product.getmainpicture }}" width="114" height="114" alt="{{product.name}}" title="" style="object-fit: contain;"></picture>
+                                                        </div>
+                                                        <div class="bg-neutral-000 absolute bottom-0 left-0 rounded-small text-center text-neutral-900 text-caption-strong hidden styles_CartItem__imageQuantity__bzt41">۱</div>
+                                                    </a>
+
+                                                </div>
+                                                <div class="overflow-x-hidden">
+                                                    <div class="">
+                                                        <h3 class="text-neutral-800 text-body1-strong mb-2"> {{product.name}} </h3>
+                                                        <div class="flex">
+                                                            <div class="flex mt-1">
+                                                                <svg style="width: 18px; height: 18px; fill: {{product.detail.color.detailoption.info}};"><use xlink:href="#variationColor"></use>
+                                            </svg>
+                                                            </div>
+                                                            <p class="text-body-2 text-neutral-600 mr-2">{{product.detail.color.detailoption.name}}</p>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="flex mt-1">
+                                                                <svg style="width: 18px; height: 18px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#guarantee"></use>
+                                            </svg>
+                                                            </div>
+                                                            <p class="text-body-2 text-neutral-600 mr-2">گارانتی 18 ماهه دوبی کالا </p>
+                                                        </div>
+
+                                                        <div class="flex flex-col w-full relative">
+                                                            <span class="flex items-center mb-1">
+                                            <div class="flex ml-2">
+                                              <svg style="width: 18px; height: 18px; fill: var(--color-icon-secondary);"><use xlink:href="#productAvailable"></use>
+                                              </svg>
+                                            </div>
+                                            <span class="text-body-2 text-neutral-600"> موجود در انبار  دوبی کالا </span>
+                                                            </span>
+                                                            <ul class="flex flex-col">
+                                                                <li class="flex ml-3 items-center">
+                                                                    <div class="relative flex items-center justify-center relative flex items-center justify-center self-stretch ml-2" style="width: 18px; min-width: 18px;">
+                                                                        <div class="flex">
+                                                                            <svg style="width: 5px; height: 5px; fill: var(--color-blue-primary);"><use xlink:href="#variationColor"></use>
+                                                  </svg>
+                                                                        </div><span class="absolute block bg-neutral-200 top-0 listItem-bullet-slot_ListItemBulletSlot__line__jeFG5" style="height: calc(50% - 5px);"></span><span class="absolute block bg-neutral-200 bottom-0 listItem-bullet-slot_ListItemBulletSlot__line__jeFG5"
+                                                                            style="height: calc(50% - 5px);"></span>
+                                                                    </div>
+                                                                    <div class="flex mx-1">
+                                                                        <svg style="width: 16px; height: 16px; fill: var(--color-delivery-express);"><use xlink:href="#deliveryExpress"></use>
+                                                </svg>
+                                                                    </div>
+                                                                    <p class="text-body-2 text-neutral-500 mr-1 ellipsis"> ارسال دوبی کالا </p>
+                                                                </li>
+                                                                <li class="flex ml-3 items-center">
+                                                                    <div class="relative flex items-center justify-center relative flex items-center justify-center self-stretch ml-2" style="width: 18px; min-width: 18px;">
+                                                                        <div class="flex">
+                                                                            <svg style="width: 5px; height: 5px; fill: var(--color-blue-primary);"><use xlink:href="#variationColor"></use>
+                                                  </svg>
+                                                                        </div><span class="absolute block bg-neutral-200 top-0 listItem-bullet-slot_ListItemBulletSlot__line__jeFG5" style="height: calc(50% - 5px);"></span>
+                                                                    </div>
+                                                                    <div class="flex mx-1">
+                                                                        <svg style="width: 16px; height: 16px; fill: var(--color-delivery-jet-expansion);"><use xlink:href="#deliveryToday"></use>
+                                                </svg>
+                                                                    </div>
+                                                                    <p class="text-body-2 text-neutral-500 mr-1 ellipsis"> ارسال یک هفته ای </p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-col items-center">
+                                                    <div class="flex items-center justify-between user-select-none px-2 rounded-medium border-complete-200 item-quantity_ItemQuantity__box__5r4FJ">
+                                                        <div class="flex cursor-pointer " id="increase{{product.serialnumber}}" onclick=" increase(this.id) ">
+                                                            <svg data-testid="quantity-increase" data-cro-id="cart-add-quantity" style="width: 18px; height: 18px; fill: var(--color-icon-primary);">
+                                                                <use xlink:href="#addSimple"></use>
+                                          </svg>
+                                                        </div>
+                                                        <span class="flex flex-col items-center justify-between text-primary-500">
+                                                <input style="display: flex;width: 20px;border-width: 0;color: rgb(232, 84, 82);"  value="1" id="count{{product.serialnumber}}" class="relative flex items-center justify-center text-h5 ">
+                                                        </span>
+                                                        <div class="flex cursor-pointer " id="decrease{{product.serialnumber}}" onclick=" decrease(this.id) ">
+                                                            <svg data-testid="quantity-decrease" data-cro-id="cart-delete-item-right" style="width: 18px; height: 18px; fill: var(--color-icon-primary);"><use xlink:href="#delete"></use>
+                                          </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="flex items-center text-primary-700">
+                                                        <span class="text-caption-strong productoffer" id="productoffer{{product.serialnumber}}">  {{product.offer}}  </span>
+                                                        <div class="flex relative styles_CartItem__discountIcon__Vw7DV">
+                                                            <svg style="width: 14px; height: 14px; fill: var(--color-icon-primary);"><use xlink:href="#toman"></use>
+                                          </svg>
+                                                        </div>
+                                                        <span class="text-caption mr-1">تخفیف</span>
+                                                    </div>
+                                                    <div class="flex items-center justify-between">
+                                                        <div>
+                                                            <div class="flex items-center justify-start ml-4">
+                                                                <span class="text-h4 text-neutral-800 productprice" id="productprice{{product.serialnumber}}"> {{product.price}} </span>
+                                                                <div class="flex items-center justify-between">
+                                                                    <div class="flex items-center">
+                                                                        <div class="flex mr-1">
+                                                                            <svg style="width: 18px; height: 18px; fill: var(--color-icon-high-emphasis);"><use xlink:href="#toman"></use>
+                                                  </svg>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex a-center flex-row-reverse">
+                                                            <span class="text-caption text-neutral-500 ml-2"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- //////////////////////////////////////product//////////////////////////////// -->
+
+                        <div class="styles_PageLoader--hasPageContainer__gPBo1 hidden"></div>
+
+                        <div>
+                            <div class="px-5">
+
+                                <div class="flex items-center justify-between pt-3 relative">
+                                    <div class="flex items-center">
+                                        <div class="mr-1 text-body2-strong flex items-center text-neutral-800">
+                                            <span>جمع سبد خرید</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div>
+                                            <div class="flex items-center justify-start">
+                                                <span class="text-neutral-800 text-subtitle-strong" id="pricesum"> 0 </span>
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center">
+                                                        <div class="flex mr-1">
+                                                            <svg style="width: 16px; height: 16px; fill: var(--color-neutral-800);"><use xlink:href="#toman"></use>
+                                      </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 relative">
+                                    <div class="flex items-center">
+                                        <div class="mr-1 text-body2-strong flex items-center text-neutral-600 text-primary-500">
+                                            <span>سود شما از خرید</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+
+                                        <div>
+                                            <div class="flex items-center justify-start">
+                                                <span class="text-primary-500 text-h5" id="offersum"> 0 </span>
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center">
+                                                        <div class="flex mr-1">
+                                                            <svg style="width: 16px; height: 16px; fill: var(--color-icon-primary);"><use xlink:href="#toman"></use>
+                                      </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class=" mt-1 lg:my-4">
+                                    <a onclick="location.href='/checkout/selectaddress'" class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-1 styles_btn--large__1Muai styles_btn--primary__y0GEv rounded-medium w-full">
+                                        <div class="flex items-center justify-center styles_btn__loading__d5Rcc">
+                                            <svg width="24" height="24" id="e302pyQgejw1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                                                <path class="styles_Loading__circle1__K7HNJ" d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z" transform="matrix(1 0 0 1 17 9)" opacity="0.9" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></path>
+                                                <rect class="styles_Loading__circle2__jpl_q" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 9 9)" opacity="0.6" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect>
+                                                <rect class="styles_Loading__circle3__otcH4" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 0.94007500000000 9)" opacity="0.3" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect>
+                             
+                                            </svg>
+
+                                        </div>
+                                        <div class="flex items-center justify-center relative grow">ثبت سفارش</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    window.CSRF_TOKEN = "{{ csrf_token }}";
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script>
+    products = {}
+
+
+
+    function updateprice() {
+
+        let prices = document.querySelectorAll('.productprice')
+
+        let offers = document.querySelectorAll('.productoffer')
+
+        let totalprice = 0
+        let totaloffer = 0
+
+
+        for (let pp of prices) {
+
+            let price = pp.innerText
+            console.log(price)
+
+            let id = pp.id.match(/(\d+)/)[0];
+            console.log(id)
+
+            let n = document.getElementById('count' + id).value
+            console.log(n)
+
+
+            products[id] = n
+
+
+
+
+            let off = document.getElementById('productoffer' + id).innerText
+            console.log(off)
+            totaloffer = totaloffer + n * off
+            totalprice = totalprice + n * (price - off)
+            console.log(totalprice)
+
+        }
+
+
+        document.getElementById('pricesum').innerText = totalprice
+        document.getElementById('offersum').innerText = totaloffer
+
+
+
+
+    }
+
+    function sendproducts(productid, counter) {
+        console.log(productid)
+        console.log(counter)
+        $.ajax({
+            type: 'POST',
+            url: "/checkout",
+            data: {
+                "csrfmiddlewaretoken": window.CSRF_TOKEN,
+                "productid": productid,
+                "counter": counter,
+            },
+        });
+    }
+
+    function increase(productid) {
+        let matches = productid.match(/(\d+)/);
+        console.log(productid)
+        let counter = document.getElementById('count' + matches[0])
+        counter.value++
+
+        updateprice(matches[0])
+
+        sendproducts(matches[0], counter.value)
+
+
+    }
+
+    function decrease(productid) {
+        let matches = productid.match(/(\d+)/);
+        console.log(productid)
+        let counter = document.getElementById('count' + matches[0])
+        if (counter.value > 0) {
+            counter.value--
+            updateprice(matches[0])
+            sendproducts(matches[0], counter.value)
+                
+        }
+        if(counter.value == 0){
+            updateprice(matches[0])
+            sendproducts(matches[0], counter.value)
+            location.href = '/checkout'
+
+        }
+
+
+
+    }
+
+    updateprice()
+</script>
+
+{% endblock content %}

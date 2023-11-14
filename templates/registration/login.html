@@ -1,0 +1,84 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+          <main style="margin-top: 100px;"  class="min-h-full w-full flex items-center flex-col bg-neutral-000 justify-center" >
+        
+        
+        
+        
+        <div class="lg:border-complete-200 border-complete-200 rounded-medium p-5 lg:p-8 flex flex-col items-center justify-start lg:justify-center account-wrapper_AccountWrapper__mainBox__cC78z">
+          <div class="w-full relative flex items-center justify-center"><div class="flex cursor-pointer right-0 text-neutral-700 transition-all duration-300 ease-out opacity-0 pointer-events-none fixed lg:absolute  logo_Logo__icon__bHD2_">
+              <svg style="width: 24px; height: 24px; fill: var(--color-icon-high-emphasis);"><use xlink:href="#arrowRight"></use>
+              </svg></div>
+            <a class=""  href="/">
+              <div class="transform transition-all duration-500 ease-out" style="width:100px; height: 100px; line-height: 0;">
+                <img class="w-full inline-block"  src="{{logo.img.url}}" width="100" height="100" title="" style="object-fit: contain;">
+              </div>
+            </a>
+          </div>
+
+
+          <form method="post">
+            {% csrf_token %}
+          <div id="logincontainer1" class="w-full" style="min-width: 300px;max-width: 450px;">
+            <h1 class="text-h4 text-neutral-900 text-right w-full mt-4">ورود | ثبت‌نام</h1>
+            <p class="text-body-2 text-neutral-700 mt-4 text-right w-full">سلام!</p>
+            <p class="text-body-2 text-neutral-700 mb-4 text-right w-full">لطفا شماره موبایل یا ایمیل خود را وارد کنید</p>
+            
+              <label class="FormComponentFrame_FormComponentFrame__PIUpy w-full FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center Input_InputWrapper--error__GDWAB relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                  <div class="grow text-body-3">
+                    <input class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="text" name="username" autocomplete="off" value="" required>
+                  </div>
+                </div>
+                <p class="text-body-2 text-hint-text-error">لطفا این قسمت را خالی نگذارید</p></label>
+              <button type="button" onclick="next()" class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-1 styles_btn--large__1Muai styles_btn--primary__y0GEv rounded-medium w-full mt-6 lg:mt-8 text-button-1" >
+                <div class="flex items-center justify-center styles_btn__loading__d5Rcc">
+                  <svg width="24" height="24" id="e302pyQgejw1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path class="styles_Loading__circle1__K7HNJ" d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z" transform="matrix(1 0 0 1 17 9)" opacity="0.9" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></path><rect class="styles_Loading__circle2__jpl_q" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 9 9)" opacity="0.6" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect><rect class="styles_Loading__circle3__otcH4" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 0.94007500000000 9)" opacity="0.3" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect>
+                  </svg>
+                </div>
+                <div class="flex items-center justify-center relative grow">ورود</div>
+              </button>
+            
+            <p class="text-caption text-neutral-700 mt-4">    ورود شما به معنای پذیرش قوانین حریم خصوصی است    </p>
+          </div>
+
+          <div id="logincontainer2" class="w-full hidden" style="min-width: 300px;max-width: 450px;" >
+            <h1 class="text-h4 text-neutral-900 text-right w-full mt-4">ورود | ثبت‌نام</h1>
+            <p class="text-body-2 text-neutral-700 mb-4 text-right w-full">رمز ورود را وارد کنید</p>
+            
+              <label class="FormComponentFrame_FormComponentFrame__PIUpy w-full FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center Input_InputWrapper--error__GDWAB relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                  <div class="grow text-body-3">
+                    <input required class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="password" name="password" autocomplete="off" value="">
+                  </div>
+                </div>
+                <p class="text-body-2 text-hint-text-error">لطفا این قسمت را خالی نگذارید</p></label>
+              <button type="submit" class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-1 styles_btn--large__1Muai styles_btn--primary__y0GEv rounded-medium w-full mt-6 lg:mt-8 text-button-1"  >
+                <div class="flex items-center justify-center styles_btn__loading__d5Rcc">
+                  <svg width="24" height="24" id="e302pyQgejw1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path class="styles_Loading__circle1__K7HNJ" d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z" transform="matrix(1 0 0 1 17 9)" opacity="0.9" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></path><rect class="styles_Loading__circle2__jpl_q" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 9 9)" opacity="0.6" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect><rect class="styles_Loading__circle3__otcH4" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 0.94007500000000 9)" opacity="0.3" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect>
+                  </svg>
+                </div>
+                <div class="flex items-center justify-center relative grow">ورود</div>
+              </button>
+            
+              <p class="text-caption text-neutral-700 mt-4">    ورود شما به معنای پذیرش قوانین حریم خصوصی است    </p>
+          </div>
+
+
+
+          </form>
+        </div>
+        
+        
+        
+
+      </main>
+
+      <script>
+        function next(){
+          document.getElementById('logincontainer1').classList.add('hidden')
+          document.getElementById('logincontainer2').classList.remove('hidden')
+        }
+
+      </script>
+{% endblock content %}
+

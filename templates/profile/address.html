@@ -1,0 +1,139 @@
+﻿ {% extends "base.html" %} {% load static %} {% block content %}
+
+
+
+<div class="flex flex-col bg-neutral-000">
+
+    <div class="flex flex-col grow">
+        <div class="grow flex flex-col" style="padding-bottom: 55px; padding-top: 0px;">
+            <div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX" style="width: 100%; justify-content: center;">
+                <div id="profileLayoutContainer" class="relative flex flex-col lg:grid grid-cols-1  gap-4 gap-y-0 mt-0  pt-4 pb-6 lg:px-4">
+                    <div class="lg:col-span-5" style="width: 100%;">
+                        <div class="styles_PageLoader--hasPageContainer__gPBo1 hidden"></div>
+                        <div>
+
+                            <div class="lg:rounded-medium relative styles_Frame__Lu_I7 mb-4 bg-neutral-000">
+
+                                {% if addresses %}
+                                {% for address in addresses %}
+                                <div class="px-5 lg:px-6 blocksofaddress" id="block{{address.pk}}" {% if address.default %} style="background-color: #6494ed1e;" {% endif %}>
+
+                                    <div class="br-list-vertical-0 py-4 ">
+                                        <div class="flex lg:items-center justify-between mb-4" style="border-width: 0; border-top-width: 0px;border-color: rgba(0, 0, 0, 0.115);border-style: solid;">
+                                            <div class="flex items-center justify-start text-body1-strong text-neutral-700"> {{address.address}}</div>
+                                            <div style="justify-content: center;">
+                                                <button type="button" id="btn{{address.pk}}" style="background-color: #6495ed;border-radius: 7px;padding: 8px;border-radius: 7px;color: aliceblue;" onclick="setdefault(this.id)"> انتخاب پیشفرض </button>
+                                            </div>
+                                        </div>
+                                        <a href="/profile/address/editaddress/{{address.pk}}" class="blocksofaddress" id="block{{address.pk}}" {% if address.default %} style="background-color: cornflowerblue;" {% endif %}>
+
+                                            <div class="flex items-start justify-between ">
+                                                <div class="text-body-1 text-neutral-500">
+                                                    <div class="mb-1 flex items-center">
+                                                        <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#street"></use></svg></div>{{address.city}}</div>
+                                                    <div class="mb-1 flex items-center">
+                                                        <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#post"></use></svg></div>{{address.postalcode}}</div>
+                                                    <div class="mb-1 flex items-center">
+                                                        <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#phone"></use></svg></div>{{address.telephone}}</div>
+                                                    <div class="mb-1 flex items-center">
+                                                        <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#profileOff"></use></svg></div> {{address.nameofreceiver}} {{address.familyofreceiver}}</div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                {% endfor %}
+                                {% else %}
+                                <button onclick="location.href='/profile/address/editaddress/add' "  style="display: flex; width: 100%;background-color: rgb(59, 152, 239);border-radius: 7px;color: rgb(47, 48, 50);padding: 10px;justify-content: center;margin-top: 20px;"> ایجاد آدرس </button>
+                                {% endif %}
+
+                            </div>
+                            <div class="lg:rounded-medium relative styles_Frame__Lu_I7 mb-4 bg-neutral-000">
+                                <div class="flex justify-between items-center lg:py-4 px-5 lg:px-6">
+                                    <div class="break-words py-3 profile-card_ProfileCard__title--mobileHeader__nROkX">
+                                        <div class="flex items-center grow">
+                                            <div onclick="location.href='/profile'" class="flex cursor-pointer shrink-0 ml-2">
+                                            <p class="inline-flex items-center cursor-pointer styles_Anchor--secondary__3KsgY text-button-2 mt-2 mx-4 lg:mx-0"><span class="relative">پروفایل</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="break-words py-3 profile-card_ProfileCard__title--mobileHeader__nROkX">
+                                        <div class="flex items-center grow">
+                                            <div onclick="location.href='/checkout'" class="flex cursor-pointer shrink-0 ml-2">
+
+                                                <p class="inline-flex items-center cursor-pointer styles_Anchor--secondary__3KsgY text-button-2 mt-2 mx-4 lg:mx-0"><span class="relative">سبد خرید</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fixed w-full left-0 bottom-14 flex justify-end lg:hidden pb-4 px-5">
+                                <button onclick="location.href='/profile/address/editaddress/add'" class="flex items-center justify-between text-button-1 styles_FabButton__5YQgj styles_FabButton--primary__fBOaQ px-4 py-3 px-4 shadow-fab-button whitespace-nowrap" data-cro-id="profile-address-add">
+                                
+                                <div class="flex items-center justify-center">
+                                    
+                                    <div class="ml-2">ثبت آدرس جدید</div>
+                                    <div class="flex styles_FabButton__icon__Nx9Sr">
+                                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-white);">
+                                            <use xlink:href="/profile/address/editaddress/add"></use>
+                                        </svg>
+                                    </div>
+                                    
+                                </div>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    window.CSRF_TOKEN = "{{ csrf_token }}";
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    function setdefault(btnpk) {
+
+        const addresspk = btnpk.match(/(\d+)/)[0]
+
+        $.ajax({
+            type: 'POST',
+            url: "/profile/address/selectaddress",
+            data: {
+                "csrfmiddlewaretoken": window.CSRF_TOKEN,
+                "addresspk": addresspk,
+
+            },
+            success: function(addresspk) {
+                console.log('succsesfull')
+                let blocks = document.querySelectorAll(".blocksofaddress")
+                blocks.forEach(b => {
+                    const addresspk = btnpk.match(/(\d+)/)[0]
+                    console.log(addresspk)
+                    const blockpk = b.id.match(/(\d+)/)[0]
+                    console.log(blockpk)
+                    if (blockpk == addresspk) {
+                        console.log(blockpk + 'selected')
+                        b.style.backgroundColor = "#6494ed1e"
+
+                    } else {
+                        b.style.backgroundColor = ''
+                    }
+                })
+            }
+        });
+
+
+    }
+</script>
+{% endblock content %}

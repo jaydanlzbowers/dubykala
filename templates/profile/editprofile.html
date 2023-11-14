@@ -1,0 +1,66 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+
+                                    <div class="lg:rounded-medium relative styles_Frame__Lu_I7 mb-4 bg-neutral-000" style="padding: 20px;">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="px-6 pb-6 flex flex-col ">
+
+                                            <div class="bg-neutral-000 flex justify-between items-center">
+                                                <div style="display: flex;width: 100%;flex-direction: column;"style="margin-top: 20px;">
+                                                    <div class="flex items-center">
+                                                        <p class="text-body-1 text-neutral-500 ml-1">   نام و نام خانوادگی    </p>
+                                                    </div>
+                                                    <input name="name" value="{{userprofile.name}}" type="text" class="text-subtitle-strong text-neutral-700 styles_InfoCard__value__mI6GY" style="display: flex; width: 100%;border-radius: 7px;border-color: rgba(0, 0, 0, 0.081);text-align: center;">
+                                                </div>
+
+                                            </div>
+                                            <div class="bg-neutral-000 flex justify-between items-center"style="margin-top: 20px;">
+                                                <div style="display: flex;width: 100%;flex-direction: column;">
+                                                    <div class="flex items-center">
+                                                        <p class="text-body-1 text-neutral-500 ml-1">کد ملی</p>
+                                                    </div>
+                                                    <input name="idcode"  type="text" pattern="[0-9]*" minlength="10" value="{{userprofile.idcode}}" class="text-subtitle-strong text-neutral-700 styles_InfoCard__value__mI6GY" style="display: flex; width: 100%;border-radius: 7px;border-color: rgba(0, 0, 0, 0.081);text-align: center;">
+                                                </div>
+
+                                            </div>
+                                            <div class="bg-neutral-000 flex justify-between items-center" style="margin-top: 20px;">
+                                                <div style="display: flex;width: 100%;flex-direction: column;">
+                                                    <div class="flex items-center">
+                                                        <p class="text-body-1 text-neutral-500 ml-1">شماره موبایل</p>
+                                                        
+                                                    </div>
+                                                    <input name="mobile" type="text" pattern="[0-9]*" minlength="10" value="{{userprofile.mobile}}" class="text-subtitle-strong text-neutral-700 styles_InfoCard__value__mI6GY" style="display: flex; width: 100%;border-radius: 7px;border-color: rgba(0, 0, 0, 0.081);text-align: center;">
+                                                </div>
+
+                                            </div>
+                                            <div class="bg-neutral-000 flex justify-between items-center"style="margin-top: 20px;">
+                                                <div style="display: flex;width: 100%;flex-direction: column;">
+                                                    <div class="flex items-center">
+                                                        <p class="text-body-1 text-neutral-500 ml-1">ایمیل</p>
+                                                    </div>
+                                                    <input name="email" type="email" minlength="10" value="{{userprofile.email}}" class="text-subtitle-strong text-neutral-700 styles_InfoCard__value__mI6GY" style="display: flex; width: 100%;border-radius: 7px;border-color: rgba(0, 0, 0, 0.081);text-align: center;">
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="bg-neutral-000 flex justify-between items-center " style="margin-top: 20px;">
+                                                <div style="display: flex;width: 100%;flex-direction: column;">
+                                                    <div class="flex items-center">
+                                                        <p class="text-body-1 text-neutral-500 ml-1">شغل</p>
+                                                    </div>
+                                                    <input name="job" type="text"  value="{{userprofile.job}}" class="text-subtitle-strong text-neutral-700 styles_InfoCard__value__mI6GY" style="display: flex; width: 100%;border-radius: 7px;border-color: rgba(0, 0, 0, 0.081);text-align: center;">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <button type="submit" style="display: flex; width: 100%;background-color: #ef3b51ff;border-radius: 7px;color: aliceblue;padding: 10px;justify-content: center;margin-top: 20px;">ثبت تغییرات</button>
+                                        
+                                    
+                                    </form>
+                                    <button onclick="location.href='/profile' "  style="display: flex; width: 100%;background-color: rgb(59, 152, 239);border-radius: 7px;color: rgb(47, 48, 50);padding: 10px;justify-content: center;margin-top: 20px;"> بازگشت </button>
+                                    </div>
+
+
+{% endblock content %}

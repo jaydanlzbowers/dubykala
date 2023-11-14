@@ -1,0 +1,137 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+
+<div class="grid grid-cols-1 lg:mt-3" style="padding: 20px ;">
+
+
+
+        <div class="lg:rounded-medium relative styles_Frame__Lu_I7 pr-5 pl-6 py-4">
+            <div class="lg:rounded-medium bg-neutral-000">
+                <div class="flex flex-col lg:flex-col justify-between items-start lg:items-center">
+                    <div class="flex justify-between w-full flex-col">
+                        <div class="px-5 lg:px-6 blocksofaddress" id="block{{address.pk}}">
+                            {% if address %}
+                            <div class="br-list-vertical-0 py-4 ">
+                                
+                                <a href="/profile/address/editaddress/{{address.pk}}" class="blocksofaddress" id="block{{address.pk}}">
+
+                                    <div class="flex items-start justify-between ">
+                                        <div class="text-body-1 text-neutral-500">
+                                            <div class="mb-1 flex items-center">
+                                                <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#street"></use></svg></div>{{address.city}}</div>
+                                            <div class="mb-1 flex items-center">
+                                                <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#post"></use></svg></div>{{address.postalcode}}</div>
+                                            <div class="mb-1 flex items-center">
+                                                <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#phone"></use></svg></div>{{address.telephone}}</div>
+                                            <div class="mb-1 flex items-center">
+                                                <div class="flex ml-1"><svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#profileOff"></use></svg></div> {{address.nameofreceiver}} {{address.familyofreceiver}}</div>
+                                        </div>
+
+
+
+                                    </div>
+                                </a>
+                                {% else %}
+                                <button onclick="location.href='/profile/address/editaddress/add' "  style="display: flex; width: 100%;background-color: rgb(59, 152, 239);border-radius: 7px;color: rgb(47, 48, 50);padding: 10px;justify-content: center;margin-top: 20px;"> ایجاد آدرس </button>
+                                {% endif %}
+                            </div>
+                            {% if address %}
+                            <div class="flex justify-end lg:w-unset">
+                                <span class="inline-flex items-center cursor-pointer styles_Anchor--secondary__3KsgY text-button-1 self-end md:self-auto mt-1 shrink-0 focus:outline-none" data-cro-id="shipping-change-address">
+                                    <a href="/profile/address" style="color: inherit">تغییر یا ویرایش آدرس</a>
+                                <div class="flex">
+                                    <svg style="width: 18px; height: 18px; fill: var(--color-icon-secondary);"><use xlink:href="#chevronLeft"></use>
+                                      </svg>
+                                </div>
+                                </span>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lg:border-complete-200 rounded-medium mt-3 mx-3 lg:mx-0 lg:px-6 lg:pt-6">
+            <div name="aafd4f_1_2" class="br-list-vertical-no-padding-200 py-3 lg:py-5 px-2 lg:px-0 mb-3 lg:mb-0 border-complete-200 lg:border-none rounded-medium lg:rounded-0">
+                <div>
+                    <div class="flex items-center px-4">
+                        <div class="ml-6">
+                            <div style="width: 36px; height: 36px; line-height: 0;"><img class="w-full inline-block" data-savepage-src="https://dkstatics-public.digikala.com/delivery-submit-type/16060551.png?x-oss-process=image/resize,m_fill,h_48,w_48/quality,q_90" src="data:binary/octet-stream;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAHNElEQVRoge2ZfVBc1RXAf3d32WX5zAeUj7BkFygJRogmRtBAnXGqnaRV27GZqB2HqU2rNe20pTZqWpRopylG2zqJmmqm2vhRI9P0a9oZJ2mtQySEJEpoEjFxgWRJAoQNnyHswu7tHxd4+2CXXaIMYSbnH3j3nnPf77x373nnnBVSSsksFsNMA3xWuerATMtVB2ZaZqcDvn5o3gw1SzDNNMuUxNcPrm3Q8izS60YYLLPEAd9FcL0ALVuQ3k5tPDr9CnfAPwCnR8HPT5xPvgtxRX6J/QPgelGBezqCqghrJhTWXWFvwH8JXC9BS2VIcAAxdyVc+0cwp1whDvgvgWv7CHh7SDURuxiyn4TUtYAAmGEH/IPQuh2aK5GetpBqIjYXsp+A1HsZH/mVA94OOLcTumth8BRICdZMiF8GX7gD4pZOA/jvR8DPhQaPyVHgafcBxuA68pOfSFpfhuQ74WIj9B9H+j16pTlFkPUEJK36HMBfhuZfhwHPgqxySL9fgXd/AE1PQ8oaWPAdna4JUyL4BiEmBzK+BwnLEe49cOp3yK5qAGR3LXy4GjH/Vsh/A8xpUwOXHmh9BZo3IwfPhga32iHrF5BeCsKkwJ0VSPdeNT//yxNtpJSStjfh6ANIvxdhTgb7zyDzh9BdrcYHWzUDSwoUvANzvxQh+I4R8DOTgGeC4+ew4NsgoqB7Hzg3jYGP6S2tgpRvBnEAFGz9N5Bet5pIWA7X7QZTAhy5G+n+j2ZkioXleyGxKAS4NwC8NbgOIKIzIGuj2hbCPAJegXT/e6KuMQZuaQXT3BAOAPTUQl0xUvq0GxTWQFQy1H8d2fmuZhg1Dwr3Q0yu/k4du6HxR2HA08GxETLWgbBMCj5ms+hZWPjTCeP6mJRYBHZNSQ62wuGvAH4o+BPCou19OXQBjpaquUDpqg4JLyxpiMXPQ7ETbOuh5xAcvg1ZVxISXphiEXlbg8LD+DcAat/uX4bsP64p2csg9zk4/w/kR3fqFxj/ZDxnYV820jcYAJ4C9kfB9hAYrBMOZ1AwY7QKKo7HwZwaWi9oLnRhL/LQbZqSMKrtkrACjpYiz+7U5kwJUNIEUfM1+xNlyJbfqoDg2AC2h8EQExm4way2lmMjWBaE1JvcAYADhcieOk0xvgCKDoOvD6pz1BYanbM/ArlbNFtfL7RVQeo9YIyFnhr4tALp3jMJeJQ6zFkbwWILCz4qoSuy7HLdpexrgLa3VBSwl+l1XdvAExAmjQkKpr9B7fEDK0PCC4MJkbEOik9C3kvqqbe9CScfj8iBydPpAyuQPYc05bg8uPmYqoyqHWMhF0DYHoS87Zqtrx/em4v0Dwe/sTCqL21WOVizAD+07QLnU8iLjYg5N8ONH4R1YPKaOLtCdyn7P4aOv4IxHuyP6HXP/EHlUaNijIOUtUHBRfr9UNwIS14Fqx3ad0FNPrLhPuTFRqUYNS8sfHgHkr6KSLxBP9ZSqf7afoAwJ2nO+YdUoR0o2eXqSQNCGBBp98LKY3DtTrBmQ3sV1BQgj9yji3pAZF96wm0hgM5/Ij/8mt6osBYSC1XFdGKDNm4wQ8mn+kN4ogw859RWib0GkND+Z2jahOw7GhzKmgk3fQSm8G8hspLywI3InoOaUdq3VFLnH1BnIaB6EpnrYfG2IItI6PiLynH6GkIDxedDwS6IzQuLBZH2hcadBdqrwNuuYrt9g36udQd4XPoxXx/ULkPW3x0SXkTNQyx6DooORQwPkTqQtBqRuGLsUvq9qugGsD2MsKQGzHnA+ZTe3hgXcmlhjEY4NkCJExaWqaRuChJ5Z278W3C9oLaQwQqOR/VzZ1+DgZOBmJDzKz24MCAWlELxCfhiJZjmTAl8VCJ3IGm16gaMiPS64cyr6iLjIX2i5x8G55Pj7Fch5qnIIpJXwU31sOS1kQPvuyx4mGpvdPFWhAgwOfUbkENgiAbHY3rdtreh/4h+7JpXECveh+v/BXH5gB/O7ID3M9QbnXYH4q9X+3RE5EATnN6qLmwPIqK15EtKCce/jy7djsnV4nvXe1C7HHnsu6oj0fRL1V6ZVgcAcisRqWu0a+cmFZGERaW+ASK798PH6yeu0bAWefBWZG+9putp0wLDFOQy2usGyH9dJWCAHO6FT36spjLWIWIX6bSlazscLIGWLeAd6UR4Q3TdWp5RgWFqNJchwqL289J3ENE25Lm3wVmuxvPfQBj0/TLZtU99sf9XqgZyng66rPR0qGbutDswKilroMSJyN8JF/6rumwJN8DSKkRU4kRA9x5VG8wpRiTdHnzNlmdUJhuhfL7daV+vqgUALjWDswI6diOHNSCRdDssexd665C1hcGhcjeD/bGgcxN0p7297h+Ajr9D72EYPK0Kn+v+pkrQYw8gR78lgVDm+VDSrNL2MDLzvw8MnQfvefB2wlCn+n+4SzVyoxeGNZ95Bz6jzM5fKQPkqgMzLbPegf8DT5fNAtQaYdUAAAAASUVORK5CYII="
+                                    width="36" height="36" alt="ارسال پستی" title="" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="grow flex flex-wrap justify-between items-start">
+                            <div>
+                                <div class="text-h5 text-neutral-800 flex flex-wrap">
+                                    <span class="ml-2">ارسال پستی</span>
+
+                                </div>
+                                <div class="text-caption text-neutral-600">موجود در انبار</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 mb-7">
+                        <div class="overflow-x-hidden">
+                            <div class="flex flex-row justify-between w-full mx-auto relative">
+                                <div class="relative flex-1 w-full">
+                                    <div>
+                                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-rtl">
+
+                                            <div class="styles_Slider__next-button-selector__R9M5X hidden lg:flex justify-center items-center bg-neutral-000 absolute left-0 cursor-pointer z-5 shadow-fab-button styles_Slider__carouselButton__F2ifj styles_Slider__carouselButton--next__RQQfO lg:hidden">
+                                                <div class="flex">
+                                                    <svg style="width: 40px; height: 40px; fill: var(--color-icon-high-emphasis);"><use xlink:href="#chevronLeft"></use>
+                                          </svg>
+                                                </div>
+                                            </div>
+                                            <div class="styles_Slider__prev-button-selector__fsha9 hidden lg:flex justify-center items-center bg-neutral-000 absolute right-0 cursor-pointer z-5 shadow-fab-button styles_Slider__carouselButton__F2ifj styles_Slider__carouselButton--prev__xquUG lg:hidden">
+                                                <div class="flex">
+                                                    <svg style="width: 40px; height: 40px; fill: var(--color-icon-high-emphasis);"><use xlink:href="#chevronRight"></use>
+                                          </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:border-none pb-3 lg:pb-0 border-complete-b">
+                        <div class="flex justify-between items-center mt-3">
+                            <div><span class="text-body-2">زمان تحویل:</span><span class="text-body2-strong mr-2">زمان تقریبی تحویل از ۱۲ آبان تا ۱۶ آبان</span>
+                                <div class="flex items-center">
+                                    <span class="text-neutral-800 text-body-1 ml-3">هزینه ارسال</span>
+                                    <span class="text-neutral-800 text-body1-strong ml-1">رایگان</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+ 
+    <div class=" mt-1 lg:my-4" style="padding: 20px;">
+        <a onclick="location.href='/checkout/payment'" class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-1 styles_btn--large__1Muai styles_btn--primary__y0GEv rounded-medium w-full">
+            <div class="flex items-center justify-center styles_btn__loading__d5Rcc">
+                <svg width="24" height="24" id="e302pyQgejw1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                    <path class="styles_Loading__circle1__K7HNJ" d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z" transform="matrix(1 0 0 1 17 9)" opacity="0.9" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></path>
+                    <rect class="styles_Loading__circle2__jpl_q" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 9 9)" opacity="0.6" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect>
+                    <rect class="styles_Loading__circle3__otcH4" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 0.94007500000000 9)" opacity="0.3" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect>
+ 
+                </svg>
+
+            </div>
+            <div class="flex items-center justify-center relative grow">پرداخت</div>
+        </a>
+    </div>
+    <div class=" mt-1 lg:my-4" style="padding: 20px;">
+        <a class="inline-flex items-center cursor-pointer styles_Anchor--secondary__3KsgY text-button-2 mt-2 mx-4 lg:mx-0" href="/checkout">
+            <span>بازگشت به سبد خرید</span></a>
+    </div>
+</div>
+
+
+
+{% endblock content %}

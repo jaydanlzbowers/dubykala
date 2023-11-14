@@ -1,0 +1,69 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+
+
+
+<!-- /////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+    <div class="grow flex flex-col" style="padding-bottom: 102px; padding-top: 0px;">
+
+        <div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX">
+
+            <div class="lg:px-5" style="flex-direction: row;">
+
+
+
+
+                <div class="flex flex-col  styles_PdpProductContent__sectionBorder--mobile__J7liJ">
+
+
+                    <!--  ///////////////////////options of present///////////////////////////-->
+                    <div class="flex w-full">
+                        <div class="grow min-w-0">
+
+
+                            <article class=" px-5 lg:px-0 pb-5 styles_PdpProductContent__sectionBorder__39zAX">
+                                <div id="PdpShortReview">
+                                    <div class="break-words py-3">
+                                        <div class="flex items-center grow">
+                                            <h2 class="grow text-h5"><span class="relative">  {{magazine.title}} </span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-body-1 text-neutral-800"> {{ magazine.text|safe }} </div>
+
+                                <div class="flex content-between w-full overflow-x-scroll lg:overflow-x-hidden mt-4"></div>
+                            </article>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+    {% endblock content %}

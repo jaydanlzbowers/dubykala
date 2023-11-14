@@ -1,0 +1,68 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+
+
+
+<div class="grow flex flex-col overflow-y-auto">
+    <div class="grow flex flex-col styles_children__hHq5Q pt-4">
+        <div>
+            <div class="flex items-start mb-1 lg:mb-0 px-5">
+                <div class="grow styles_AddCommentForm__formWrapper__BiRU_">
+                    <form>
+                        <div class="flex justify-center flex-wrap lg:px-3 pb-6 relative border-complete-b pt-4">
+                            <div class="mb-4 flex items-center"><span class="text-hint-text-error ml-1">*</span>
+                                <p class="text-neutral-700 text-body1-strong">امتیاز دهید!:‌ </p>
+                                <p class="text-neutral-700 mr-1 text-body1-strong"> </p>
+                            </div>
+                            <div class="pr-1 pl-1 w-full">
+                                <div class="styles_noUi-target__XAwMt styles_noUi-rtl__a4z36 styles_noUi-horizontal__dw6Te styles_noUi-txt-dir-rtl__iqVbf">
+                                    <div class="styles_noUi-base__VsFI9">
+                                        <div class="styles_noUi-connects__bbrsT">
+                                            <div class=" styles_noUi-connect__FBBSb styles_AddCommentRatingBarInput__range--active__OQfIV" style="transform: translate(100%, 0px) scale(0, 1);"></div>
+                                        </div>
+                                        <div class="styles_noUi-origin__UEgCh" style="transform: translate(100%, 0px); z-index: 4;">
+                                            <div class="styles_noUi-handle__8L8O2 styles_AddCommentRatingBarInput__handle__qekUa undefined" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="5.0" aria-valuenow="0.0" aria-valuetext="0.00">
+                                                <div class="styles_noUi-touch-area__Lm7W6"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="styles_noUi-pips__UmpDJ styles_noUi-pips-horizontal__KW2RI">
+                                        <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 0%;"></div>
+                                        <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 20%;"></div>
+                                        <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 40%;"></div>
+                                        <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 60%;"></div>
+                                        <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 80%;"></div>
+                                        <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-h5 text-neutral-900 my-6">دیدگاه خود را شرح دهید</p>
+
+                        <div class="flex justify-between items-center">
+                            <p class="mb-2 text-body-1">متن نظر<span class="text-hint-text-error">*</span></p>
+                        </div>
+                        <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I FormComponentFrame_FormComponentFrame__input-container--textArea__qeOmL px-2 flex items-center">
+                            <div class="grow text-body-3"><textarea class="px-1 TextField_TextField__textarea__fMFfN text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--primary__IZ6Ku rounded-medium" name="comment" placeholder="برای ما بنویسید..."></textarea></div>
+                        </div>
+                        </label>
+                        <div class="flex items-center lg:mb-5 lg:mt-4 mt-3 mb-4"><label class="flex items-center cursor-pointer styles_Checkbox__checkboxContainer__7joRB py-1"><input class="invisible absolute" type="checkbox" name="isAnonymous" labelclassname="text-body-1 text-neutral-700"><span class="inline-flex justify-center items-center cursor-pointer rounded-small shrink-0 styles_Checkbox__checkbox__z1B5a styles_Checkbox__checkbox--secondary__FspFz"><div class="flex styles_Checkbox__icon__AaKB1"><svg style="width: 10px; height: 10px; fill: var(--color-icon-white);"><use xlink:href="#check"></use></svg></div></span></label>
+                            <p class="text-button-2 text-neutral-700 mr-5">ارسال دیدگاه به صورت ناشناس</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-start items-center lg:gap-10 lg:py-5 py-4 shadow-1-top px-5">
+                <div class="grow-5 w-full lg:w-6/12">
+                    <button class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-1 styles_btn--large__1Muai styles_btn--primary__y0GEv rounded-medium w-full" data-cro-id="pdp-submit-comment"><div class="flex items-center justify-center styles_btn__loading__d5Rcc"><svg width="24" height="24" id="e302pyQgejw1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path class="styles_Loading__circle1__K7HNJ" d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z" transform="matrix(1 0 0 1 17 9)" opacity="0.9" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></path><rect class="styles_Loading__circle2__jpl_q" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 9 9)" opacity="0.6" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect><rect class="styles_Loading__circle3__otcH4" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 0.94007500000000 9)" opacity="0.3" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect></svg></div><div class="flex items-center justify-center relative grow">ثبت دیدگاه</div></button></div>
+                <p class="mt-2 lg:mt-0 text-caption grow">ثبت دیدگاه به معنی موافقت با
+                    <a class="mx-1 text-secondary-500" target="_blank" ">قوانین انتشار </a>است.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

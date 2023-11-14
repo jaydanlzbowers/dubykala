@@ -1,0 +1,131 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+
+<div class="flex flex-col grow">
+    <div class="fixed z-5 top-0 left-0 w-full z-3 bg-neutral-000" width="593" height="0">
+        <div class="overflow-hidden styles_BaseLayoutMobile__collapsibleHeader__JJtSp" id="base_layout_mobile_collapsible_header" style="height: 0px;"></div>
+        <div id="base_layout_mobile_fixed_header"></div>
+    </div>
+    <div></div>
+
+    <div class="grow flex flex-col" style="padding-bottom: 55px; padding-top: 0px;">
+
+        <div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX px-5 ">
+            <div class="styles_PageLoader--hasPageContainer__gPBo1 hidden"></div>
+            <div class="flex items-center my-3 lg:mb-5">
+                <div class="flex flex-col">
+                    <h1 class="text-neutral-900 text-h5">گوشی موبایل اپل</h1>
+                </div>
+            </div>
+
+            <div id="ProductListPagesWrapper" class="relative w-full flex flex-col lg:flex-row items-center lg:items-stretch justify-between product-list_ProductList__wrapper__Evjm8">
+                <section class="w-full grow relative">
+                    <div class="sticky lg:static top-5 bg-neutral-000 z-2">
+                        <div>
+
+                            <div class="flex items-center justify-between pt-3 text-neutral-500">
+                                <span class="grow text-body1-strong">همه کالاها</span>
+                                <div class="mr-auto block lg:hidden xl:block">
+                                    <span class="whitespace-nowrap text-body-2 ellispis-1 flex items-center gap-2">{{numberofp}} کالا</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-list_ProductList__pagesContainer__zAhrX product-list_ProductList__pagesContainer--withoutSidebar__aty9j">
+                        <div class="product-list_ProductList__item__LiiNI" data-product-index="1">
+                            {% for product in products %}
+
+                            <a class="block cursor-pointer relative bg-neutral-000 overflow-hidden grow flex flex-col items-stretch justify-start py-2" target="_blank" href="/product/{{product.serialnumber}}">
+
+
+
+
+                                <div data-testid="product-card">
+                                    <article class="overflow-hidden flex flex-col items-stretch justify-start">
+                                        <div class="flex items-center justify-start mb-1">
+                                            <div class="text-body2-extra grow"><br>
+                                            </div>
+                                        </div>
+                                        <div class="flex grow relative flex-row">
+                                            <div class="flex items-stretch flex-col relative ml-3">
+                                                <div class="flex flex-col">
+                                                    <div>
+                                                        <div style="width: 118px; height: 118px; line-height: 0;">
+                                                            <picture>
+                                                                <source type="image/webp" " srcset=" ">
+                                                                            <source type="image/jpeg "  srcset=" ">
+                                                                            <img class="w-full rounded-medium inline-block " 
+                                                                                
+                                                                                src="{{product.getmainpicture}} "
+                                                                                width="118 " height="118 " alt=" " title=" " style="object-fit: contain; "></picture>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="grow flex flex-col items-stretch justify-start ">
+
+                                                            <div>
+                                                                <h3 class="ellipsis-2 text-body2-strong text-neutral-700 styles_HorizontalProductCard__productTitle__hzx5X ">گوشی موبایل اپل مدل iPhone 13 CH دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت - نات اکتیو</h3>
+                                                            </div>
+                                                            <div class="mb-1 flex items-center justify-between ">
+                                                                <div class="flex items-center " data-ab-id=" ">
+                                                                    <div class="flex shrink-0 ml-1 ">
+                                                                        <svg style="width: 18px; height: 18px; fill: var(--color-delivery-jet-expansion); "><use xlink:href="#deliveryToday "></use>
+                                      </svg>
+                                                                    </div>
+                                                                    <p class="text-caption text-neutral-600 ">ارسال یک هفته ای</p>
+                                                                    <br>
+                                                                </div>
+                                                                <div class="flex items-center ">
+                                                                    <p class="text-body2-strong text-neutral-700 ">{{ product.rate }}</p>
+                                                                    <div class="flex mr-2 shrink-0 ">
+                                                                        <svg style="width: 16px; height: 16px; fill: var(--color-icon-rating-0-2); "><use xlink:href="#starFill "></use>
+                                      </svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pt-1 flex flex-col items-stretch justify-between ">
+                                                                <div class="flex items-center justify-between ">
+                                                                    <div class="flex items-center justify-end gap-1 text-neutral-700 text-neutral-400 text-h5 grow ">
+                                                                        <span data-testid="price-final ">{{ product.price }}</span>
+                                                                        <div class="flex ">
+                                                                            <svg style="width: 16px; height: 16px; fill: var(--color-icon-high-emphasis); "><use xlink:href="#toman "></use>
+                                        </svg>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex items-center justify-between pl-5 "></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+
+                                            
+
+                                        </a>
+                                        {% endfor %}
+                                    </div>
+
+                                    <section class="product-list_ProductList__banner__Mxvqm "></section>
+                                    <span class="w-full product-list_ProductList__banner__Mxvqm "></span>
+                                </div>
+                            </section>
+                        </div>
+
+                        {% if article != '' %}
+                        <article class="w-full seo mt-10 px-5 lg:px-0 ">
+                            <div class="mb-1 styles_content__NtE6p styles_content--expanded__5wMiV ">
+                                <div class="text-body-1 text-neutral-400 ">
+                                    {{article}}
+                                </div>
+                            </div>
+                        </article>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+            </div>
+
+{% endblock content %}

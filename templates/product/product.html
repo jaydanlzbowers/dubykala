@@ -1,0 +1,712 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+
+
+
+<!-- /////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+<div class="flex flex-col grow">
+    <div class="fixed z-5 styles_BaseLayoutMobile__fixedHeaderBorder__iRll7 top-0 left-0 w-full z-3 bg-neutral-000" width="537" height="0">
+        <div class="overflow-hidden styles_BaseLayoutMobile__collapsibleHeader__JJtSp" id="base_layout_mobile_collapsible_header" style="height: 0px;"></div>
+        <div id="base_layout_mobile_fixed_header"></div>
+    </div>
+    <div></div>
+
+
+
+
+
+
+
+    <div class="grow flex flex-col" style="padding-bottom: 102px; padding-top: 0px;">
+        <div class="styles_BaseLayoutMobile__fixMobileHeader__eilSC">
+            <div id="base_layout_mobile_static_header"></div>
+        </div>
+        <div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX">
+            <div class="styles_PageLoader--hasPageContainer__gPBo1 hidden"></div>
+            <div class="lg:px-5" style="flex-direction: row;">
+                <div class="flex items-center">
+                    <nav class="flex items-center">
+                        <a class="styles_Link__RMyqc" href="/productlist/brand/{{product.brand.name}}">
+                            <span class="text-secondary-500 text-body1-strong">
+                                            {{ product.getpath }} / </span>
+                        </a>
+                        <a class="styles_Link__RMyqc" href="/product/{{product.serialnumber}}">
+                            <span class="text-secondary-500 text-body1-strong">
+                                            {{ product.name }}  </span>
+                        </a>
+                    </nav>
+                </div>
+
+
+
+                <div class="flex flex-col  styles_PdpProductContent__sectionBorder--mobile__J7liJ">
+                    <div class=" shrink-0 styles_InfoSection__rightSection__PiYpa">
+                        <div class="flex items-center text-h5 py-2 mx-5 lg:mx-0">
+                            <div></div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="styles_GalleryMobile__imageContainer__tIXDC aspect-square w-full">
+                                <div class="relative">
+                                    <div>
+                                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-rtl">
+
+
+
+                                            <!--  ///////////////////////images///////////////////////////-->
+
+
+                                            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+                                            <div class="lg:ml-4 shrink-0 styles_InfoSection__rightSection__PiYpa">
+
+                                                <div class="mb-2">
+                                                    <div class="styles_GalleryMobile__imageContainer__tIXDC aspect-square w-full">
+                                                        <div class="container">
+                                                            <h2>تصاویر</h2>
+                                                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                                <!-- Indicators -->
+                                                                <ol class="carousel-indicators">
+                                                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                                                </ol>
+
+                                                                <!-- Wrapper for slides -->
+                                                                <div class="carousel-inner">
+
+                                                                    <div class="item active">
+                                                                        <img src="{{ product.getmainpicture }}" alt="Los Angeles">
+                                                                        <div class="carousel-caption">
+                                                                            <h3></h3>
+                                                                            <p></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    {% for pic in product.getpicture %}
+                                                                    <div class="item">
+                                                                        <img src="{{ pic.img.url }}" alt="Chicago" style="width:100%;">
+                                                                        <div class="carousel-caption">
+                                                                            <h3></h3>
+                                                                            <p></p>
+                                                                        </div>
+                                                                    </div>
+                                                                    {% endfor %}
+
+
+                                                                </div>
+
+                                                                <!-- Left and right controls -->
+                                                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <!--  ///////////////////////images///////////////////////////-->
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="grow min-w-0">
+                            <div class="flex items-center w-full px-5 lg:px-0">
+                                <div>
+
+                                    <h1 class="text-h4 text-neutral-900 mb-2 pointer-events-none" data-testid="pdp-title">{{ product.fullname }}</h1>
+                                </div>
+                            </div>
+                            <div class="styles_InfoSection__leftSection__0vNpX">
+                                <div class="pb-3 min-w-0 mx-5  styles_InfoSection__wrapper__e2TLb styles_InfoSection__variantInfo__PVSw4">
+                                    <div class="flex items-center">
+                                        <div class="flex items-center mt-2">
+                                            <div style="width: 16px; height: 16px; line-height: 0;">
+                                                <picture>
+                                                    <source type="image/webp" data-savepage-srcset="/statics/img/png/star-yellow.webp" srcset="">
+                                                    <source type="image/jpeg" data-savepage-srcset="/statics/img/png/star-yellow.png" srcset="">
+                                                    <img class="w-full inline-block"  data-savepage-src="/statics/img/png/star-yellow.png" src="data:image/webp;base64,UklGRpIBAABXRUJQVlA4WAoAAAAQAAAAEwAAFAAAQUxQSGoAAAABcBDZbtx8CIIgCIYgCIZiCIEQBhGEMkiZCIIg/B6+JggiYgLw/Fp3vO4NwpS1Stqak9dakimjwuUCQGMuDP/qMy4Ytuxlw6z3TkxHL6eMZAZJm3HyrXqT50ywAcDBnLAo6GqUEQRDwbMBVlA4IAIBAADQCACdASoUABUAPhkKhEGhBQEABABhLYATplxwWfQPwA/FXnDIAfrBiOP2v7gN0A22b9Vff/5wDgAPKO9hb9YP2R9wX+kANqwC6irOnq8AAP7//rXQ/3kFV8f9BEKx+GuwCF/il8JZDN/dBHCmsih1w7QChFCIA+j1T1Bo0TmTpuCsAQl237EHNwb1AGODbgtoAp8BwImJv+6E3///tZ2kKbY7UGyV+oqs9hGUtfsyL0tCdKmnjCG06QxHsh5M5kBfj8kd8Ot0PT5WlkdPjQumf4RnsvH44VWaavZ2inJD06jHIWdmu1bkOSPmMscfrr0Yh6kj//7Sdk0xpAyc5DwAAAA="
+                                                        width="16" height="16" alt="امتیاز" title="" style="object-fit: contain;"></picture>
+                                            </div>
+                                            <p class="mr-1 text-body-2">{{product.rate}}</p>
+                                            <p class="mr-1 text-caption text-neutral-300">({{product.nrate}})</p>
+                                            <div class="flex mr-1">
+                                                <svg style="width: 16px; height: 16px; fill: var(--color-icon-disable);"><use xlink:href="#dotOutline"></use>
+                              </svg>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center mt-2">
+                                            <span class="inline-flex items-center cursor-pointer styles_Anchor--secondary__3KsgY text-body-2 text-secondary-500 mx-1 cursor-pointer text-body-2" data-cro-id="pdp-comments-abovefold">
+                              <span>{{product.getncomment}} دیدگاه</span>
+                                            </span>
+                                            <div class="flex text-neutral-300">
+                                                <svg style="width: 16px; height: 16px; fill: var(--color-icon-disable);"><use xlink:href="#dotOutline"></use>
+                              </svg>
+                                            </div>
+                                        </div>
+                                        <span class="inline-flex items-center cursor-pointer styles_Anchor--secondary__3KsgY text-body-2 mt-2 mx-1 cursor-pointer" data-cro-id="pdp-questions-abovefold">
+                            <span>{{product.getnfaq}} پرسش</span>
+                                        </span>
+                                    </div>
+
+
+                                    {% if colors %}
+                                    <div class="border-complete-t lg:border-none mt-3 lg:mt-0">
+                                        <div class="break-words py-3">
+                                            <div class="flex items-center grow">
+                                                <p class="grow text-h5 text-neutral-900">
+                                                    <span class="relative">رنگ: </span> {% for color in colors %}
+
+                                                    <a href="#">
+                                                        <span class="relative selectcolor" onclick="selectcolor(this.id)" style="background-color: #0000000e;border-radius: 7px;padding: 3px;color: black;" id="{{ color.value }}">{{ color.value }}</span>
+                                                    </a>
+
+                                                    {% endfor %}
+                                                    <input type="hidden" id="colorselected" value="">
+
+                                                </p>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    {% endif %}
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="border-complete-t px-3 items-center justify-between pt-3 pb-7 flex lg:mt-3 styles_Footer__a0yS8">
+                        <div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar w-full flex gap-y-4 lg:gap-y-2 mx-auto justify-between">
+                            <a class="styles_Footer__item__kcYwG"  >
+                                <div class="flex flex-col lg:flex-row items-center justify-center px-1">
+                                    <div class="lg:inline-block lg:ml-2 filter" style="width: 42px; height: 42px; line-height: 0;"><img class="w-full inline-block" data-savepage-currentsrc="https://www.digikala.com/statics/img/svg/infosection/express-delivery.svg" data-savepage-src="/statics/img/svg/infosection/express-delivery.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMyAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2Ljc5MzEgNS41QzE3LjA2OTIgNS41IDE3LjI5MzEgNS43MjM4NiAxNy4yOTMxIDZDMTcuMjkzMSA2LjI3NjE0IDE3LjA2OTIgNi41IDE2Ljc5MzEgNi41SDkuMDAwMDRDOC43MjM4OSA2LjUgOC41MDAwNCA2LjI3NjE0IDguNTAwMDQgNkM4LjUwMDA0IDUuNzIzODYgOC43MjM4OSA1LjUgOS4wMDAwNCA1LjVIMTYuNzkzMVoiIGZpbGw9IiNBMUEzQTgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNy43NjEgMTUuMjM1NFYxMi4yNDQzTDI1LjE0NzcgMTMuMDcxVjE2LjA4MzFMMjUuNzIzOSAxNS44OTI4QzI1Ljk4NjEgMTUuODA2MiAyNi4yNjg5IDE1Ljk0ODYgMjYuMzU1NSAxNi4yMTA4QzI2LjQ0MjEgMTYuNDczIDI2LjI5OTcgMTYuNzU1OCAyNi4wMzc1IDE2Ljg0MjRMMjQuODA0NSAxNy4yNDk2QzI0LjQ4MSAxNy4zNTY0IDI0LjE0NzcgMTcuMTE1NSAyNC4xNDc3IDE2Ljc3NDhWMTMuMzg3M0wyMS4yODgzIDE0LjI5MTlDMjEuMjk2IDE0LjMyNjcgMjEuMyAxNC4zNjI5IDIxLjMgMTQuNFYyMS41NDI4QzIxLjMgMjEuODE4OSAyMS4wNzYyIDIyLjA0MjggMjAuOCAyMi4wNDI4QzIwLjUyMzkgMjIuMDQyOCAyMC4zIDIxLjgxODkgMjAuMyAyMS41NDI4VjE0LjRDMjAuMyAxNC4zNzY3IDIwLjMwMTYgMTQuMzUzOCAyMC4zMDQ3IDE0LjMzMTNMMTIuMDM0NyAxMS43MDEzQzExLjc3MTYgMTEuNjE3NiAxMS42MjYxIDExLjMzNjQgMTEuNzA5OCAxMS4wNzMzQzExLjc5MzUgMTAuODEwMSAxMi4wNzQ2IDEwLjY2NDYgMTIuMzM3OCAxMC43NDgzTDIwLjczMzggMTMuNDE4NEwyMi45NzIzIDEyLjcxMDNMMTMuNTkyOCA5LjcxMzQyTDEwLjE3MDMgMTAuNzg4MVYxMy4xOTc0QzEwLjE3MDMgMTMuNDczNSA5Ljk0NjM5IDEzLjY5NzQgOS42NzAyNSAxMy42OTc0QzkuMzk0MTEgMTMuNjk3NCA5LjE3MDI1IDEzLjQ3MzUgOS4xNzAyNSAxMy4xOTc0VjEwLjQyMUM5LjE3MDI1IDEwLjIwMjYgOS4zMTIwNiAxMC4wMDk0IDkuNTIwNDcgOS45NDM5NkwxMy40OTMxIDguNjk2NkMxMy41MDc5IDguNjkxOTcgMTMuNTIyNiA4LjY4ODA2IDEzLjUzNzQgOC42ODQ4NUwxNy42NDMxIDcuMzI1MzVDMTcuNjYxNyA3LjMxOTE5IDE3LjY4MDQgNy4zMTQxOCAxNy42OTkxIDcuMzEwMjhMMjAuNTcxNSA2LjMyNjk1QzIwLjY3MjYgNi4yOTIzNiAyMC43ODIgNi4yOTEwMyAyMC44ODM5IDYuMzIzMThMMzIuMDgzOSA5Ljg1NzI5QzMyLjI5MiA5LjkyMjk0IDMyLjQzMzQgMTAuMTE1OSAzMi40MzM0IDEwLjMzNDFWMTAuMzg4NkMzMi40MzM2IDEwLjM5NjMgMzIuNDMzNiAxMC40MDQgMzIuNDMzNCAxMC40MTE3VjIyLjUyN0MzMi40MzM0IDIyLjc0NSAzMi4yOTIxIDIyLjkzNzkgMzIuMDg0MiAyMy4wMDM3TDIwLjg4NDIgMjYuNTQ2NkMyMC43ODU1IDI2LjU3NzkgMjAuNjc5NSAyNi41Nzc3IDIwLjU4MDkgMjYuNTQ2MUw5LjUyMDU1IDIzLjAwMzFDOS4zMTM1NCAyMi45MzY4IDkuMTczMDggMjIuNzQ0MyA5LjE3MzA4IDIyLjUyN1YyMC44NzY3QzkuMTczMDggMjAuNjAwNSA5LjM5Njk0IDIwLjM3NjcgOS42NzMwOCAyMC4zNzY3QzkuOTQ5MjMgMjAuMzc2NyAxMC4xNzMxIDIwLjYwMDUgMTAuMTczMSAyMC44NzY3VjIyLjE2MjFMMjAuMyAyNS40MDYxVjIzLjU1MTlDMjAuMyAyMy4yNzU4IDIwLjUyMzkgMjMuMDUxOSAyMC44IDIzLjA1MTlDMjEuMDc2MiAyMy4wNTE5IDIxLjMgMjMuMjc1OCAyMS4zIDIzLjU1MTlWMjUuMzY2M0wzMS40MzM0IDIyLjE2MDdWMTEuMDgyNkwyOC43NjEgMTEuOTI4VjE1LjU4OTFDMjguNzYxIDE1LjgwMSAyOC42MjczIDE1Ljk4OTkgMjguNDI3NSAxNi4wNjA1TDI3LjQ4ODQgMTYuMzkyMkMyNy4yMjggMTYuNDg0MSAyNi45NDI0IDE2LjM0NzYgMjYuODUwNCAxNi4wODcyQzI2Ljc1ODUgMTUuODI2OCAyNi44OTUgMTUuNTQxMiAyNy4xNTU0IDE1LjQ0OTJMMjcuNzYxIDE1LjIzNTRaTTE4LjgwNDkgNy45ODg3MUwyOC4zMDM4IDExLjAyMzhMMzAuMzc4IDEwLjM2NzZMMjAuNzM5OCA3LjMyNjMxTDE4LjgwNDkgNy45ODg3MVpNMTcuMTk5NiA4LjUyNTU5TDE1LjIxNjMgOS4xODIzM0wyNC42MjM0IDEyLjE4OEwyNi42NTI4IDExLjU0NkwxNy4xOTk2IDguNTI1NTlaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik0xNC44OTMxIDE0LjhDMTQuODkzMSAxNC41MjM5IDE0LjY2OTIgMTQuMyAxNC4zOTMxIDE0LjNINS40MDAwNEM1LjEyMzg5IDE0LjMgNC45MDAwNCAxNC41MjM5IDQuOTAwMDQgMTQuOEM0LjkwMDA0IDE1LjA3NjEgNS4xMjM4OSAxNS4zIDUuNDAwMDQgMTUuM0gxNC4zOTMxQzE0LjY2OTIgMTUuMyAxNC44OTMxIDE1LjA3NjEgMTQuODkzMSAxNC44WiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNOS4zOTMxIDE2LjVDOS42NjkyNSAxNi41IDkuODkzMSAxNi43MjM5IDkuODkzMSAxN0M5Ljg5MzEgMTcuMjc2MSA5LjY2OTI1IDE3LjUgOS4zOTMxIDE3LjVIMS42MDAwNEMxLjMyMzg5IDE3LjUgMS4xMDAwNCAxNy4yNzYxIDEuMTAwMDQgMTdDMS4xMDAwNCAxNi43MjM5IDEuMzIzODkgMTYuNSAxLjYwMDA0IDE2LjVIOS4zOTMxWiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNMy45MDAwNCAxNS4zQzQuMTc2MTggMTUuMyA0LjQwMDA0IDE1LjA3NjEgNC40MDAwNCAxNC44QzQuNDAwMDQgMTQuNTIzOSA0LjE3NjE4IDE0LjMgMy45MDAwNCAxNC4zQzMuNjIzODkgMTQuMyAzLjQwMDA0IDE0LjUyMzkgMy40MDAwNCAxNC44QzMuNDAwMDQgMTUuMDc2MSAzLjYyMzg5IDE1LjMgMy45MDAwNCAxNS4zWiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNNS44MDAwNCAxOS4yQzUuODAwMDQgMTkuNDc2MSA1LjU3NjE4IDE5LjcgNS4zMDAwNCAxOS43QzUuMDIzODkgMTkuNyA0LjgwMDA0IDE5LjQ3NjEgNC44MDAwNCAxOS4yQzQuODAwMDQgMTguOTIzOSA1LjAyMzg5IDE4LjcgNS4zMDAwNCAxOC43QzUuNTc2MTggMTguNyA1LjgwMDA0IDE4LjkyMzkgNS44MDAwNCAxOS4yWiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNMTIuMjkzMSAxOS4yQzEyLjI5MzEgMTguOTIzOSAxMi4wNjkyIDE4LjcgMTEuNzkzMSAxOC43SDYuODAwMDRDNi41MjM4OSAxOC43IDYuMzAwMDQgMTguOTIzOSA2LjMwMDA0IDE5LjJDNi4zMDAwNCAxOS40NzYxIDYuNTIzODkgMTkuNyA2LjgwMDA0IDE5LjdIMTEuNzkzMUMxMi4wNjkyIDE5LjcgMTIuMjkzMSAxOS40NzYxIDEyLjI5MzEgMTkuMloiIGZpbGw9IiNBMUEzQTgiLz4KPHBhdGggZD0iTTkuNDkzMSA4LjRDOS40OTMxIDguMTIzODYgOS4yNjkyNSA3LjkgOC45OTMxIDcuOUg1LjIwMDA0QzQuOTIzODkgNy45IDQuNzAwMDQgOC4xMjM4NiA0LjcwMDA0IDguNEM0LjcwMDA0IDguNjc2MTQgNC45MjM4OSA4LjkgNS4yMDAwNCA4LjlIOC45OTMxQzkuMjY5MjUgOC45IDkuNDkzMSA4LjY3NjE0IDkuNDkzMSA4LjRaIiBmaWxsPSIjQTFBM0E4Ii8+Cjwvc3ZnPgo="
+                                            width="42" height="42" alt="امکان تحویل اکسپرس" title="" style="object-fit: contain;">
+                                    </div>
+                                    <p class="text-center text-caption-strong text-neutral-400">امکان تحویل اکسپرس</p>
+                                </div>
+                            </a>
+                            <a class="styles_Footer__item__kcYwG"  >
+                                <div class="flex flex-col lg:flex-row items-center justify-center px-1">
+                                    <div class="lg:inline-block lg:ml-2 filter" style="width: 42px; height: 42px; line-height: 0;"><img class="w-full inline-block" data-savepage-currentsrc="https://www.digikala.com/statics/img/svg/infosection/support.svg" data-savepage-src="/statics/img/svg/infosection/support.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMyAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy42NzI3IDRDMjAuMTc4NyA0IDIyLjU0MTMgNC45ODI2IDI0LjMyNTEgNi43NjY0QzI2LjEwOTEgOC41NTA0IDI3LjA5MTUgMTAuOTEzIDI3LjA5MTUgMTMuNDE5QzI3LjA5MTEgMTYuODcyNCAyNy4wOTA1IDE4LjYwMjIgMjcuMDkwMyAxOC42MDhDMjcuMDYxNSAyMC41MDUgMjUuNTEwMyAyMi4wMzk2IDIzLjYwNjcgMjIuMDM5NkMyMy4zNDI1IDIyLjAzOTYgMjMuMTI4NSAyMS44MjU2IDIzLjEyODUgMjEuNTYxNFYxNS41NDc2QzIzLjEyODUgMTUuMjgzNiAyMy4zNDI1IDE1LjA2OTYgMjMuNjA2NyAxNS4wNjk2QzI0LjYwMTcgMTUuMDY5NiAyNS40OTk5IDE1LjQ4OTQgMjYuMTM1NSAxNi4xNjA0VjEzLjQxOUMyNi4xMzU1IDguNzUyNiAyMi4zMzkxIDQuOTU2MiAxNy42NzI3IDQuOTU2MkMxNC40MzA3IDQuOTU2MiAxMS42MDg1IDYuNzg4OCAxMC4xODc5IDkuNDcyNEM5Ljk2ODEzIDkuOTgyMiA5LjA2MjMzIDkuNzk1IDkuMzQyOTMgOS4wMjgyQzkuNzc5NTMgOC4yMDY2IDEwLjM0MTkgNy40NDQ4IDExLjAyMDEgNi43NjY0QzEyLjgwNDEgNC45ODI2IDE1LjE2NjcgNCAxNy42NzI3IDRaTTI0LjA4NDcgMTYuMDcxVjIxLjAzOEMyNS4yNTEzIDIwLjgxNCAyNi4xMzU1IDE5Ljc4NTYgMjYuMTM1NSAxOC41NTQ2QzI2LjEzNTUgMTcuMzIzNiAyNS4yNTEzIDE2LjI5NTIgMjQuMDg0NyAxNi4wNzFaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik0yNS44OTQxIDIxLjY0ODNDMjUuOTc5OSAyMS41NjI3IDI2LjA5ODkgMjEuNTEzMyAyNi4yMjAxIDIxLjUxMzNDMjYuMzQxMyAyMS41MTMzIDI2LjQ2MDMgMjEuNTYyNyAyNi41NDYxIDIxLjY0ODNDMjYuNjMxOSAyMS43MzQxIDI2LjY4MTEgMjEuODUzMSAyNi42ODExIDIxLjk3NDlDMjYuNjgxMSAyMi4wOTYxIDI2LjYzMTkgMjIuMjE0NSAyNi41NDYxIDIyLjMwMDlDMjYuNDYwMyAyMi4zODY1IDI2LjM0MTMgMjIuNDM1NSAyNi4yMjAxIDIyLjQzNTVDMjYuMDk4OSAyMi40MzU1IDI1Ljk3OTkgMjIuMzg2NSAyNS44OTQxIDIyLjMwMDlDMjUuODA4MyAyMi4yMTQ1IDI1Ljc1OTEgMjIuMDk1NyAyNS43NTkxIDIxLjk3NDlDMjUuNzU5MSAyMS44NTMxIDI1LjgwODMgMjEuNzM0MSAyNS44OTQxIDIxLjY0ODNaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjUuOTU4MyAyMy4wMTZDMjUuNzI5NyAyMi44ODQgMjUuNDM3MSAyMi45NjIyIDI1LjMwNTEgMjMuMTkwOEMyNC4zNzczIDI0Ljc5NyAyMi45MTkxIDI1LjkwMTggMjEuMDY5OSAyNi40MDc4TDIwLjgyOTMgMjUuMjc1NkMyMC43NzQzIDI1LjAxNzIgMjAuNTIwNSAyNC44NTI0IDIwLjI2MjEgMjQuOTA3MkwxOC42NDg1IDI1LjI1MDJDMTguMzkwMSAyNS4zMDUyIDE4LjIyNTMgMjUuNTU5IDE4LjI4MDMgMjUuODE3NEwxOC42MjMzIDI3LjQzMUMxOC42NzgxIDI3LjY4OTQgMTguOTMxOSAyNy44NTQyIDE5LjE5MDMgMjcuNzk5NEwyMC44MDQxIDI3LjQ1NjRDMjMuMTQ2NyAyNi45NTg0IDI0Ljk4OTUgMjUuNjQ4OCAyNi4xMzMxIDIzLjY2OTJDMjYuMjY1MyAyMy40NDA2IDI2LjE4NjkgMjMuMTQ4MiAyNS45NTgzIDIzLjAxNlpNMTkuMzE0OSAyNi4wODYyTDE5Ljk5MzMgMjUuOTQyTDIwLjEzNzUgMjYuNjIwNEwxOS40NTkxIDI2Ljc2NDZMMTkuMzE0OSAyNi4wODYyWiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNMTUuNzg3NCAxNS44NjA2SDE4Ljc2MzJWMTYuNjM0OEwxNy4yMDMgMjAuNDkyNEgxNi4yNDE2TDE3Ljc1NiAxNi43MzRIMTUuNzg3NFYxNS44NjA2WiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNMTQuNjE0NCAxNS43NzhWMTYuNjI1SDE0LjEyMDZWMTcuNDEyNEgxMy4yMDU0VjE2LjYyNUgxMS4wMjYyVjE1Ljc3OEwxMi42MTM0IDEyLjY4OEgxMy41ODc4TDEyLjAwNzIgMTUuNzc4SDEzLjIwNTRWMTQuNjc5NkgxNC4xMjA2VjE1Ljc3OEgxNC42MTQ0WiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNNy40NTI2NCAxNy40MTI0VjE2LjczMDhMOS4wMjYwMyAxNS4xMDMyQzkuMzIyNDMgMTQuNzkyMiA5LjU1MjgzIDE0LjQ4NzggOS41NTI4MyAxNC4xNzY4QzkuNTUyODMgMTMuODA2MiA5LjMwMjYzIDEzLjU3NDYgOC45NTM2MyAxMy41NzQ2QzguNTk4MjQgMTMuNTc0NiA4LjMzNDg0IDEzLjc4NjQgOC4xODM0NCAxNC4xMTcyTDcuNDE5NjQgMTMuNjY3MkM3LjcxNjA0IDEzLjAwNTYgOC4zMTUwNCAxMi42ODggOC45NDA2MyAxMi42ODhDOS43MzA2NCAxMi42ODggMTAuNDYxNCAxMy4yMTcyIDEwLjQ2MTQgMTQuMTQzNkMxMC40NjE0IDE0LjcwNiAxMC4xMzg4IDE1LjE4OTIgOS43MDQyNCAxNS42MjU4TDguODAyMjMgMTYuNTMyNEgxMC41MzM4VjE3LjQxMjRINy40NTI2NFoiIGZpbGw9IiNBMUEzQTgiLz4KPHBhdGggZD0iTTEyLjY4NSAyMC40OTI1TDE2Ljc5NiAxMi44NTE5SDE3LjE5MTZMMTMuMDgzNCAyMC40OTI1SDEyLjY4NVoiIGZpbGw9IiNBMUEzQTgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjU5OTk4IDIwLjU3NjVDNS41OTk5OCAyMS40NzI5IDYuMzI2NTggMjIuMTk5NSA3LjIyMjk4IDIyLjE5OTVIMTcuNzE2NEwxOC43MDI2IDIzLjQxNDVDMTguODk4NiAyMy42NTYxIDE5LjE5MzIgMjMuNzk2MyAxOS41MDQ0IDIzLjc5NjNDMjAuMDc0OCAyMy43OTYzIDIwLjUzNzIgMjMuMzMzOSAyMC41MzcyIDIyLjc2MzVWMTIuMDY1N0MyMC41MzcyIDExLjE2OTMgMTkuODEwNiAxMC40NDI3IDE4LjkxNDIgMTAuNDQyN0g3LjIyMjk4QzYuMzI2NTggMTAuNDQyNyA1LjU5OTk4IDExLjE2OTMgNS41OTk5OCAxMi4wNjU3VjIwLjU3NjVaTTYuNDg1MTggMTIuMDY1N0M2LjQ4NTE4IDExLjY1ODMgNi44MTU1OCAxMS4zMjc5IDcuMjIyOTggMTEuMzI3OUgxOC45MTQyQzE5LjMyMTYgMTEuMzI3OSAxOS42NTIgMTEuNjU4MyAxOS42NTIgMTIuMDY1N1YyMi43NjM1QzE5LjY1MiAyMi44NDUxIDE5LjU4NiAyMi45MTExIDE5LjUwNDQgMjIuOTExMUMxOS40NiAyMi45MTExIDE5LjQxNzggMjIuODkxMSAxOS4zODk4IDIyLjg1NjVMMTguMTM4IDIxLjMxNDNINy4yMjI5OEM2LjgxNTU4IDIxLjMxNDMgNi40ODUxOCAyMC45ODM5IDYuNDg1MTggMjAuNTc2NVYxMi4wNjU3WiIgZmlsbD0iI0ExQTNBOCIvPgo8L3N2Zz4K"
+                                            width="42" height="42" alt="۲۴ ساعته، ۷ روز هفته" title="" style="object-fit: contain;">
+                                    </div>
+                                    <p class="text-center text-caption-strong text-neutral-400">۲۴ ساعته، ۷ روز هفته</p>
+                                </div>
+                            </a>
+
+                            <a class="styles_Footer__item__kcYwG" >
+                                <div class="flex flex-col lg:flex-row items-center justify-center px-1">
+                                    <div class="lg:inline-block lg:ml-2 filter" style="width: 42px; height: 42px; line-height: 0;"><img class="w-full inline-block" data-savepage-currentsrc="https://www.digikala.com/statics/img/svg/infosection/days-return.svg" data-savepage-src="/statics/img/svg/infosection/days-return.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMyAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNy41NzM1IDcuNjc1MThDMjcuNjM0MSA3LjcyODY4IDI3LjY3ODggNy43OTc4NSAyNy43MDI5IDcuODkyNzFDMjcuNzE2MiA3LjkzNjUxIDI3LjcyMzUgNy45ODE4OSAyNy43MjQ2IDguMDI3NjVWMjAuMTEyMkMyNy43MjQ0IDIwLjMzMTkgMjcuNTgxNyAyMC41MjYxIDI3LjM3MjEgMjAuNTkyQzI3LjM3MjEgMjAuNTkyIDI2LjM0NjYgMjAuOTE4OSAyNi4zMzczIDIwLjkyMTVDMjYuMDY5NyAyMC45OTczIDI1Ljc5MTQgMjAuODQxOCAyNS43MTU2IDIwLjU3NDJDMjUuNjM5OCAyMC4zMDY2IDI1Ljc5NTMgMjAuMDI4MyAyNi4wNjI5IDE5Ljk1MjVMMjYuNzE3NSAxOS43NDM2VjguNzE2NDdMMjQuMTEzMyA5LjU0NDI2VjEzLjIwNTRDMjQuMTEzMSAxMy40MjUxIDIzLjk3MDQgMTMuNjE5MyAyMy43NjA4IDEzLjY4NTJMMjIuODM3MyAxMy45Nzg4QzIyLjc4ODYgMTMuOTk0NSAyMi43Mzc2IDE0LjAwMjUgMjIuNjg2MyAxNC4wMDI0QzIyLjQ2NzYgMTQuMDAxOCAyMi4yNzQyIDEzLjg2IDIyLjIwNzkgMTMuNjUxNUMyMi4xMjM3IDEzLjM4NjQgMjIuMjcwMiAxMy4xMDMzIDIyLjUzNTIgMTMuMDE5MUwyMy4xMDcyIDEyLjgzNzNWOS44NjY1MUwyMC41MDYgMTAuNjk0M1YxMy42NjUxTDIxLjAyNDcgMTMuNDk5OUMyMS4yODk3IDEzLjQxNTYgMjEuNTcyOCAxMy41NjIyIDIxLjY1NzEgMTMuODI3MkMyMS43NDE0IDE0LjA5MjIgMjEuNTk0OCAxNC4zNzU0IDIxLjMyOTggMTQuNDU5NkwyMC4xNTUxIDE0LjgzNDJDMjAuMTA2MiAxNC44NDk2IDIwLjA1NTMgMTQuODU3NiAyMC4wMDQgMTQuODU3OUMxOS43MjYgMTQuODU3OSAxOS41MDA1IDE0LjYzMjUgMTkuNTAwNSAxNC4zNTQ0VjExLjAxNEwxNi42NDcxIDExLjkyMDRWMTcuOTA1MUMxNi42NDcxIDE4LjE4MzIgMTYuNDIxNiAxOC40MDg2IDE2LjE0MzUgMTguNDA4NkMxNS44NjU1IDE4LjQwODYgMTUuNjQgMTguMTgzMiAxNS42NCAxNy45MDUxVjExLjkyMDRMNy40Mjk2IDkuMzA4NjFDNy4xNjQ1NiA5LjIyNDMzIDcuMDE4MDQgOC45NDEyMyA3LjEwMjMxIDguNjc2MThDNy4xODY1OSA4LjQxMTE0IDcuNDY5NyA4LjI2NDYyIDcuNzM0NzQgOC4zNDg5TDE2LjE0MzUgMTEuMDIzNkwxOC4zNDI0IDEwLjMyNDJMOC45MjY1NyA3LjMyNzc2TDUuNTY5NiA4LjM5NTcyVjE5Ljc0NDFMNi42OTk5OSAyMC4xNTIxVjE3LjA2OUM2LjY5OTk5IDE2LjgxIDYuOTA5OTkgMTYuNiA3LjE2ODk5IDE2LjZDNy40MjggMTYuNiA3LjYzNzk5IDE2LjgxIDcuNjM3OTkgMTcuMDY5VjIwLjQ3NTlMNy42Mzc5NCAyMC40ODI4QzcuNjM3OSAyMC40ODU0IDcuNjM3ODQgMjAuNDg4IDcuNjM3NzYgMjAuNDkwNkw5LjEwOTYgMjEuMDIxOUM5LjE4MDk1IDIxLjA0NDYgOS4yNDY4NSAyMS4wODQgOS4zMDAxNSAyMS4xMzczQzkuMzg3MzMgMjEuMjI0NSA5LjQzNzQ5IDIxLjM0NTUgOS40Mzc0OSAyMS40NjkyQzkuNDM3NDkgMjEuNTkyNSA5LjM4NzMzIDIxLjcxMyA5LjMwMDE1IDIxLjgwMDZDOS4yMTI5NiAyMS44ODc4IDkuMDkyMDIgMjEuOTM3NSA4Ljk2ODc0IDIxLjkzNzVDOC45MDc4NyAyMS45Mzc1IDguODQ3NTggMjEuOTI1NCA4Ljc5MTYzIDIxLjkwMjZMNC45MTUwMiAyMC41OTJDNC43MDU0MyAyMC41MjYxIDQuNTYyNzQgMjAuMzMxOSA0LjU2MjU1IDIwLjExMjJWOC4wMjc2NUM0LjU2Mjk5IDcuODA4MTEgNC43MDU2MiA3LjYxNDEzIDQuOTE1MDIgNy41NDgzTDE1Ljk5MjUgNC4wMjM2NUMxNi4wOTE3IDMuOTkyMTIgMTYuMTk4NCAzLjk5MjEyIDE2LjI5NzYgNC4wMjM2NUMxNi4yOTc2IDQuMDIzNjUgMjcuNDA1IDcuNTYyMjcgMjcuNDE5NCA3LjU3MDQ1QzI3LjQ0IDcuNTc5MiAyNy40NiA3LjU4OTI3IDI3LjQ3OTMgNy42MDA2NkMyNy41MTM1IDcuNjIxNzUgMjcuNTQ1MSA3LjY0NjggMjcuNTczNSA3LjY3NTE4Wk0xMC41ODc3IDYuNzk5NTZMMjAuMDAzNSA5Ljc5NTUxTDIxLjk1MTIgOS4xNzU2OEwxMi41MzUzIDYuMTc5NzNMMTAuNTg3NyA2Ljc5OTU2Wk0yMy42MTE4IDguNjQ3NDhMMTQuMTk2NCA1LjY1MTAzTDE2LjE0MzUgNS4wMzE3TDI1LjU1OTQgOC4wMjc2NUwyMy42MTE4IDguNjQ3NDhaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik03LjE2ODc0IDE1LjJDNy4wNDU0NiAxNS4yIDYuOTI0NTIgMTUuMjUwMSA2LjgzNzMzIDE1LjMzNzNDNi43NTAxNSAxNS40MjQ1IDYuNjk5OTkgMTUuNTQ1NSA2LjY5OTk5IDE1LjY2OTJDNi42OTk5OSAxNS43OTIgNi43NTAxNSAxNS45MTMgNi44MzczMyAxNi4wMDA2QzYuOTI0NTIgMTYuMDg3OCA3LjA0NTQ2IDE2LjEzNzUgNy4xNjg3NCAxNi4xMzc1QzcuMjkyMDIgMTYuMTM3NSA3LjQxMjk2IDE2LjA4NzggNy41MDAxNSAxNi4wMDA2QzcuNTg3MzMgMTUuOTEzIDcuNjM3NDkgMTUuNzkyNSA3LjYzNzQ5IDE1LjY2OTJDNy42Mzc0OSAxNS41NDU1IDcuNTg3MzMgMTUuNDI0NSA3LjUwMDE1IDE1LjMzNzNDNy40MTI5NiAxNS4yNTAxIDcuMjkyMDIgMTUuMiA3LjE2ODc0IDE1LjJaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik0yNC4xOTk5IDE0LjY5MzhDMjMuOTIxOCAxNC42OTM4IDIzLjY5NjQgMTQuOTE5MyAyMy42OTY0IDE1LjE5NzRWMjAuNDQ2N0MyMy42OTM2IDIyLjk0ODMgMjEuNjY2MyAyNC45NzU2IDE5LjE2NDcgMjQuOTc4NEgxMy4xMjI0QzEyLjg0NDMgMjQuOTc4NCAxMi42MTg5IDI1LjIwMzggMTIuNjE4OSAyNS40ODE5VjI2LjUyODdMOC45NjUzNCAyMy45NzEzTDEyLjYxODkgMjEuNDEzOVYyMi40NjA3QzEyLjYxODkgMjIuNzM4OCAxMi44NDQzIDIyLjk2NDMgMTMuMTIyNCAyMi45NjQzSDE3LjY1NDFDMTkuMzIyIDIyLjk2MjYgMjAuNjczNiAyMS42MTEgMjAuNjc1MiAxOS45NDMxVjE5LjcyOTFDMjAuNjc1MiAxOS40NTEgMjAuNDQ5OCAxOS4yMjU1IDIwLjE3MTcgMTkuMjI1NUMxOS44OTM2IDE5LjIyNTUgMTkuNjY4MiAxOS40NTEgMTkuNjY4MiAxOS43MjkxVjE5Ljk0MzFDMTkuNjY4MiAyMS4wNTU1IDE4Ljc2NjQgMjEuOTU3MiAxNy42NTQxIDIxLjk1NzJIMTMuNjI1OVYyMC40NDY3QzEzLjYyNTggMjAuMTY4NiAxMy40MDAyIDE5Ljk0MzMgMTMuMTIyMiAxOS45NDM0QzEzLjAxOTEgMTkuOTQzNSAxMi45MTg0IDE5Ljk3NTIgMTIuODMzOSAyMC4wMzQzTDcuNzk4NjggMjMuNTU4OUM3LjU3MDkgMjMuNzE4NSA3LjUxNTY0IDI0LjAzMjUgNy42NzUyIDI0LjI2MDJDNy43MDg4NyAyNC4zMDgyIDcuNzUwNjYgMjQuMzUgNy43OTg2OCAyNC4zODM3TDEyLjgzMzkgMjcuOTA4M0MxMy4wNjE4IDI4LjA2NzcgMTMuMzc1NyAyOC4wMTIxIDEzLjUzNSAyNy43ODQyQzEzLjU5NDEgMjcuNjk5NyAxMy42MjU5IDI3LjU5OTEgMTMuNjI1OSAyNy40OTZWMjUuOTg1NEgxOS4xNjQ3QzIyLjIyMjEgMjUuOTgxOCAyNC42OTk4IDIzLjUwNDEgMjQuNzAzNCAyMC40NDY3VjE1LjE5NzRDMjQuNzAzNCAxNC45MTkzIDI0LjQ3NzkgMTQuNjkzOCAyNC4xOTk5IDE0LjY5MzhaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik0xMy41MzY2IDEyLjJIOC40OTk5OVYxMy42NzA4SDExLjgzMTdMOS4yNjg4NSAyMEgxMC44OTU3TDEzLjUzNjYgMTMuNTAzN1YxMi4yWiIgZmlsbD0iI0ExQTNBOCIvPgo8L3N2Zz4K"
+                                            width="42" height="42" alt="هفت روز ضمانت بازگشت کالا" title="" style="object-fit: contain;">
+                                    </div>
+                                    <p class="text-center text-caption-strong text-neutral-400">هفت روز ضمانت بازگشت کالا</p>
+                                </div>
+                            </a>
+                            <a class="styles_Footer__item__kcYwG" >
+                                <div class="flex flex-col lg:flex-row items-center justify-center px-1">
+                                    <div class="lg:inline-block lg:ml-2 filter" style="width: 42px; height: 42px; line-height: 0;"><img class="w-full inline-block" data-savepage-currentsrc="/statics/img/svg/infosection/original-products.svg" data-savepage-src="/statics/img/svg/infosection/original-products.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMyAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjY5NDQgMTAuMzIzNkMyMC40NDk4IDEwLjE0NzQgMjAuMTA3NCAxMC4yMDEyIDE5LjkyOTggMTAuNDQzOEwxNS40OTQgMTYuNDk5OEwxMy40MDc2IDE0Ljg1NzZDMTMuMTcwOCAxNC42NzEyIDEyLjgyNjYgMTQuNzEwNCAxMi42Mzg2IDE0Ljk0NTJDMTIuNDUwOCAxNS4xODAyIDEyLjQ5MDQgMTUuNTIxNiAxMi43MjcyIDE1LjcwOEwxNS4yNjA4IDE3LjcwMjRDMTUuNTA0OCAxNy44OTQ0IDE1Ljg2MDggMTcuODQ2IDE2LjA0NCAxNy41OTYyTDIwLjgxNTQgMTEuMDgyQzIwLjk5MzIgMTAuODM5NCAyMC45Mzg4IDEwLjQ5OTggMjAuNjk0NCAxMC4zMjM2WiIgZmlsbD0iI0ExQTNBOCIvPgo8cGF0aCBkPSJNMTYuODIgNy4zODAwMkMxNy4wNzA0IDcuMzgwMDIgMTcuMjczNiA3LjU4MDIyIDE3LjI3MzYgNy44Mjc0MkMxNy4yNzM2IDguMDc0NjIgMTcuMDcwNCA4LjI3NDgyIDE2LjgyIDguMjc0ODJDMTMuNTk4NCA4LjI3NDgyIDEwLjk4NzIgMTAuODQ3MiAxMC45ODcyIDE0LjAyQzEwLjk4NzIgMTcuMTkyOCAxMy41OTg0IDE5Ljc2NTIgMTYuODIgMTkuNzY1MkMyMC4wNDE2IDE5Ljc2NTIgMjIuNjUyOCAxNy4xOTI4IDIyLjY1MjggMTQuMDJDMjIuNjUyOCAxMy43NzI4IDIyLjg1NiAxMy41NzI2IDIzLjEwNjQgMTMuNTcyNkMyMy4zNTY4IDEzLjU3MjYgMjMuNTYgMTMuNzcyOCAyMy41NiAxNC4wMkMyMy41NiAxNy42ODc0IDIwLjU0MjIgMjAuNjYgMTYuODIgMjAuNjZDMTMuMDk3OCAyMC42NiAxMC4wOCAxNy42ODc0IDEwLjA4IDE0LjAyQzEwLjA4IDEwLjM1MjYgMTMuMDk3OCA3LjM4MDAyIDE2LjgyIDcuMzgwMDJaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik0xOC4wNjY0IDcuNTY2NDJDMTguMTU5NCA3LjQ3MzYyIDE4LjI4ODQgNy40MjAwMiAxOC40MiA3LjQyMDAyQzE4LjU1MTYgNy40MjAwMiAxOC42ODA0IDcuNDczNjIgMTguNzczNiA3LjU2NjQyQzE4Ljg2NjQgNy42NTk0MiAxOC45MiA3Ljc4ODQyIDE4LjkyIDcuOTIwNjJDMTguOTIgOC4wNTIwMiAxOC44NjY0IDguMTgwNDIgMTguNzczNiA4LjI3NDAyQzE4LjY4MDQgOC4zNjcwMiAxOC41NTE2IDguNDIwMDIgMTguNDIgOC40MjAwMkMxOC4yODg0IDguNDIwMDIgMTguMTU5NCA4LjM2NzAyIDE4LjA2NjQgOC4yNzQwMkMxNy45NzM2IDguMTgwNDIgMTcuOTIgOC4wNTE2MiAxNy45MiA3LjkyMDYyQzE3LjkyIDcuNzg4NDIgMTcuOTczNiA3LjY1OTQyIDE4LjA2NjQgNy41NjY0MloiIGZpbGw9IiNBMUEzQTgiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yNS4yODY3IDE3LjQwMjhDMjUuMjg1IDE3LjM5MDUgMjUuMjgzMSAxNy4zNzgyIDI1LjI3NDkgMTcuMzI1MkMyNS4xNzI5IDE2LjY1ODQgMjUuMTY0OSAxNi4zOTYyIDI1LjI0MjcgMTYuMTA3OEMyNS4zMTY3IDE1LjgzNCAyNS40NTI1IDE1LjYxODIgMjUuODY3NSAxNS4xMDdDMjYuNDA4NSAxNC40NDA2IDI2LjU0MDEgMTQuMTk3OCAyNi41Mzk5IDEzLjgyQzI2LjUzOTkgMTMuNDQyNCAyNi40MDgzIDEzLjE5OTYgMjUuODY3MyAxMi41MzMyTDI1Ljg1NyAxMi41MjA0QzI1Ljg1MDUgMTIuNTEyMyAyNS44NDM5IDEyLjUwNDMgMjUuODIyOSAxMi40Nzg2QzI1LjQ1NTcgMTIuMDI1IDI1LjMxMzcgMTEuNzk1NCAyNS4yNDI3IDExLjUzMjRDMjUuMTg4OSAxMS4zMzMyIDI1LjE3ODcgMTEuMTA0MiAyNS4yMDkxIDEwLjc5OThDMjUuMjIxNSAxMC42NzU4IDI1LjIzNjMgMTAuNTY3NiAyNS4yNzQ5IDEwLjMxNTJDMjUuNDAyNSA5LjQ4MjYgMjUuMzk0OSA5LjIyMTYgMjUuMjEyMSA4LjkwOUMyNS4wMzI1IDguNjAxNiAyNC43ODI3IDguNDQ2NCAyNC4wNTg5IDguMTY2OEMyNC4wNCA4LjE1OTYzIDI0LjAzOTkgOC4xNTk2IDIzLjk5OTEgOC4xNDM3NkwyMy45OTg3IDguMTQzNkMyMy4zNzAzIDcuOTAxOCAyMy4xMzk1IDcuNzc5NCAyMi45MzA3IDcuNTczQzIyLjcyMjEgNy4zNjY0IDIyLjU5ODcgNy4xMzggMjIuMzU0MyA2LjUxNThMMjIuMzMwOSA2LjQ1NkMyMi4wNDg1IDUuNzM5NiAyMS44OTE3IDUuNDkyNCAyMS41ODExIDUuMzE0NEMyMS4yODA3IDUuMTQyNCAyMC45ODQ5IDUuMTMwMiAyMC4yMjA3IDUuMjQzNEMyMC4xOTY5IDUuMjQ2OTcgMjAuMTk2NyA1LjI0NyAyMC4xNDUzIDUuMjU0OEwyMC4xNDM5IDUuMjU1QzE5LjkwNTUgNS4yOTA2IDE5Ljc5NzMgNS4zMDUgMTkuNjczMyA1LjMxNzJDMTkuMzY0NyA1LjM0NzQgMTkuMTMyNyA1LjMzNzYgMTguOTMxMSA1LjI4NDJDMTguNjU0MyA1LjIxMSAxOC40MzYxIDUuMDc2NCAxNy45MTk3IDQuNjY1OEMxNy4yNDY1IDQuMTMwMiAxNy4wMDE1IDQgMTYuNjIwMSA0QzE2LjI4NzMgNCAxNS45OTY3IDQuMTQwMiAxNS41MTY1IDQuNTExMkMxNS40Njg3IDQuNTQ4IDE1LjQyMTkgNC41ODUgMTUuMzIwNSA0LjY2NTZDMTQuODAzOSA1LjA3NjQgMTQuNTg1OSA1LjIxMDggMTQuMzA5MSA1LjI4NEMxNC4wMTc3IDUuMzYxMiAxMy43NTI1IDUuMzUzMiAxMy4wNzkzIDUuMjUyMkMxMi4yMzgzIDUuMTI2IDExLjk3NDkgNS4xMzM0IDExLjY1OTEgNS4zMTQyQzExLjMzNzcgNS40OTg0IDExLjE5NjMgNS43MjU4IDEwLjg4NTkgNi41MTU2QzEwLjY0MTcgNy4xMzc0IDEwLjUxODEgNy4zNjYgMTAuMzA5NSA3LjU3MjZDMTAuMTE4NSA3Ljc2MTggOS44NzIxMiA3Ljg5NzggOS4zODA3MiA4LjA4OTRDOS4zNDM5MiA4LjEwMzggOS4zMTQ3MiA4LjExNTIgOS4yNDE1MiA4LjE0MzJMOS4yMjc4MiA4LjE0ODYzQzkuMjE4OTUgOC4xNTIxMiA5LjIxMDA0IDguMTU1NTMgOS4xODEyOSA4LjE2NjU0QzguNDU3NDkgOC40NDU5NCA4LjIwNzcyIDguNjAxMiA4LjAyNzkyIDguOTA4NkM3Ljg1NDEyIDkuMjA2MiA3Ljg0MTcyIDkuNDk5MiA3Ljk1NjEyIDEwLjI1NjJMNy45Njc3MiAxMC4zMzE4QzguMDAzOTIgMTAuNTY3NiA4LjAxODMyIDEwLjY3NSA4LjAzMDcyIDEwLjc5NzZDOC4wNjEzMiAxMS4xMDMgOC4wNTEzMiAxMS4zMzI2IDcuOTk3MzIgMTEuNTMyMkM3LjkyMjkyIDExLjgwNzYgNy43ODUzMiAxMi4wMjQ2IDcuMzQ1MTIgMTIuNTY3QzcuMjg4NTIgMTIuNjM2OCA3LjI1MjcyIDEyLjY4MTQgNy4yMTcxMiAxMi43MjY2QzYuODQxNTIgMTMuMjAyNiA2LjY5OTkyIDEzLjQ5MDQgNi42OTk5MiAxMy44MkM2LjY5OTkyIDE0LjE0OTQgNi44NDE1MiAxNC40MzcyIDcuMjE1OTIgMTQuOTExOEM3LjI1MzMyIDE0Ljk1OTYgNy4yOTA3MiAxNS4wMDYgNy4zNzI1MiAxNS4xMDY4QzcuNzg3MzIgMTUuNjE3OCA3LjkyMzMyIDE1LjgzMzggNy45OTczMiAxNi4xMDc4QzguMDUxMTIgMTYuMzA3MiA4LjA2MTEyIDE2LjUzNjIgOC4wMzA3MiAxNi44NDFDOC4wMTgzMiAxNi45NjQ4IDguMDAzNzIgMTcuMDcyOCA3Ljk2NTEyIDE3LjMyNUM3LjgzNzUyIDE4LjE1NzYgNy44NDUxMiAxOC40MTg0IDguMDI3NzIgMTguNzMxQzguMjA3NTIgMTkuMDM4NiA4LjQ1NzEyIDE5LjE5MzYgOS4xODExMiAxOS40NzMyQzkuMTk5OTcgMTkuNDgwNSA5LjIwMDEzIDE5LjQ4MDYgOS4yNDA0NCAxOS40OTYxTDkuMjQwNjcgMTkuNDk2Mkw5LjI0MTIxIDE5LjQ5NjRDOS44Njk0MSAxOS43Mzg0IDEwLjEwMDcgMTkuODYwNiAxMC4zMDkzIDIwLjA2NzJDMTAuNTE3OSAyMC4yNzM2IDEwLjY0MTMgMjAuNTAyMiAxMC44ODU3IDIxLjEyNDJDMTAuODkyOSAyMS4xNDI4IDEwLjg5MjkgMjEuMTQyOCAxMC45MDkxIDIxLjE4NEMxMS4xOTE1IDIxLjkwMDYgMTEuMzQ4MyAyMi4xNDc4IDExLjY1ODkgMjIuMzI1NkMxMS45NTkzIDIyLjQ5NzggMTIuMjU1MyAyMi41MDk4IDEzLjAxOTcgMjIuMzk2NkwxMy4wMiAyMi4zOTY2QzEzLjA0MzcgMjIuMzkzIDEzLjA0NCAyMi4zOTMgMTMuMDk2NyAyMi4zODUyQzEzLjMzNTMgMjIuMzQ5NCAxMy40NDM5IDIyLjMzNDggMTMuNTY4MyAyMi4zMjI4QzEzLjY4MzUgMjIuMzExNCAxMy43ODUzIDIyLjMwNTggMTMuODc5NyAyMi4zMDU4QzE0LjA0MTMgMjIuMzA1OCAxNC4xODE3IDIyLjMyMjIgMTQuMzA4OSAyMi4zNTU4QzE0LjU4NTcgMjIuNDI5IDE0LjgwMzkgMjIuNTYzNiAxNS4zMjAzIDIyLjk3NDRDMTUuOTkzNSAyMy41MDk4IDE2LjIzODUgMjMuNjQgMTYuNjE5OSAyMy42NEMxNy4wMDE1IDIzLjY0IDE3LjI0NjUgMjMuNTA5OCAxNy45MTk3IDIyLjk3NDRMMTcuOTMzMyAyMi45NjM3TDE3Ljk3NDkgMjIuOTMwNEMxOC40MzMxIDIyLjU2NjggMTguNjY1MSAyMi40MjYyIDE4LjkzMDkgMjIuMzU2QzE5LjIyMjMgMjIuMjc4OCAxOS40ODcxIDIyLjI4NjggMjAuMTYwOSAyMi4zODc4QzIxLjAwMTcgMjIuNTE0IDIxLjI2NTEgMjIuNTA2NiAyMS41ODA5IDIyLjMyNThDMjEuOTAyMyAyMi4xNDE2IDIyLjA0MzcgMjEuOTE0MiAyMi4zNTQxIDIxLjEyNDRDMjIuNTk4MyAyMC41MDI2IDIyLjcyMTkgMjAuMjc0IDIyLjkzMDUgMjAuMDY3NEMyMy4xMzkzIDE5Ljg2MDggMjMuMzcwMSAxOS43Mzg2IDIzLjk5ODUgMTkuNDk2NkwyNC4wMTIyIDE5LjQ5MTNMMjQuMDU2OSAxOS40NzQyTDI0LjA1ODkgMTkuNDczNEMyNC43ODI3IDE5LjE5MzggMjUuMDMyMyAxOS4wMzg4IDI1LjIxMjEgMTguNzMxNEMyNS4zODU5IDE4LjQzMzggMjUuMzk4MyAxOC4xNDA4IDI1LjI4ODUgMTcuNDE1TDI1LjI4NjcgMTcuNDAyOFpNMjUuNjk0OSAxMy44MjAyQzI1LjY5NTEgMTMuOTM4NCAyNS41NjU5IDE0LjE0MjggMjUuMjA4OSAxNC41ODI4QzI0LjczMzUgMTUuMTY4NCAyNC41NDM5IDE1LjQ1NjggMjQuNDI2MyAxNS44OTE4QzI0LjMwNTMgMTYuMzQgMjQuMzIzNSAxNi42OTI0IDI0LjQ0MTUgMTcuNDY0NEwyNC40NDczIDE3LjUwMTlMMjQuNDUyOSAxNy41Mzg4QzI0LjUyMjMgMTcuOTk4OCAyNC41MjY5IDE4LjIzMzQgMjQuNDgwNyAxOC4zMTI0QzI0LjQyOTcgMTguMzk5NiAyNC4yMTc1IDE4LjUxNCAyMy43NTE5IDE4LjY5NEwyMy43MjIyIDE4LjcwNTRMMjMuNjkyMSAxOC43MTdDMjIuOTc1MyAxOC45OTMgMjIuNjYwNSAxOS4xNTE0IDIyLjMzMzEgMTkuNDc1OEMyMi4wMDU3IDE5Ljc5OTggMjEuODQ1MyAyMC4xMTE2IDIxLjU2NjUgMjAuODIxQzIxLjM2NDEgMjEuMzM2NCAyMS4yNTExIDIxLjU0OCAyMS4xNTc3IDIxLjYwMTZDMjEuMDcxMyAyMS42NTEgMjAuODMxMyAyMS42NDIyIDIwLjI4NzUgMjEuNTYwNkMxOS41MjE1IDIxLjQ0NTYgMTkuMTY1NSAyMS40Mjc4IDE4LjcxMjcgMjEuNTQ3NkMxOC4yODk3IDIxLjY1OTYgMTcuOTc4MSAyMS44NTU2IDE3LjQ0NjUgMjIuMjc3NkMxNy40MTgzIDIyLjMgMTcuNDE4MyAyMi4zIDE3LjM5MDUgMjIuMzIyQzE2Ljk0NTkgMjIuNjc1OCAxNi43MzkzIDIyLjgwMzQgMTYuNjE5OSAyMi44MDM0QzE2LjUwMDUgMjIuODAzNCAxNi4yOTQxIDIyLjY3NTYgMTUuODQ5NSAyMi4zMjJDMTUuMjU3OSAyMS44NTE2IDE0Ljk2NjUgMjEuNjYzOCAxNC41MjcxIDIxLjU0NzZDMTQuMzIyOSAyMS40OTM0IDE0LjEwOTcgMjEuNDY5MiAxMy44Nzk3IDIxLjQ2OTJDMTMuNzU0NSAyMS40NjkyIDEzLjYyNDkgMjEuNDc2NCAxMy40ODUxIDIxLjQ5MDJDMTMuMzM3MSAyMS41MDQ2IDEzLjIxMjcgMjEuNTIxNiAxMi45Mzg1IDIxLjU2MjZDMTIuOTE5NSAyMS41NjU1IDEyLjkxMDEgMjEuNTY3IDEyLjkwMDYgMjEuNTY4NEMxMi44OTEzIDIxLjU2OTggMTIuODgxOSAyMS41NzExIDEyLjg2MzMgMjEuNTczOEMxMi4zOTg3IDIxLjY0MjYgMTIuMTYxNyAyMS42NDcgMTIuMDgxOSAyMS42MDE0QzExLjk5MzcgMjEuNTUwOCAxMS44NzgxIDIxLjM0MSAxMS42OTYzIDIwLjg4TDExLjY3MzEgMjAuODIwOEMxMS4zOTQzIDIwLjExMTIgMTEuMjM0MSAxOS43OTk2IDEwLjkwNjcgMTkuNDc1NEMxMC41NzkzIDE5LjE1MTIgMTAuMjY0MyAxOC45OTI2IDkuNTQ3NTIgMTguNzE2Nkw5LjUxNzY4IDE4LjcwNTJMOS40ODgxMiAxOC42OTM4QzkuMDIyMzIgMTguNTEzOCA4LjgxMDMyIDE4LjM5OTQgOC43NTkxMiAxOC4zMTJDOC43MDkxMiAxOC4yMjY0IDguNzE3OTIgMTcuOTg4OCA4LjgwMzEyIDE3LjQzMzRDOC44Mzk5MiAxNy4xOTMgOC44NTY5MiAxNy4wNyA4Ljg3MTcyIDE2LjkyMzRDOC45MTA3MiAxNi41MzI0IDguODk4NTIgMTYuMjA2MiA4LjgxMzUyIDE1Ljg5MTZDOC42OTYxMiAxNS40NTY2IDguNTA2MzIgMTUuMTY4IDguMDA0MTIgMTQuNTQ5MkM3Ljk1MTUyIDE0LjQ4NDQgNy45MTYzMiAxNC40NDA4IDcuODgxOTIgMTQuMzk3QzcuNjQ5MTIgMTQuMTAxOCA3LjU0NDkyIDEzLjkxNDYgNy41NDQ5MiAxMy44MkM3LjU0NDkyIDEzLjcyNTIgNy42NDkzMiAxMy41Mzc4IDcuODgzMTIgMTMuMjQxNkM3LjkxNzEyIDEzLjE5ODIgNy45NTE5MiAxMy4xNTUgOC4wMzEzMiAxMy4wNTcyQzguNTA2NTIgMTIuNDcxNiA4LjY5NjEyIDEyLjE4MzIgOC44MTM3MiAxMS43NDgyQzguODk4NzIgMTEuNDMzNCA4LjkxMDcyIDExLjEwNjggOC44NzE1MiAxMC43MTVDOC44NTY5MiAxMC41Njg4IDguODM5OTIgMTAuNDQ2MiA4Ljc5ODUyIDEwLjE3NTZMOC43OTI3MiAxMC4xMzgxTDguNzg3MTIgMTAuMTAxMkM4LjcxNzcyIDkuNjQxMiA4LjcxMzMyIDkuNDA2NiA4Ljc1OTMyIDkuMzI3NkM4LjgxMDMyIDkuMjQwNCA5LjAyMjUyIDkuMTI2IDkuNDg4MTIgOC45NDZDOS41MTc4NCA4LjkzNDYzIDkuNTE3OTIgOC45MzQ2IDkuNTQ3NjYgOC45MjMxTDkuNTQ3OTIgOC45MjNDOS42MTA0MiA4Ljg5OTA2IDkuNjQyMzkgOC44ODY1OCA5LjY3NjQ0IDguODczM0w5LjY5MDUyIDguODY3OEMxMC4yNjc5IDguNjQyNiAxMC42MDU3IDguNDYyNiAxMC45MDY5IDguMTY0MkMxMS4yMzQ1IDcuODQgMTEuMzk0NyA3LjUyODQgMTEuNjczNSA2LjgxOUMxMS44NzU5IDYuMzAzNiAxMS45ODg5IDYuMDkyIDEyLjA4MjMgNi4wMzg0QzEyLjE2ODkgNS45ODg4IDEyLjQwODcgNS45OTc4IDEyLjk1MjUgNi4wNzk0QzEzLjcxNzkgNi4xOTQyIDE0LjA3NDUgNi4yMTIyIDE0LjUyNzMgNi4wOTI0QzE0Ljk2NjcgNS45NzYyIDE1LjI1NzkgNS43ODg0IDE1Ljg4MzUgNS4yOTFDMTUuOTQ4NSA1LjIzOTIgMTUuOTkyNSA1LjIwNDYgMTYuMDM2MyA1LjE3MDhDMTYuMzM1MSA0Ljk0IDE2LjUyNDMgNC44MzY2IDE2LjYyMDEgNC44MzY2QzE2LjczOTUgNC44MzY2IDE2Ljk0NTkgNC45NjQ0IDE3LjM5MDcgNS4zMThDMTcuOTgyMSA1Ljc4ODQgMTguMjczNSA1Ljk3NjIgMTguNzEyOSA2LjA5MjZDMTkuMDMwOSA2LjE3NjYgMTkuMzYwOSA2LjE4ODYgMTkuNzU2NSA2LjE0OThDMTkuOTA0MyA2LjEzNTQgMjAuMDI4MyA2LjExODQgMjAuMzAxOSA2LjA3NzRMMjAuMzAyNyA2LjA3NzI5QzIwLjMzOTYgNi4wNzE4MiAyMC4zNCA2LjA3MTc2IDIwLjM3NzEgNi4wNjYyQzIwLjg0MTUgNS45OTc0IDIxLjA3ODMgNS45OTMgMjEuMTU4MSA2LjAzODhDMjEuMjQ2MyA2LjA4OTIgMjEuMzYxOSA2LjI5OTIgMjEuNTQzNyA2Ljc2MDJMMjEuNTU1MyA2Ljc4OTU2TDIxLjU2NjkgNi44MTkyQzIxLjg0NTcgNy41MjkgMjIuMDA1OSA3Ljg0MDQgMjIuMzMzMyA4LjE2NDZDMjIuNjYwNyA4LjQ4ODggMjIuOTc1NSA4LjY0NzQgMjMuNjkyMyA4LjkyMzRDMjMuNzIxNiA4LjkzNDczIDIzLjcyMjMgOC45MzUgMjMuNzQ5OSA4Ljk0NTYzTDIzLjc1MTkgOC45NDY0QzI0LjIxNzcgOS4xMjYyIDI0LjQyOTcgOS4yNDA2IDI0LjQ4MDcgOS4zMjhDMjQuNTMwOSA5LjQxMzggMjQuNTIxOSA5LjY1MTIgMjQuNDM2OSAxMC4yMDY4QzI0LjQwMDEgMTAuNDQ3NCAyNC4zODI5IDEwLjU3MDYgMjQuMzY4MyAxMC43MTc0QzI0LjMyOTMgMTEuMTA4MiAyNC4zNDE1IDExLjQzNDIgMjQuNDI2MyAxMS43NDg2QzI0LjUzOTUgMTIuMTY3NCAyNC43Mzc1IDEyLjQ3NTggMjUuMTYzNyAxMy4wMDJMMjUuMjA4NyAxMy4wNTc0QzI1LjU2NTkgMTMuNDk3NCAyNS42OTQ5IDEzLjcwMiAyNS42OTQ5IDEzLjgyMDJaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik0yMi4wNjYgMjIuODJDMjEuODE1MiAyMi44MiAyMS42MTIgMjMuMDE3NiAyMS42MTIgMjMuMjYxMlYyNi44MjMyTDE2Ljk2MzQgMjUuNzcyNkMxNi44OTYyIDI1Ljc1NzQgMTYuODI2NCAyNS43NTcyIDE2Ljc1OTIgMjUuNzcyMkwxMi4wMjggMjYuODI1VjI0LjYzMzZDMTIuMDI4IDI0LjM5IDExLjgyNDYgMjQuMTkyNiAxMS41NzQgMjQuMTkyNkMxMS4zMjMyIDI0LjE5MjYgMTEuMTIgMjQuMzkgMTEuMTIgMjQuNjMzNlYyNy4zNzg2QzExLjEyIDI3LjY2MiAxMS4zOTEgMjcuODcyIDExLjY3NTIgMjcuODA4OEwxNi44NTk4IDI2LjY1NUwyMS45NjMyIDI3LjgwODRDMjIuMjQ3OCAyNy44NzI4IDIyLjUyIDI3LjY2MjggMjIuNTIgMjcuMzc4NlYyMy4yNjEyQzIyLjUyIDIzLjAxNzYgMjIuMzE2OCAyMi44MiAyMi4wNjYgMjIuODJaIiBmaWxsPSIjQTFBM0E4Ii8+CjxwYXRoIGQ9Ik0xMS42MiAyMi44MkMxMS40ODg0IDIyLjgyIDExLjM1OTQgMjIuODczNiAxMS4yNjY0IDIyLjk2NjRDMTEuMTczNiAyMy4wNTk0IDExLjEyIDIzLjE4ODQgMTEuMTIgMjMuMzIwNkMxMS4xMiAyMy40NTE2IDExLjE3MzYgMjMuNTgwNCAxMS4yNjY0IDIzLjY3NEMxMS4zNTk0IDIzLjc2NyAxMS40ODg0IDIzLjgyIDExLjYyIDIzLjgyQzExLjc1MTYgMjMuODIgMTEuODgwNCAyMy43NjcgMTEuOTczNiAyMy42NzRDMTIuMDY2NCAyMy41ODA0IDEyLjEyIDIzLjQ1MiAxMi4xMiAyMy4zMjA2QzEyLjEyIDIzLjE4ODQgMTIuMDY2NCAyMy4wNTk0IDExLjk3MzYgMjIuOTY2NEMxMS44ODA0IDIyLjg3MzYgMTEuNzUxNiAyMi44MiAxMS42MiAyMi44MloiIGZpbGw9IiNBMUEzQTgiLz4KPC9zdmc+Cg=="
+                                            width="42" height="42" alt="ضمانت اصل بودن کالا" title="" style="object-fit: contain;">
+                                    </div>
+                                    <p class="text-center text-caption-strong text-neutral-400">ضمانت اصل بودن کالا</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- //////////////////////////navbar of present//////////////////////// -->
+
+                    <div class="w-full block sticky z-2 bg-neutral-000 styles_Tabs__XG9uc mt-5" style="top: 56px;">
+
+                        <!--  ///////////////////////options of present///////////////////////////-->
+                        <div>
+                            <ul class="flex relative border-complete-b-200">
+                                <div>
+                                    <li class="relative px-4 py-2 flex flex-row items-center grow justify-center lg:grow-0 text-subtitle text-neutral-500 cursor-pointer text-body2-strong" data-cro-id="pdp-scroll-menu">معرفی
+                                        <div class="absolute bottom-0 opacity-0 styles_Tab__border__6fH9m">
+                                            
+                                        </div>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li class="relative px-4 py-2 flex flex-row items-center grow justify-center lg:grow-0 text-subtitle text-neutral-500 cursor-pointer text-body2-strong" data-cro-id="pdp-scroll-menu">بررسی تخصصی
+                                        <div class="absolute bottom-0 opacity-0 styles_Tab__border__6fH9m">
+                                            
+                                        </div>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li class="relative px-4 py-2 flex flex-row items-center grow justify-center lg:grow-0 text-subtitle text-neutral-500 cursor-pointer text-body2-strong" data-cro-id="pdp-scroll-menu">مشخصات
+                                        <div class="absolute bottom-0 opacity-0 styles_Tab__border__6fH9m"></div>
+                                    </li>
+                                </div>
+                                <div>
+                                    <li class="relative px-4 py-2 flex flex-row items-center grow justify-center lg:grow-0 text-subtitle text-neutral-500 cursor-pointer text-body2-strong" data-cro-id="pdp-scroll-menu">دیدگاه‌ها
+                                        <div class="absolute bottom-0 opacity-0 styles_Tab__border__6fH9m"></div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+
+                        <!--  ///////////////////////options of present///////////////////////////-->
+                    </div>
+
+
+
+                    <!--  ///////////////////////options of present///////////////////////////-->
+                    <div class="flex w-full">
+                        <div class="grow min-w-0">
+
+
+                            <article class=" px-5 lg:px-0 pb-5 styles_PdpProductContent__sectionBorder__39zAX">
+                                <div id="PdpShortReview">
+                                    <div class="break-words py-3">
+                                        <div class="flex items-center grow">
+                                            <h2 class="grow text-h5"><span class="relative">  معرفی</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-body-1 text-neutral-800"> {{ product.present|safe }} </div>
+
+                                <div class="flex content-between w-full overflow-x-scroll lg:overflow-x-hidden mt-4"></div>
+                            </article>
+                            <!--  ///////////////////////options of present///////////////////////////-->
+                            <div class="px-5 lg:px-0 pb-5 styles_PdpProductContent__sectionBorder__39zAX">
+                                <div id="expertReview">
+                                    <div class="break-words py-3">
+                                        <div class="flex items-center grow">
+                                            <p class="grow text-h5 text-neutral-900"><span class="relative">بررسی تخصصی</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <article class="mt-3">
+                                    <section class="pb-6 mb-2 styles_ReviewSection__5aV9j">
+                                        {{ product.specialpresent|safe }}
+                                    </section>
+                                </article>
+
+                            </div>
+                            <section class=" px-5 lg:px-0 pb-5 styles_PdpProductContent__sectionBorder__39zAX">
+                                <div class="mt-4 grow" id="specification">
+                                    <div class="flex flex-col pb-6 lg:py-4 styles_SpecificationBox__main__JKiKI">
+                                        <p class="w-full lg:ml-12 text-h5 text-neutral-700 shrink-0 mb-3 lg:mb-0 styles_SpecificationBox__title__ql60s">مشخصات کلی</p>
+                                        {% for detail in details %}
+                                        <div class="w-full grow">
+                                            
+                                            <div class="w-full flex last styles_SpecificationAttribute__valuesBox__gvZeQ">
+                                                <p class="ml-4 text-body-1 text-neutral-500 py-2 lg:py-3 lg:p-2 shrink-0 styles_SpecificationAttribute__value__CQ4Rz">{{detail.key}}</p>
+                                                <div class="border-complete-b py-2 lg:py-3 grow">
+                                                    <p class="flex items-center w-full text-body-1 text-neutral-900 break-words">{{detail.value}}</p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+
+                            </section>
+
+
+
+
+
+
+
+
+
+
+                            <div class="lazyload-wrapper ">
+                                <div id="commentSection">
+                                    <section>
+                                        <div class="hidden"></div>
+                                        <div class=" pb-3 styles_PdpProductContent__sectionBorder__39zAX">
+                                            <div class="px-5 lg:px-0">
+                                                <div class="break-words py-3">
+                                                    <div class="flex items-center grow">
+                                                        <h2 class="grow text-h5 text-neutral-900"><span class="relative">دیدگاه‌ها</span>
+                                                        </h2>
+                                                        <p class="text-body-2 text-secondary-500" data-cro-id="pdp-all-comments">{{nmaincomments}} دیدگاه</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar mb-4 pr-5">
+
+
+                                                <!-- ///////////////////////////comments////////////////// -->
+
+
+                                                <style>
+                                                    #scrolcontainer {
+                                                        display: flex;
+                                                        overflow-x: scroll;
+                                                        max-width: 100rem;
+                                                        margin: 0 auto;
+                                                        padding: 3px;
+                                                    }
+                                                    
+                                                    #scrolcontainer article {
+                                                        font-family: sans-serif;
+                                                        border-radius: 8px;
+                                                        background: #ff696100;
+                                                        border-color: rgba(0, 0, 0, 0.131);
+                                                        border-width: 1px;
+                                                        border-style: solid;
+                                                        padding: 10px;
+                                                        margin: 2rem 1rem;
+                                                    }
+                                                    
+                                                    #scrolcontainer::-webkit-scrollbar {
+                                                        display: none;
+                                                    }
+                                                </style>
+
+
+
+                                                <div id="scrolcontainer">
+                                                    {% for comment in maincomments %}
+                                                    <article style="display: block;min-width: 200px;">
+                                                        <div style="display: flex;flex-direction: row;height: 70%;width: 100%;">
+                                                            <div style="display: flex;flex-direction: column;height: 100%;width: 100%;">
+                                                                <p class="text-h5 ellipsis"> {{ comment.title }} </p>
+                                                                <p class="text-button-2 ellipsis-3 mt-2">
+                                                                    {{ comment.text }}
+                                                                </p>
+                                                            </div>
+
+                                                        </div>
+                                                        <div style="display: flex;flex-direction: row;height: 70%;width: 100%;">
+                                                            <p class="body-2" style="font-family: Yekan Bakh FaNumBold;"> {{ comment.shamsidate }} </p>
+                                                            <div class="flex mx-1">
+                                                                <svg style="width: 16px; height: 16px; fill: var(--color-icon-disable);"><use xlink:href="#dotOutline"></use>
+                            </svg>
+                                                            </div>
+                                                            <p class="body-2"> {{ comment.user.name }} </p>
+                                                        </div>
+                                                    </article>
+                                                    {% endfor %}
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <script>
+                                                    const element = document.querySelector("#scrolcontainer");
+
+                                                    element.addEventListener('wheel', (event) => {
+                                                        event.preventDefault();
+
+                                                        element.scrollBy({
+                                                            left: event.deltaY < 0 ? -30 : 30,
+
+                                                        });
+                                                    });
+                                                </script>
+                                                <!-- ///////////////////////////comments////////////////// -->
+
+
+                                            </div>
+
+                                            <div data-cro-id="pdp-add-comment" class="px-5">
+                                                <div class="flex items-start mt-4">
+                                                    <div class="flex ml-4">
+                                                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-high-emphasis);"><use xlink:href="#comment"></use>
+                                  </svg>
+                                                    </div>
+
+                                                    <div class="flex grow items-start pb-2">
+                                                        <div>
+                                                            <div class="grow flex flex-col overflow-y-auto">
+                                                                <div class="grow flex flex-col styles_children__hHq5Q pt-4">
+                                                                    <div>
+                                                                        <div class="flex items-start mb-1 lg:mb-0 px-5">
+                                                                            <div class="grow styles_AddCommentForm__formWrapper__BiRU_">
+                                                                                <form method="post" >
+                                                                                    {% csrf_token %}
+
+                                                                                    <div class="flex justify-center flex-wrap lg:px-3 pb-6 relative border-complete-b pt-4">
+
+                                                                                        <div class="pr-1 pl-1 w-full">
+                                                                                            <div class="styles_noUi-target__XAwMt styles_noUi-rtl__a4z36 styles_noUi-horizontal__dw6Te styles_noUi-txt-dir-rtl__iqVbf">
+                                                                                                <div class="styles_noUi-base__VsFI9">
+                                                                                                    <div class="styles_noUi-connects__bbrsT">
+                                                                                                        <div class=" styles_noUi-connect__FBBSb styles_AddCommentRatingBarInput__range--active__OQfIV" style="transform: translate(100%, 0px) scale(0, 1);"></div>
+                                                                                                    </div>
+                                                                                                    <div class="styles_noUi-origin__UEgCh" style="transform: translate(100%, 0px); z-index: 4;">
+                                                                                                        <div class="styles_noUi-handle__8L8O2 styles_AddCommentRatingBarInput__handle__qekUa undefined" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="5.0" aria-valuenow="0.0" aria-valuetext="0.00">
+                                                                                                            <div class="styles_noUi-touch-area__Lm7W6"></div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="styles_noUi-pips__UmpDJ styles_noUi-pips-horizontal__KW2RI">
+                                                                                                    <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 0%;"></div>
+                                                                                                    <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 20%;"></div>
+                                                                                                    <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 40%;"></div>
+                                                                                                    <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 60%;"></div>
+                                                                                                    <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 80%;"></div>
+                                                                                                    <div class="styles_noUi-marker__5cMCy styles_AddCommentRatingBarInput__dot__V1lR4 undefined" style="right: 100%;"></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <p class="text-h5 text-neutral-900 my-6">دیدگاه خود را شرح دهید</p>
+
+                                                                                    <div class="flex justify-between items-center">
+                                                                                        <p class="mb-2 text-body-1"> عنوان<span class="text-hint-text-error">*</span></p>
+                                                                                    </div>
+                                                                                    <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I FormComponentFrame_FormComponentFrame__input-container--textArea__qeOmL px-2 flex items-center">
+                                                                                        <div class="grow text-body-3">
+                                                                                            <input id="commenttitle" type="text" class="px-1 TextField_TextField__textarea__fMFfN text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--primary__IZ6Ku rounded-medium" name="commenttitle"
+                                                                                                placeholder="عنوان...">
+                                                                                            </input>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="flex justify-between items-center">
+                                                                                        <p class="mb-2 text-body-1">متن نظر<span class="text-hint-text-error">*</span></p>
+                                                                                    </div>
+                                                                                    <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I FormComponentFrame_FormComponentFrame__input-container--textArea__qeOmL px-2 flex items-center">
+                                                                                        <div class="grow text-body-3">
+                                                                                            <input id="commenttext" type="text" class="px-1 TextField_TextField__textarea__fMFfN text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--primary__IZ6Ku rounded-medium" name="commenttext"
+                                                                                                placeholder="برای ما بنویسید...">
+                                                                                            </input>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    </label>
+                                                                                    <div class="flex items-center lg:mb-5 lg:mt-4 mt-3 mb-4"><label class="flex items-center cursor-pointer styles_Checkbox__checkboxContainer__7joRB py-1"><input class="invisible absolute" type="checkbox" name="isAnonymous" labelclassname="text-body-1 text-neutral-700"><span class="inline-flex justify-center items-center cursor-pointer rounded-small shrink-0 styles_Checkbox__checkbox__z1B5a styles_Checkbox__checkbox--secondary__FspFz"><div class="flex styles_Checkbox__icon__AaKB1"><svg style="width: 10px; height: 10px; fill: var(--color-icon-white);"><use xlink:href="#check"></use></svg></div></span></label>
+                                                                                        <p class="text-button-2 text-neutral-700 mr-5">ارسال دیدگاه به صورت ناشناس</p>
+                                                                                    </div>
+                                                                                    <div class="flex flex-col lg:flex-row justify-start items-center lg:gap-10 lg:py-5 py-4 shadow-1-top px-5">
+                                                                                        <div class="grow-5 w-full lg:w-6/12">
+                                                                                            <button type="submit" class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-1 styles_btn--large__1Muai styles_btn--primary__y0GEv rounded-medium w-full" data-cro-id="pdp-submit-comment">
+                                                                                                <div class="flex items-center justify-center styles_btn__loading__d5Rcc"><svg width="24" height="24" id="e302pyQgejw1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path class="styles_Loading__circle1__K7HNJ" d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z" transform="matrix(1 0 0 1 17 9)" opacity="0.9" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></path><rect class="styles_Loading__circle2__jpl_q" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 9 9)" opacity="0.6" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect><rect class="styles_Loading__circle3__otcH4" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 0.94007500000000 9)" opacity="0.3" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect></svg></div><div class="flex items-center justify-center relative grow">ثبت دیدگاه</div>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <p class="mt-2 lg:mt-0 text-caption grow">ثبت دیدگاه به معنی موافقت با
+                                                                                            <a class="mx-1 text-secondary-500" target="_blank" ">قوانین انتشار </a>است.</p>
+                                                                                        </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="w-full bg-neutral-000 shadow-fab-button  styles_BuyBoxFooter__actionWrapper__Hl4e7 ">
+
+                        <div class="py-3 px-5 ">
+                            <div class="flex align-middle "></div>
+                            <div class="flex items-center lg:mt-3 ">
+                                <div class="min-w-6/12 shrink-0 ">
+                                    <button onclick="addtocheckout ( {{product.serialnumber}} ) " class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-2 styles_btn--medium__4GoNC styles_btn--primary__y0GEv rounded-medium
+                                                                                    text-button-2 w-full " data-cro-id="pdp-add-to-cart " data-add-to-cart-variant-id="42421938 " data-testid="add-to-cart "><div class="flex items-center justify-center styles_btn__loading__d5Rcc ">
+                              <svg width="24 " height="24 " id="e302pyQgejw1 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " shape-rendering="geometricPrecision " text-rendering="geometricPrecision "><path class="styles_Loading__circle1__K7HNJ
+                                                                                    " d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z " transform="matrix(1 0 0 1 17 9) " opacity="0.9 " fill="var(--color-icon-low-emphasis)
+                                                                                    " stroke="none " stroke-width="1 "></path><rect class="styles_Loading__circle2__jpl_q " width="6 " height="6 " rx="3 " ry="3 " transform="matrix(1 0 0 1 9 9) " opacity="0.6
+                                                                                    " fill="var(--color-icon-low-emphasis) " stroke="none " stroke-width="1 "></rect><rect class="styles_Loading__circle3__otcH4 " width="6 " height="6 " rx="3 " ry="3 " transform="matrix(1
+                                                                                    0 0 1 0.94007500000000 9) " opacity="0.3 " fill="var(--color-icon-low-emphasis) " stroke="none " stroke-width="1 "></rect>
+                              </svg></div>
+                            <div class="flex items-center justify-center relative grow ">افزودن به سبد خرید</div>
+                          </button>
+                                </div>
+                                <div class="flex justify-start mr-auto text-h4 pr-4 ">
+                                    <div class="flex items-center justify-end w-full ">
+                                        <span class="text-h4 ml-1 text-neutral-800 " data-testid="price-no-discount ">{{product.price}}</span>
+                                    </div>
+                                    <div class="flex flex-row items-center ">
+                                        <div class="flex mr-1 ">
+                                            <svg style="width: 14px; height: 14px; fill: var(--color-icon-high-emphasis); "><use xlink:href="#toman "></use>
+                              </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="bg-app-background px-5 ">
+
+                        <a class="styles_Link__RMyqc " href="">
+                            <div class="flex items-center text-neutral-400 border-complete-b-200 py-3 ">
+                                <div class="flex ml-4 ">
+                                    <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis); "><use xlink:href="#return "></use>
+                        </svg>
+                                </div>
+                                <p class="text-subtitle-strong ">     امکان بازگشت کالا    </p>
+                                <div class="flex mr-auto ">
+                                    <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis); "><use xlink:href="#chevronLeft "></use>
+                        </svg>
+                                </div>
+                            </div>
+                            <p class="text-center w-full text-caption py-4 text-neutral-500 text-center ">شناسه کالا: {{product.serialnumber}}</p>
+                        </a>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- ///////////////////////////////////////////// -->
+    <script type="text/javascript " src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script type="text/javascript ">
+        window.CSRF_TOKEN = "{{ csrf_token }}";
+        
+    </script>
+    <script>
+        function selectcolor(id) {
+            let selector = document.querySelectorAll('[class="relative selectcolor "]')
+            console.log(selector)
+            for (var i = 0, len = selector.length; i < len; i++) {
+                console.log(selector[i])
+                if (selector[i].id == id) {
+                    selector[i].style.backgroundColor = '#496f7091'
+                    document.getElementById('colorselected').value = id
+                } else {
+                    selector[i].style.backgroundColor = '#0000000e'
+                }
+            }
+
+        }
+
+
+
+        function addtocheckout(serialnumber){
+            console.log(serialnumber)
+            console.log(window.CSRF_TOKEN)
+            $.ajax({
+            type: 'POST',
+            url: "/addtocheckout ",
+            data: {
+                "csrfmiddlewaretoken": window.CSRF_TOKEN ,
+                "serialnumber": serialnumber,
+            },
+            success: function(res, status) {
+                alert(res);
+            },
+            error: function(res) {
+                alert(res.status);
+            },
+        });
+        }
+    </script>
+
+
+    {% endblock content %}

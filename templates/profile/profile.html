@@ -1,0 +1,169 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+<div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX">
+    <div id="profileLayoutContainer" class="relative flex flex-col lg:grid grid-cols-1  gap-4 gap-y-0 mt-0  pt-4 pb-6 lg:px-4">
+        <div class="lg:col-span-5">
+            <div class="styles_PageLoader--hasPageContainer__gPBo1 hidden"></div>
+            <div>
+                <div class="px-2"></div>
+                <div  class="mx-5 lg:mx-4 lg:py-4 bg-neutral-000 lg:border-complete-b pb-5" >
+                    <a href="/profile/editprofile" style="display: flex;flex-direction: column; column-count: 2; width: 100%; background-color: #0000ff0d;border-radius: 7px;padding: 15px;">
+
+                    <div class="flex justify-between items-center mb-2 pb-5 lg:pb-0 styles_ProfileSidebarUserCard__info__gRs23" style="display: flex;flex-direction: column; width: 100%;">
+
+                        <div class="flex flex-col">
+                        
+                            <p class="text-h5 text-neutral-800">{{userprofile.name}} </p>
+                            <p class="text-body-1 text-neutral-400 styles_ProfileSidebarUserCard__userPhone__lcCD0">{{userprofile.mobile}}</p>
+
+                        
+                        </div>
+                        
+                    </div>
+                    <div style="display: flex; width: 100%; justify-content: center;">
+                        <button type="button" id="btn{{address.pk}}" style="display: flex; background-color: #6494ed00;border-radius: 7px;padding: 8px;border-radius: 7px;color: rgba(87, 129, 166, 0.519);width: 100%;text-align: left;" onclick="location.href='/profile/editprofile'">  ویرایش پروفایل </button>
+                    </div>
+                    </a>
+                    <div class="flex lg:flex-col">
+                        <div class="cursor-pointer">
+                            <div>
+                                <div class="flex items-center grow">
+                                    <span class="ml-2 lg:ml-0">
+                                <div style="width: 48px; height: 48px; line-height: 0;"><img class="w-full inline-block" data-savepage-currentsrc="https://www.digikala.com/statics/img/svg/profile-wallet.svg" data-savepage-src="/statics/img/svg/profile-wallet.svg" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMSkiPgo8cGF0aCBkPSJNMi43NDUxMiA2LjYzNDRMMjAuODA5OSAzLjQ0OTA5QzIxLjYwMSAzLjMwOTYgMjIuMzU1NCAzLjgzNzg0IDIyLjQ5NDkgNC42Mjg5NkwyNC40NDU0IDE1LjY5MDZDMjQuNTg0OSAxNi40ODE4IDI0LjA1NjYgMTcuMjM2MiAyMy4yNjU1IDE3LjM3NTdMNS4yMDA3NSAyMC41NjFMMi43NDUxMiA2LjYzNDRaIiBmaWxsPSIjRkZBRUZGIi8+CjxtYXNrIGlkPSJtYXNrMCIgbWFzay10eXBlPSJhbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMiIgeT0iMyIgd2lkdGg9IjIzIiBoZWlnaHQ9IjE4Ij4KPHBhdGggZD0iTTIuNzQ1MTIgNi42MzQ0TDIwLjgwOTkgMy40NDkwOUMyMS42MDEgMy4zMDk2IDIyLjM1NTQgMy44Mzc4NCAyMi40OTQ5IDQuNjI4OTZMMjQuNDQ1NCAxNS42OTA2QzI0LjU4NDkgMTYuNDgxOCAyNC4wNTY2IDE3LjIzNjIgMjMuMjY1NSAxNy4zNzU3TDUuMjAwNzUgMjAuNTYxTDIuNzQ1MTIgNi42MzQ0WiIgZmlsbD0id2hpdGUiLz4KPC9tYXNrPgo8ZyBtYXNrPSJ1cmwoI21hc2swKSI+CjxnIGZpbHRlcj0idXJsKCNmaWx0ZXIwX2QpIj4KPHJlY3QgeD0iMS41NTU1NCIgeT0iNi40NTU5MyIgd2lkdGg9IjIzLjE5MTkiIGhlaWdodD0iMTguNjY2NyIgcng9IjEuNDU0NTUiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcikiLz4KPC9nPgo8L2c+CjwvZz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xLjU1NTU0IDguMjIyMTdDMS41NTU1NCA3LjExNzYgMi40NTA5NyA2LjIyMjE3IDMuNTU1NTQgNi4yMjIxN0gyMi44ODg5QzIzLjk5MzQgNi4yMjIxNyAyNC44ODg5IDcuMTE3NiAyNC44ODg5IDguMjIyMTdWMjMuNjY2NkMyNC44ODg5IDI0Ljc3MTIgMjMuOTkzNCAyNS42NjY2IDIyLjg4ODkgMjUuNjY2NkgzLjU1NTU0QzIuNDUwOTcgMjUuNjY2NiAxLjU1NTU0IDI0Ljc3MTIgMS41NTU1NCAyMy42NjY2VjguMjIyMTdaIiBmaWxsPSJ1cmwoI3BhaW50MV9saW5lYXIpIi8+CjxnIGZpbHRlcj0idXJsKCNmaWx0ZXIxX2QpIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNCAxNS45NDQ0QzE0IDEzLjU4MTkgMTUuOTE1MiAxMS42NjY2IDE4LjI3NzggMTEuNjY2NkgyNi4zNTQ2QzI2LjQwNDIgMTEuNjY2NiAyNi40NDQ0IDExLjcwNjkgMjYuNDQ0NCAxMS43NTY1VjIwLjEzMjNDMjYuNDQ0NCAyMC4xODIgMjYuNDA0MiAyMC4yMjIyIDI2LjM1NDYgMjAuMjIyMkgxOC4yNzc4QzE1LjkxNTIgMjAuMjIyMiAxNCAxOC4zMDcgMTQgMTUuOTQ0NFoiIGZpbGw9IiM2OTAwRjYiLz4KPC9nPgo8cmVjdCB4PSIxNi4zMzM0IiB5PSIxNCIgd2lkdGg9IjMuODg4ODkiIGhlaWdodD0iMy44ODg4OSIgcng9IjEuOTQ0NDQiIGZpbGw9IndoaXRlIi8+CjwvZz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjBfZCIgeD0iLTEuNDQ0NDYiIHk9IjMuNDU1OTMiIHdpZHRoPSIyOS4xOTE5IiBoZWlnaHQ9IjI0LjY2NjciIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldC8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEuNSIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwLjYzNzk2NCAwIDAgMCAwIDAuMjMyMjk1IDAgMCAwIDAgMC42Mzc5NjQgMCAwIDAgMSAwIi8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0iZWZmZWN0MV9kcm9wU2hhZG93Ii8+CjxmZUJsZW5kIG1vZGU9Im5vcm1hbCIgaW49IlNvdXJjZUdyYXBoaWMiIGluMj0iZWZmZWN0MV9kcm9wU2hhZG93IiByZXN1bHQ9InNoYXBlIi8+CjwvZmlsdGVyPgo8ZmlsdGVyIGlkPSJmaWx0ZXIxX2QiIHg9IjEwIiB5PSI3LjY2NjYzIiB3aWR0aD0iMjAuNDQ0NCIgaGVpZ2h0PSIxNi41NTU2IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyIi8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjIgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvdyIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvdyIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyIiB4MT0iMjQuNzQ3NSIgeTE9IjYuNDU1OTMiIHgyPSIxLjU1NTU0IiB5Mj0iNi40NTU5MyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjOEMzMUVEIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0EyNEJGRiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXIiIHgxPSIyNC44ODg5IiB5MT0iNi4yMjIxNyIgeDI9IjEuNTU1NTQiIHkyPSI2LjIyMjE3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM4QzMxRUQiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQTI0QkZGIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxjbGlwUGF0aCBpZD0iY2xpcDAiPgo8cmVjdCB3aWR0aD0iMjQuODg4OSIgaGVpZ2h0PSIyMi41NTU2IiBmaWxsPSJ3aGl0ZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS41NTU1NCAzLjExMTA4KSIvPgo8L2NsaXBQYXRoPgo8Y2xpcFBhdGggaWQ9ImNsaXAxIj4KPHJlY3Qgd2lkdGg9IjIyLjU1NTYiIGhlaWdodD0iMTcuODg4OSIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIuNjg2ODkgMy4xMTEwOCkiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K" width="48" height="48" alt="کیف پول" title="" style="object-fit: contain;">
+                                </div>
+                              </span>
+                                    <div class="grow">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex justify-start items-center text-neutral-800">
+                                                <div class="ml-1 text-subtitle-strong text-neutral-800"> {{userprofile.charge}}  </div>
+                                                <div class="w-4 h-4 w-7/2 text-neutral-400">
+                                                    <div class="flex">
+                                                        <svg style="width: 16px; height: 16px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#toman"></use>
+                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="/checkout/pay" data-cro-id="profile-add-to-wallet" class="flex items-center text-button-2 text-secondary-500">افزایش موجودی
+                                  <div class="flex">
+                                    <svg style="width: 20px; height: 20px; fill: var(--color-icon-secondary);"><use xlink:href="#chevronLeft"></use>
+                                    </svg>
+                                  </div>
+                                </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:rounded-medium relative styles_Frame__Lu_I7 mb-4 bg-neutral-000">
+                <div class="flex justify-between items-center lg:py-4 px-5 lg:px-6">
+                    <div class="break-words py-3">
+                        <div class="flex items-center grow">
+                            <p class="grow text-h5 text-neutral-900"><span class="relative">سفارش‌های من</span>
+                            </p>
+                        </div>
+                        <div class="mt-2 styles_Title__line__KyW9l styles_Title__line--red__TP9mu"></div>
+                    </div>
+                    <span data-cro-id="profile-all-orders">
+                      <a class="inline-flex items-center cursor-pointer styles_Anchor--secondary__3KsgY text-button-2"  href="/checkout">
+                          <span>مشاهده همه</span>
+                    <div class="flex">
+                        <svg style="width: 18px; height: 18px; fill: var(--color-icon-secondary);"><use xlink:href="#chevronLeft"></use>
+                            </svg>
+                    </div>
+                    </a>
+                    </span>
+                </div>
+                <div class="flex flex-row justify-evenly items-center my-5 lg:pr-6 w-full">
+                    <a class="flex flex-col lg:flex-row lg:gap-3 items-center xs:justify-start styles_OrderStatus__3hpHr br-list-horizontal-0" data-cro-id="profile-orders-inprogress" href="/checkout">
+                        <div class="relative">
+                            <div style="width: 60px; height: 60px; line-height: 0;"><img class="w-full inline-block" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUyLjA1MDIgMjMuODAwN0M1MS4zNjU4IDE5Ljc4MjMgNDkuMzUyMiAxNi4xMTUgNDYuMjcyNyAxMy4zMzJDNDIuODUwOSAxMC4yMzY5IDM4LjQwMjYgOC41MzMzNCAzMy43NzAxIDguNTMzMzRDMzAuMTkwNCA4LjUzMzM0IDI2LjcwMjkgOS41NDc2OSAyMy43MTU0IDExLjQ1OTRDMjEuMjI4IDEzLjA0NTkgMTkuMTYxOCAxNS4xOTE3IDE3LjcwMSAxNy43MTQ1QzE3LjA2OTMgMTcuNTk3NSAxNi40MTEzIDE3LjUzMjUgMTUuNzUzMiAxNy41MzI1QzEwLjE2IDE3LjUzMjUgNS42MDY0MiAyMi4wMzIgNS42MDY0MiAyNy41NTlDNS42MDY0MiAyOC4yNzQyIDUuNjg1MzggMjguOTYzNSA1LjgxNjk5IDI5LjYzOTdDMi4xOTc4MiAzMi4yNDA2IDAgMzYuNDI4IDAgNDAuODg4NkMwIDQ0LjQ5MDkgMS4zNTU1NCA0Ny45ODkxIDMuODI5NzMgNTAuNzU5QzYuMzY5NzMgNTMuNTk0IDkuNzI1NjggNTUuMjcxNiAxMy4zMDU0IDU1LjQ2NjdDMTMuMzQ0OCA1NS40NjY3IDEzLjM3MTIgNTUuNDY2NyAxMy40MTA3IDU1LjQ2NjdMNDkuMDIzMiA1NS40NTM3QzQ5LjA2MjcgNTUuNDUzNyA0OS4xMDIyIDU1LjQ1MzcgNDkuMTU0OCA1NS40NTM3QzUzLjE2ODggNTUuMTY3NiA1Ni45MTk2IDUzLjM0NjkgNTkuNzA5NiA1MC4zMDM5QzYyLjQ4NjUgNDcuMjg2OCA2NCA0My40MTE1IDY0IDM5LjM4MDFDNjMuOTg2OCAzMi4wODQ1IDU4Ljk0NjMgMjUuNTk1MyA1Mi4wNTAyIDIzLjgwMDdaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIi8+CjxyZWN0IHg9IjkuNTk5OTgiIHk9IjMzLjA2NjciIHdpZHRoPSI0NC44IiBoZWlnaHQ9IjE0LjkzMzMiIHJ4PSI3IiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjMzNjY3NSIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9kKSI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiPgo8cmVjdCB4PSIzMy4wNjY3IiB5PSIzNS4yIiB3aWR0aD0iMTkuMiIgaGVpZ2h0PSIxMC42NjY3IiByeD0iNSIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iMzMuMDY2NyIgeT0iMzUuMiIgd2lkdGg9IjE5LjIiIGhlaWdodD0iMTAuNjY2NyIgcng9IjUiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcikiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00MS42IDM1LjJINDUuODY2Nkw0My43MzMzIDQ1Ljg2NjdIMzkuNDY2Nkw0MS42IDM1LjJaIiBmaWxsPSIjMkJEMUZGIiBmaWxsLW9wYWNpdHk9IjAuNTQxMjc1Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMzMuMDY2NiAzNS4ySDM3LjMzMzNMMzUuMiA0NS44NjY3SDMwLjkzMzNMMzMuMDY2NiAzNS4yWiIgZmlsbD0iIzJCRDFGRiIgZmlsbC1vcGFjaXR5PSIwLjU0MTI3NSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTUwLjEzMzMgMzUuMkg1NC40TDUyLjI2NjYgNDUuODY2N0g0OEw1MC4xMzMzIDM1LjJaIiBmaWxsPSIjMkJEMUZGIiBmaWxsLW9wYWNpdHk9IjAuNTQxMjc1Ii8+CjwvZz4KPC9nPgo8ZGVmcz4KPGZpbHRlciBpZD0iZmlsdGVyMF9kIiB4PSIyOS4wNjY3IiB5PSIzMS4yIiB3aWR0aD0iMjcuMiIgaGVpZ2h0PSIxOC42NjY3IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIiByZXN1bHQ9ImhhcmRBbHBoYSIvPgo8ZmVPZmZzZXQvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyIi8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjUgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvdyIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvdyIgcmVzdWx0PSJzaGFwZSIvPgo8L2ZpbHRlcj4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyIiB4MT0iMCIgeTE9IjYyLjIzNDciIHgyPSI2NCIgeTI9IjYyLjIzNDciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAwQ0VGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1MTc5RkYiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyIiB4MT0iMzMuMDY2NyIgeTE9IjM1LjIiIHgyPSIzMy4wNjY3IiB5Mj0iNDUuODY2NyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSJ3aGl0ZSIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQ0NEQUZGIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxjbGlwUGF0aCBpZD0iY2xpcDAiPgo8cmVjdCB4PSIzMy4wNjY3IiB5PSIzNS4yIiB3aWR0aD0iMTkuMiIgaGVpZ2h0PSIxMC42NjY3IiByeD0iNSIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K"
+                                    width="60" height="60" alt="icon" title="" style="object-fit: contain;">
+                            </div>
+                            <div class="absolute left-0 bottom-0 flex items-center justify-center rounded-small text-caption-strong text-neutral-700 styles_OrderStatus__count__3ctvu">{{ userprofile.get_checkout_i }}</div>
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <span class="text-body2-strong text-neutral-700">جاری</span>
+                        </div>
+                    </a>
+                    <a class="flex flex-col lg:flex-row lg:gap-3 items-center xs:justify-start styles_OrderStatus__3hpHr br-list-horizontal-0 lg:pr-8" data-cro-id="profile-orders-sent" href="/checkout">
+                        <div class="relative">
+                            <div style="width: 60px; height: 60px; line-height: 0;">
+                                <img class="w-full inline-block" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zMiA4LjAwMDAxQzI3LjU4MTcgOC4wMDAwMSAyNCAxMS41ODE3IDI0IDE2QzI0IDIwLjQxODMgMjcuNTgxNyAyNCAzMiAyNEMzNi40MTgzIDI0IDQwIDIwLjQxODMgNDAgMTZDNDAgMTEuNTgxNyAzNi40MTgzIDguMDAwMDEgMzIgOC4wMDAwMVpNMTguNjY2NyAxNkMxOC42NjY3IDguNjM2MjEgMjQuNjM2MiAyLjY2NjY3IDMyIDIuNjY2NjdDMzkuMzYzOCAyLjY2NjY3IDQ1LjMzMzQgOC42MzYyMSA0NS4zMzM0IDE2QzQ1LjMzMzQgMjMuMzYzOCAzOS4zNjM4IDI5LjMzMzMgMzIgMjkuMzMzM0MyNC42MzYyIDI5LjMzMzMgMTguNjY2NyAyMy4zNjM4IDE4LjY2NjcgMTZaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIi8+CjxwYXRoIGQ9Ik0xMC42NjY3IDE3LjkzMzNDMTAuNjY2NyAxNi4yNzY1IDEyLjAwOTggMTQuOTMzMyAxMy42NjY3IDE0LjkzMzNINTAuMzMzM0M1MS45OTAyIDE0LjkzMzMgNTMuMzMzNCAxNi4yNzY1IDUzLjMzMzQgMTcuOTMzM1Y1My42NjY3QzUzLjMzMzQgNTYuNDI4MSA1MS4wOTQ4IDU4LjY2NjcgNDguMzMzNCA1OC42NjY3SDE1LjY2NjdDMTIuOTA1MyA1OC42NjY3IDEwLjY2NjcgNTYuNDI4MSAxMC42NjY3IDUzLjY2NjdWMTcuOTMzM1oiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcikiLz4KPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfaSkiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIxLjMzMzMgMzcuMTJMMjQuOTE3MyAzMy43MDY3TDI5LjM5NzMgMzcuOTczM0w0MC4xNDkzIDI3LjczMzNMNDMuNzMzMyAzMS4xNDY3TDI5LjM5NzMgNDQuOEwyMS4zMzMzIDM3LjEyWiIgZmlsbD0idXJsKCNwYWludDJfbGluZWFyKSIvPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2kiIHg9IjIxLjMzMzMiIHk9IjI3LjczMzMiIHdpZHRoPSIyMi40IiBoZWlnaHQ9IjE3LjA2NjciIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0ic2hhcGUiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldC8+CjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjIiLz4KPGZlQ29tcG9zaXRlIGluMj0iaGFyZEFscGhhIiBvcGVyYXRvcj0iYXJpdGhtZXRpYyIgazI9Ii0xIiBrMz0iMSIvPgo8ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwLjA0OTM3NTkgMCAwIDAgMCAwLjMzOTA3OSAwIDAgMCAwIDAuMDY0NDI1NCAwIDAgMCAwLjQgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0ic2hhcGUiIHJlc3VsdD0iZWZmZWN0MV9pbm5lclNoYWRvdyIvPgo8L2ZpbHRlcj4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyIiB4MT0iMjEuMzMzNCIgeTE9IjUuMzMzMzQiIHgyPSIyMS4zMzM0IiB5Mj0iMjYuNjY2NyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjODNENzg4Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzREQjA1MSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXIiIHgxPSIxMC42NjY3IiB5MT0iMTQuOTMzMyIgeDI9IjEwLjY2NjciIHkyPSI1OC42NjY3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM4M0Q4ODgiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNENBRjUwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQyX2xpbmVhciIgeDE9IjI0LjU0NzciIHkxPSIyNS44MDI1IiB4Mj0iMjEuNTQ0MiIgeTI9IjQzLjIyNTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzJFN0IzMiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyRTdCMzIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K"
+                                    width="60" height="60" alt="icon" title="" style="object-fit: contain;">
+                            </div>
+                            <div class="absolute left-0 bottom-0 flex items-center justify-center rounded-small text-caption-strong text-neutral-700 styles_OrderStatus__count__3ctvu">۰</div>
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <span class="text-body2-strong text-neutral-700">تحویل شده</span>
+                        </div>
+                    </a>
+                    <a class="flex flex-col lg:flex-row lg:gap-3 items-center xs:justify-start styles_OrderStatus__3hpHr br-list-horizontal-0 lg:pr-8" href="/checkout">
+                        <div class="relative">
+                            <div style="width: 60px; height: 60px; line-height: 0;">
+                                <img class="w-full inline-block" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zMiA4LjAwMDAxQzI3LjU4MTcgOC4wMDAwMSAyNCAxMS41ODE3IDI0IDE2QzI0IDIwLjQxODMgMjcuNTgxNyAyNCAzMiAyNEMzNi40MTgzIDI0IDQwIDIwLjQxODMgNDAgMTZDNDAgMTEuNTgxNyAzNi40MTgzIDguMDAwMDEgMzIgOC4wMDAwMVpNMTguNjY2NyAxNkMxOC42NjY3IDguNjM2MjEgMjQuNjM2MiAyLjY2NjY3IDMyIDIuNjY2NjdDMzkuMzYzOCAyLjY2NjY3IDQ1LjMzMzMgOC42MzYyMSA0NS4zMzMzIDE2QzQ1LjMzMzMgMjMuMzYzOCAzOS4zNjM4IDI5LjMzMzMgMzIgMjkuMzMzM0MyNC42MzYyIDI5LjMzMzMgMTguNjY2NyAyMy4zNjM4IDE4LjY2NjcgMTZaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIi8+CjxwYXRoIGQ9Ik0xMC42NjY3IDE3LjkzMzNDMTAuNjY2NyAxNi4yNzY1IDEyLjAwOTggMTQuOTMzMyAxMy42NjY3IDE0LjkzMzNINTAuMzMzM0M1MS45OTAyIDE0LjkzMzMgNTMuMzMzMyAxNi4yNzY1IDUzLjMzMzMgMTcuOTMzM1Y1My42NjY3QzUzLjMzMzMgNTYuNDI4MSA1MS4wOTQ3IDU4LjY2NjcgNDguMzMzMyA1OC42NjY3SDE1LjY2NjdDMTIuOTA1MiA1OC42NjY3IDEwLjY2NjcgNTYuNDI4MSAxMC42NjY3IDUzLjY2NjdWMTcuOTMzM1oiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcikiLz4KPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfaSkiPgo8cGF0aCBkPSJNMjYuNjY2NyAyNS42TDIwLjI2NjcgMzJMMjYuNjY2NyAzOC40SDMzLjA2NjdMMjguOCAzNC4xMzMzSDM2LjI2NjdMMzYuNDc5NiAzNC4xMzg2QzM4LjczNzEgMzQuMjQ5NSA0MC41MzMzIDM2LjExNSA0MC41MzMzIDM4LjRDNDAuNTMzMyA0MC43NTY0IDM4LjYyMzEgNDIuNjY2NyAzNi4yNjY3IDQyLjY2NjdIMjIuNFY0Ni45MzMzSDM2LjI2NjdMMzYuNTMyNSA0Ni45MjkzQzQxLjEyMjMgNDYuNzg4OSA0NC44IDQzLjAyMzkgNDQuOCAzOC40QzQ0LjggMzMuNjg3MiA0MC45Nzk1IDI5Ljg2NjcgMzYuMjY2NyAyOS44NjY3SDI4LjhMMzMuMDY2NyAyNS42SDI2LjY2NjdaIiBmaWxsPSIjRDA5QTJEIi8+CjwvZz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjBfaSIgeD0iMjAuMjY2NyIgeT0iMjUuNiIgd2lkdGg9IjI0LjUzMzMiIGhlaWdodD0iMjEuMzMzMyIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPgo8ZmVGbG9vZCBmbG9vZC1vcGFjaXR5PSIwIiByZXN1bHQ9IkJhY2tncm91bmRJbWFnZUZpeCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIgcmVzdWx0PSJzaGFwZSIvPgo8ZmVDb2xvck1hdHJpeCBpbj0iU291cmNlQWxwaGEiIHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAxMjcgMCIgcmVzdWx0PSJoYXJkQWxwaGEiLz4KPGZlT2Zmc2V0Lz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJhcml0aG1ldGljIiBrMj0iLTEiIGszPSIxIi8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuNjg3NSAwIDAgMCAwIDAuNDgwNzE5IDAgMCAwIDAgMC4wNjMzMjY1IDAgMCAwIDEgMCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0ic2hhcGUiIHJlc3VsdD0iZWZmZWN0MV9pbm5lclNoYWRvdyIvPgo8L2ZpbHRlcj4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyIiB4MT0iMjEuMzMzMyIgeTE9IjUuMzMzMzQiIHgyPSIyMS4zMzMzIiB5Mj0iMjYuNjY2NyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRkZENjgxIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0U2QjA0MCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50MV9saW5lYXIiIHgxPSIzMC40MDA1IiB5MT0iNC45ODUyOCIgeDI9Ii0xLjU4OTE1IiB5Mj0iMzguNTkwNiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRkZENzgyIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0UzQUMzOSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo="
+                                    width="60" height="60" alt="icon" title="" style="object-fit: contain;">
+                            </div>
+                            <div class="absolute left-0 bottom-0 flex items-center justify-center rounded-small text-caption-strong text-neutral-700 styles_OrderStatus__count__3ctvu">۰</div>
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <span class="text-body2-strong text-neutral-700">مرجوع شده</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:rounded-medium relative styles_Frame__Lu_I7 p-0">
+                <div class="bg-neutral-000 flex-col lg:pb-2">
+
+
+
+                    <div data-cro-id="profile-sidebar-menu" class="relative px-5 styles_ProfileSidebarMenuItem__YvbVJ">
+                        <a class="cursor-pointer py-3 break-words block border-complete-t" href="/profile/address">
+                            <div class="flex justify-between items-center">
+                                <div class="flex shrink-0 ml-4">
+                                    <svg style="width: 24px; height: 24px;"><use xlink:href="#street"></use>
+                              </svg>
+                                </div>
+                                <div class="grow text-right"><span class="grow text-neutral-700 text-body1-strong">آدرس‌ها</span>
+                                    <div></div>
+                                </div>
+                                <div class="flex items-center shrink-0 mr-4">
+                                    <div class="flex cursor-pointer">
+                                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#chevronLeft"></use>
+                                </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div  class="relative px-5 styles_ProfileSidebarMenuItem__YvbVJ">
+                        <a href="/accounts/logout" class="cursor-pointer py-3 break-words block border-complete-t">
+                          <div class="flex justify-between items-center">
+                            <div class="flex shrink-0 ml-4">
+                              <svg style="width: 24px; height: 24px;">
+                                <use xlink:href="#registerationSignOut"></use>
+                              </svg>
+                            </div>
+                            <div class="grow text-right">
+                                <span class="grow text-neutral-700 text-body1-strong">خروج</span>
+                        <div></div>
+                    </div>
+                    <div class="flex items-center shrink-0 mr-4">
+                        <div class="flex cursor-pointer">
+                            <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#chevronLeft"></use>
+                                </svg>
+                        </div>
+                    </div>
+                </div>
+                        </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,280 @@
+﻿{% extends "base.html" %} {% load static %} {% block content %}
+<div class="grid  grid-cols-1 lg:mt-3">
+    <div class="lg:rounded-medium relative styles_Frame__Lu_I7 col-span-1 pb-3 lg:col-span-3 lg:pl-3">
+        <div class="lg:rounded-medium relative styles_Frame__Lu_I7 bg-neutral-000 px-5 lg:px-6 py-4">
+            <div class="break-words py-3">
+                <div class="flex items-center grow">
+                    <p class="grow text-h5 text-neutral-900"><span class="relative">انتخاب روش پرداخت</span>
+                    </p>
+
+                </div>
+            </div>
+            <div class="mt-4">
+                <label class="flex justify-start items-start py-4 cursor-pointer br-list-vertical-0">
+                          <label class="relative cursor-pointer styles_PaymentOptions__radioInput__wamhQ"><input type="radio" name="paymentOption" class="hidden" value="11"><span class="w-6 h-6 shrink-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.5 6.5 2 12 2C17.5 2 22 6.5 22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12ZM4 12C4 16.4 7.6 20 12 20C16.4 20 20 16.4 20 12C20 7.6 16.4 4 12 4C7.6 4 4 7.6 4 12Z" fill="#424750"></path></svg></span>
+                          </label>
+                <div class="flex items-start mr-4 grow payment-options-detail-box">
+                    <div class="flex ml-4">
+                        <svg style="width: 32px; height: 32px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#paymentWallet"></use>
+                              </svg>
+                    </div>
+                    <div>
+                        <p class="text-subtitle-strong text-neutral-700">کیف پول</p>
+                        <p class="text-neutral-500 text-body-1 flex justify-start items-center">
+                            <span class="xs:text">موجودی</span>
+                            <span class="text-neutral-900 text-normal font-bold mr-2 flex justify-center items-center">۰
+                                  <div class="flex mr-1">
+                                    <svg style="width: 16px; height: 16px; fill: var(--color-icon-black);"><use xlink:href="#toman"></use>
+                                    </svg>
+                                  </div>
+                                </span>
+                        </p>
+                    </div>
+                </div>
+                </label>
+                <label class="flex justify-start items-start py-4 cursor-pointer br-list-vertical-0">
+                          <label class="relative cursor-pointer styles_PaymentOptions__radioInput__wamhQ"><input type="radio" name="paymentOption" class="hidden" value="5" checked=""><span class="w-6 h-6 shrink-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2Z" fill="var(--color-secondary-500)"></path><path d="M12 7C9.2 7 7 9.2 7 12C7 14.8 9.2 17 12 17C14.8 17 17 14.8 17 12C17 9.2 14.8 7 12 7Z" fill="white"></path></svg></span>
+                          </label>
+                <div class="flex items-start mr-4 grow payment-options-detail-box">
+                    <div class="flex ml-4">
+                        <svg style="width: 32px; height: 32px; fill: var(--color-icon-secondary);"><use xlink:href="#cardBank"></use>
+                              </svg>
+                    </div>
+                    <div>
+                        <p class="text-subtitle-strong text-neutral-700">پرداخت ارزی</p>
+                        <p class="text-neutral-500 text-body-1">پرداخت آنلاین تتر</p>
+                    </div>
+                </div>
+                </label>
+                <!--                 <label class="flex justify-start items-start py-4 cursor-pointer br-list-vertical-0">
+                    <label class="relative cursor-pointer styles_PaymentOptions__radioInput__wamhQ">
+                        <input type="radio" name="paymentOption" class="hidden" value="370">
+                        <span class="w-6 h-6 shrink-0">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 6.5 6.5 2 12 2C17.5 2 22 6.5 22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12ZM4 12C4 16.4 7.6 20 12 20C16.4 20 20 16.4 20 12C20 7.6 16.4 4 12 4C7.6 4 4 7.6 4 12Z" fill="#424750"></path>
+                            </svg>
+                        </span>
+                    </label>
+                <div class="flex items-start mr-4 grow payment-options-detail-box">
+                    <div class="flex ml-4">
+                        <svg style="width: 32px; height: 32px; fill: var(--color-icon-low-emphasis);">
+                                <use xlink:href="#organizationCredit"></use>
+                            </svg>
+                    </div>
+                    <div>
+                        <p class="text-subtitle-strong text-neutral-700">پرداخت با کارت اعتباری</p>
+                        <p class="text-neutral-500 text-body-1">ویژه بانک‌ها، سازمان‌ها و شرکت‌ها</p>
+                    </div>
+                </div>
+                </label> -->
+
+            </div>
+        </div>
+
+
+
+        <div class="lg:rounded-medium relative styles_Frame__Lu_I7 bg-neutral-000 px-5 lg:px-6 py-4 lg:mt-3 hidden lg:block">
+            <div class="py-2 radius">
+                <div class="flex">
+                    <div class="flex mt-1">
+                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-neutral-hint);"><use xlink:href="#infoOutline"></use>
+                            </svg>
+                    </div>
+                    <span class="mr-4 text-body-1 text-neutral-500">برای دریافت فاکتور، بعد از دریافت سفارش به حساب کاربری و صفحه جزئیات سفارش سر بزنید</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-neutral-000 mt-3 hidden lg:flex" data-cro-id="payment-timeslot-option">
+            <a class="styles_Link__RMyqc" data-savepage-href="/checkout/shipping/" href="https://www.digikala.com/checkout/shipping/"></a>
+        </div>
+    </div>
+    <aside class="col-span-1 lg:mt-0 relative">
+        <div class="sticky styles_CheckoutContainer__sideBar__WMKjM">
+            <div class="lg:border-complete-200 lg:rounded-medium pt-2">
+                <div class="px-5">
+                    <div class="flex items-center justify-between pt-3 relative">
+                        <div class="flex items-center">
+                            <div class="mr-1 text-body2-strong flex items-center text-neutral-600">
+                                <span>  قیمت کالاها </span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div>
+                                <div class="flex items-center justify-start">
+                                    <span class="text-neutral-600 text-subtitle-strong">   {{totalprice}}   </span>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div class="flex mr-1">
+                                                <svg style="width: 16px; height: 16px; fill: var(--color-neutral-600);"><use xlink:href="#toman"></use>
+                                        </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-complete-t-200 border-complete-b-200 mt-3">
+                        <div class="flex items-center justify-between pt-3 relative">
+                            <div class="flex items-center">
+                                <div class="mr-1 text-body2-strong flex items-center text-neutral-600">
+                                    <span>هزینه ارسال</span>
+                                    <div>
+                                        <div>
+
+                                        </div>
+                                        <div class="z-4 text-body-2 styles_Tooltip__tooltip___Mj8o styles_Tooltip__tooltip--whiteBg__0Pjuc shadow-fab-button styles_Tooltip__tooltip--inactive__vFMA1" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="bottom"
+                                            style="position: absolute; inset: 0px auto auto 0px; transform: translate(481px, 1143px);">
+                                            <div class="styles_BillBox__shipmentsToolTipContainer__ioNAT">
+                                                <div class="flex justify-between ai-cetner py-2 br-list-vertical-no-padding-200">
+                                                    <div class="flex items-center ml-4">
+                                                        <div class="ml-2" style="width: 18px; height: 18px; line-height: 0;"><span class="w-full inline-block" style="display: inline-block; object-fit: contain; width: 18px; height: 18px;"></span>
+                                                        </div>
+                                                        <p class="text-caption-strong" style="color: rgb(254, 185, 0);">ارسال پستی</p>
+                                                    </div>
+                                                    <p class="flex items-center text-caption text-neutral-800">
+                                                        <p class="flex items-center text-caption text-neutral-800">
+                                                            <span class="ml-1">رایگان</span>
+                                                        </p>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-neutral-600 text-subtitle-strong">رایگان</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="border-complete-b-200 pb-3">
+                        <div class="flex items-center justify-between pt-3 relative">
+                            <div class="flex items-center">
+                                <div class="flex">
+                                    <svg style="width: 20px; height: 20px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#discount"></use>
+                                  </svg>
+                                </div>
+                                <div class="mr-1 text-body2-strong flex items-center text-neutral-800">
+                                    <span>تخفیف کالاها</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div>
+                                    <div class="flex items-center justify-start">
+                                        <span class="text-neutral-800 text-subtitle-strong"> {{totaloffer}} </span>
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center">
+                                                <div class="flex mr-1">
+                                                    <svg style="width: 16px; height: 16px; fill: var(--color-neutral-800);"><use xlink:href="#toman"></use>
+                                          </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-3 relative">
+                        <div class="flex items-center">
+                            <div class="mr-1 text-body2-strong flex items-center text-neutral-600 text-primary-500">
+                                <span>سود شما از خرید</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="ml-1 text-primary-500 text-h5"></span>
+                            <div>
+                                <div class="flex items-center justify-start">
+                                    <span class="text-primary-500 text-h5">  {{totaloffer}}  </span>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div class="flex mr-1">
+                                                <svg style="width: 16px; height: 16px; fill: var(--color-icon-primary);"><use xlink:href="#toman"></use>
+                                        </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-3 relative">
+                        <div class="flex items-center">
+                            <div class="mr-1 text-body2-strong flex items-center text-neutral-600">
+                                <span>قابل پرداخت</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div>
+                                <div class="flex items-center justify-start">
+                                    <span class="text-neutral-600 text-subtitle-strong">   {{totalpay}}   </span>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div class="flex mr-1">
+                                                <svg style="width: 16px; height: 16px; fill: var(--color-neutral-600);"><use xlink:href="#toman"></use>
+                                        </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-3 relative">
+                        <div class="flex items-center">
+                            <div class="mr-1 text-body2-strong flex items-center text-neutral-600">
+                                <span>نرخ لحظه ای دلار</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div>
+                                <div class="flex items-center justify-start">
+                                    <span class="text-neutral-600 text-subtitle-strong">   51400   </span>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div class="flex mr-1">
+                                                <svg style="width: 16px; height: 16px; fill: var(--color-neutral-600);"><use xlink:href="#toman"></use>
+                                        </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-3 relative">
+                        <div class="flex items-center">
+                            <div class="mr-1 text-body2-strong flex items-center text-neutral-600">
+                                <span> معادل دلاری سبد خرید</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div>
+                                <div class="flex items-center justify-start">
+                                    <span class="text-neutral-600 text-subtitle-strong">   5214 $   </span>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" lg:block mt-1 lg:my-4">
+                        <button onclick="location.href = '/checkout/pay '" class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-1 styles_btn--large__1Muai styles_btn--primary__y0GEv rounded-medium w-full">
+                            <div class="flex items-center justify-center styles_btn__loading__d5Rcc">
+                                <svg width="24" height="24" id="e302pyQgejw1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path class="styles_Loading__circle1__K7HNJ" d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z" transform="matrix(1 0 0 1 17 9)" opacity="0.9" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></path><rect class="styles_Loading__circle2__jpl_q" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 9 9)" opacity="0.6" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect><rect class="styles_Loading__circle3__otcH4" width="6" height="6" rx="3" ry="3" transform="matrix(1 0 0 1 0.94007500000000 9)" opacity="0.3" fill="var(--color-icon-low-emphasis)" stroke="none" stroke-width="1"></rect>
+                                </svg></div>
+                              <div class="flex items-center justify-center relative grow">پرداخت</div>
+                            </button></div>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+</div>
+{% endblock content %}

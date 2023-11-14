@@ -1,0 +1,352 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    #scrolcontainer {
+        display: flex;
+        overflow-x: scroll;
+        max-width: 100rem;
+        margin: 0 auto;
+        padding: 3px;
+    }
+    
+    #scrolcontainer article {
+        font-family: sans-serif;
+        border-radius: 8px;
+        background: #ff696100;
+        border-color: rgba(0, 0, 0, 0.131);
+        border-width: 1px;
+        border-style: solid;
+        padding: 10px;
+        margin: 2rem 1rem;
+    }
+    
+    #scrolcontainer::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+<div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX">
+    <div class="flex flex-col gap-y-4 " style="padding-left: 10px;padding-right: 10px;">
+
+
+
+
+
+
+            <div class="container-2xl-w mx-auto lg:px-4 2xl:px-0">
+            <div class="w-full pr-4 lg:px-4 py-3 lg:pt-4 lg:pb-10 flex flex-col items-center">
+                <div class="mb-6 lg:mb-9 text-center">
+                    <h3 class="text-h3">خرید بر اساس دسته‌بندی</h3>
+                </div>
+                <div class="relative relative w-full dk-main-slider">
+                    <div>
+
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events swiper-container-free-mode swiper-container-rtl">
+                            <div class="swiper-wrapper">
+                                <div id="scrolcontainer">
+
+                                        {% for cat in categories %}
+                                        <span data-cro-id="hp-categories-icons" class="h-40">
+                                            <a class="flex flex-col items-center user-select-none w-full lg:p-0 lg:mx-0" href="/category/{{ cat.title }}">
+                                            <div class="flex items-center justify-center" style="width: 90px; height: 90px; line-height: 0;">
+                                            <img class="w-full h-full inline-block" " src="{{ cat.icon.url }}" width="90" height="90" alt="{{ cat.title }}" title="" style="object-fit: contain;">
+                                            </div>
+                                            <p class="text-body2-strong text-neutral-900 mt-2 text-center ellipsis-2">{{ cat.title }}</p>
+                                            </a>
+                                        </span>
+                                        {% endfor %}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        
+
+
+            <div class="container-2xl-w mx-auto lg:px-4 2xl:px-0">
+
+            <div class="w-full py-6 bg-neutral-000 lg:rounded-large lg:border-complete-200 ">
+
+                <div class="flex justify-center items-center">
+
+                    <div class="flex ml-2">
+
+                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-rating-0-2);"><use xlink:href="#topBrands"></use>
+    
+                        </svg>
+
+                    </div>
+
+                    <p class="text-h3 text-neutral-900">محبوب‌ترین برندها</p>
+
+                </div>
+
+                <div class="mt-3 overflow-hidden w-full">
+
+                    <div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar">
+                        <div id="scrolcontainer">
+                        {% for brand in brands %}
+                        <a class="px-4 py-1 overflow-hidden flex items-center justify-center h-full shrink-0 br-list-horizontal-0"  href="/productlist/brand/{{brand.name}}">
+                            <img  style="display: block;width: 50px;height: 50px;" src="{{brand.img.url}}">
+                            <div class="flex items-center justify-center" style="width: 70px; height: 70px; line-height: 0;">
+        
+                                <span class="w-full inline-block" style="display: inline-block; object-fit: contain; width: 70px; height: 70px;"> {{brand.title}} </span>
+                                
+    
+                            </div>
+                            
+
+                        </a>
+                        {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="container-2xl-w mx-auto lg:px-4 2xl:px-0" >
+
+            <div class="w-full flex flex-col justify-center align-items py-4 bg-neutral-000 lg:rounded-large lg:border-complete-200">
+
+                <div class="flex justify-between lg:justify-center items-center px-2 lg:px-5 relative">
+
+                    <div class="flex justify-center items-center">
+
+                        <div class="flex ml-2">
+    
+                            <svg style="width: 24px; height: 24px; fill: var(--color-icon-warning);"><use xlink:href="#searchTrend"></use>
+      
+                            </svg>
+
+                        </div>
+
+                        <p class="text-h3 text-neutral-900">پرفروش‌ترین کالاها</p>
+
+                    </div>
+
+
+
+            </div>
+
+            
+            <div class="flex flex-col" style="padding-right: 20px;">
+
+                
+                    {% for product in bestsell %}
+                    <a class=" styles_ProductItem__Ue_Ty" 
+    
+                    href="/product/{{product.serialnumber}}">
+    
+                        <div class="flex styles_ProductItem__Ue_Ty">
+        
+                            <span class="text-secondary-500 text-h2-extra ml-3 flex items-center"> {{ forloop.counter }} </span>
+        
+                            <div class="grow flex flex-col justify-center relative styles_ProductItem__description__jESgJ">
+            
+                                <p class="text-body-2 text-neutral-700 ellipsis-2 overflow-hidden">{{product.fullname}} </p>
+        
+                            </div>
+    
+                        </div>
+
+
+                    </a>
+                    {% endfor %}
+
+            </div>
+
+            </div>
+
+        
+
+            </div>
+
+
+
+            <div class="container-2xl-w mx-auto lg:px-4 2xl:px-0">
+
+            <div class="px-5 lg:px-3  bg-neutral-000 lg:rounded-large lg:border-complete-200">
+
+                <div class="flex items-center justify-center py-3 lg:py-4 mb-2">
+
+                    <div class="flex">
+
+                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-primary);"><use xlink:href="#discount"></use>
+    
+                        </svg>
+
+                    </div>
+
+                    <h3 class="mr-2 text-h3">منتخب محصولات تخفیف و حراج</h3>
+
+                </div>
+                
+                
+                    <div id="scrolcontainer">
+                    {% for product in offers %}
+                        <a class="flex " target="_blank" 
+
+                        href="">
+
+                    <div data-testid="product-card" class="h-full">
+    
+                        <article class="overflow-hidden flex flex-col items-stretch justify-start">
+        
+                            <div class="flex grow relative flex-col">
+            
+                                <div class="">
+                
+                                    <div class="flex items-stretch flex-col relative mb-1">
+                    
+                                        <div class="flex items-start mx-auto">
+                        
+                                            <div>
+                            
+                                                <div class="flex items-center justify-start gap-1 flex-wrap absolute top-0 right-0 z-1 style_ProductImage__miniBadges__uxcGX">
+                                
+                                                    <br>
+                                
+                                                    <br>
+                                                </div>
+                            
+                                                <div style="width: 130px; height: 130px; line-height: 0;">
+                                
+                                                    <img style="width: 130px; height: 130px;" src="{{product.getmainpicture}}" >
+                                    
+                            
+                                                </div>
+                        
+                                            </div>
+                    
+                                        </div>
+                
+                                    </div>
+            
+                                </div>
+            
+                                <div class="grow flex flex-col items-stretch justify-start">
+                
+                                    <div class="pt-1 flex flex-col items-stretch justify-between">
+                    
+                                        <div class="flex items-center justify-between">
+                        
+                                            <div class="px-1 text-white rounded-large flex items-center justify-center ProductPrice_ProductPrice__discountWrapper__1Ru_1 bg-primary-700">
+                            
+                                                <span class="text-body2-strong" data-testid="price-discount-percent">{{product.offer}}٪</span>
+                        
+                                            </div>
+                        
+                                            <div class="flex items-center justify-end gap-1 text-neutral-700 text-neutral-400 text-h5 grow">
+                            
+                                                <span data-testid="price-final"> {{product.price}} </span>
+                            
+                                                <div class="flex">
+                                
+                                                    <svg style="width: 16px; height: 16px; fill: var(--color-icon-high-emphasis);"><use xlink:href="#toman"></use>
+                   
+                                                    </svg>
+                            
+                                                </div>
+                        
+                                            </div>
+                    
+                                        </div>
+                    
+                                        <div class="flex items-center justify-between pl-5">
+                        
+                                            <div data-testid="price-no-discount" class="text-neutral-300 line-through self-end mr-auto text-body-2">{{product.getofferprice}}</div>
+                    
+                                        </div>
+                
+                                    </div>
+            
+                                </div>
+        
+                            </div>
+    
+                        </article>
+
+                    </div>
+
+                         </a>
+
+
+                    {% endfor %}
+
+
+                    </div>
+                
+        </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="container-2xl-w mx-auto lg:px-4 2xl:px-0">
+                <div class="w-full bg-neutral-000 user-select-none lg:rounded-large">
+                    <div class="flex justify-between py-4 items-center px-5">
+                        <div class="text-h5 text-neutral-900">خواندنی‌ها</div>
+                    </div>
+                    <div class="grid grid-cols- gap-3 items-stretch lg:justify-around px-5 lg:px-0">
+                        {% for mag in magazines %}
+                        <a class="bg-neutral-000 mb-1 border-complete-200 user-select-none rounded-medium flex flex-col h-full overflow-hidden article-card_ArticleCard__container__6Ks7Q"  
+                        href="/magazine/{{mag.name}}">
+
+                        <div style="line-height: 0;">
+                            <div class="mt-2 mb-3 px-4 ellipsis-2 text-body-2 text-neutral-900 w-full text-right">{{mag.title}}</div>
+                            <span class="w-full article-card_ArticleCard__image__nrAQr inline-block" style="display: inline-flex; object-fit: cover;">
+                                <img style="display: inline-flex;" src="{{mag.img.url}}" >
+                            </span>         
+                        </div>
+                        </a>
+                        
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<script>
+    const el = document.querySelectorAll("#scrolcontainer");
+    el.forEach((element)=>{ 
+    element.addEventListener('wheel', (event) => {
+        event.preventDefault();
+
+        element.scrollBy({
+            left: event.deltaY < 0 ? -30 : 30,
+
+        });
+    });
+    })
+</script>
+
+{% endblock content %}

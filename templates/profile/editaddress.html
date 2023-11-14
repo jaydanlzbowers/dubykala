@@ -1,0 +1,151 @@
+ {% extends "base.html" %} {% load static %} {% block content %}
+
+
+
+
+<div class="grow flex flex-col overflow-y-auto">
+    <div class="grow flex flex-col styles_children__hHq5Q py-4 px-5">
+        <form method="post">
+            {% csrf_token %}
+            <div class="border-complete-b border-n-300 mb-3 pb-3">
+                <label class="FormComponentFrame_FormComponentFrame__PIUpy w-full FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                    <div class="flex justify-between items-center">
+                        <p class="mb-2 mr-4 text-body-1 text-neutral-700">نشانی پستی
+                            <span class="text-primary-500">*</span>
+                        </p>
+                    </div>
+                    <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 bg-neutral-100 lg:bg-neutral-000 styles_container__JqZxq styles_frameHeightAuto__8BmMM">
+                        <div class="grow text-body-3">
+                            <textarea class="py-2 px-3 text-subtitle w-full styles_textarea__WQzCM" name="address">{{address.address}}</textarea>
+                        </div>
+                    </div>
+                    <p class="mt-2 pr-3 text-body-1 text-neutral-400">آدرس بالا بر اساس موقعیت انتخابی شما وارد شده است.</p>
+                </label>
+
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 mb-4">
+                <div class="">
+                    <div class="select-none text-body-1 mb-2 text-neutral-700 mr-4">استان<label class="text-primary-700">*</label></div>
+                    <div class="relative">
+                        <input type="hidden" required="" name="stateId" value="{{address.county}}">
+                        <input name="county" type="text" placeholder="" class="h-12 w-full px-3 py-2 outline-none md:text bg-neutral-100 lg:bg-neutral-000 rounded border-complete styles_DropDown__input--bordered__jYaLg lg:border-complete-200" autocomplete="off" value="{{address.county}}">
+
+                    </div>
+                </div>
+                <div class="">
+                    <div class="select-none text-body-1 mb-2 text-neutral-700 mr-4">شهر<label class="text-primary-700">*</label></div>
+                    <div class="relative">
+                        <input type="hidden" required="" name="cityId" value="{{address.city}}">
+                        <input name="city" type="text" placeholder="" class="h-12 w-full px-3 py-2 outline-none md:text bg-neutral-100 lg:bg-neutral-000 rounded border-complete styles_DropDown__input--bordered__jYaLg lg:border-complete-200" autocomplete="off" value="{{address.city}}">
+
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="select-none text-body-1 mb-2 text-neutral-700 mr-4">محله<label class="text-primary-700">*</label></div>
+                <div class="relative">
+                    <input type="hidden" required="" name="districtId" value="">
+                    <input name="street" type="text" placeholder="" class="h-12 w-full px-3 py-2 outline-none md:text bg-neutral-100 lg:bg-neutral-000 rounded border-complete styles_DropDown__input--bordered__jYaLg lg:border-complete-200" autocomplete="off" value="{{address.street}}">
+
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+                <div class="grid grid-cols-2 gap-4">
+                    <label class="FormComponentFrame_FormComponentFrame__PIUpy FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                        <div class="flex justify-between items-center">
+                            <p class="mb-2 mr-4 text-neutral-700 text-body-1">پلاک
+                                <span class="text-primary-500">*</span>
+                            </p>
+                        </div>
+                        <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                            <div class="grow text-body-3">
+                                <input name="pelak" class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="text" name="buildingNumber" autocomplete="off" value="{{address.pelak}}">
+                            </div>
+                        </div>
+                    </label>
+                    <label class="FormComponentFrame_FormComponentFrame__PIUpy FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                        <div class="flex justify-between items-center">
+                            <p class="mb-2 mr-4 text-neutral-700 text-body-1">واحد</p>
+                        </div>
+                        <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                            <div class="grow text-body-3">
+                                <input name="block" class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="text" name="unit" autocomplete="off"
+                                    value="{{address.block}}"></div>
+                        </div>
+                        </label>
+                </div>
+                <label class="FormComponentFrame_FormComponentFrame__PIUpy FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                    <div class="flex justify-between items-center">
+                        <p class="mb-2 mr-4 text-neutral-700 text-body-1">کد‌پستی
+                            <span class="text-primary-500">*</span>
+                        </p>
+                    </div>
+                    <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                        <div class="grow text-body-3">
+                            <input name="postalcode" class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="number" name="postalCode" autocomplete="off" value="{{address.postalcode}}">
+                        </div>
+                    </div>
+                    <p class="pr-3 text-body-1 text-neutral-400">کد‌پستی باید ۱۰ رقم و بدون خط تیره باشد.</p>
+                </label>
+            </div>
+            <div class="border-complete-t border-n-300 mt-4 pt-4">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                    <label class="FormComponentFrame_FormComponentFrame__PIUpy FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                        <div class="flex justify-between items-center">
+                            <p class="mb-2 mr-4 text-neutral-700 text-body-1">نام گیرنده
+                                <span class="text-primary-500">*</span>
+                            </p>
+                        </div>
+                        <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                            <div class="grow text-body-3">
+                                <input name="nameofreceiver" class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="text" name="receiverFirstName" autocomplete="off" value="{{address.nameofreceiver}}">
+                            </div>
+                        </div>
+                    </label>
+                    <label class="FormComponentFrame_FormComponentFrame__PIUpy FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                            <div class="flex justify-between items-center">
+                                <p class="mb-2 mr-4 text-neutral-700 text-body-1">نام‌خانوادگی گیرنده
+                                    <span class="text-primary-500">*</span>
+                                </p>
+                            </div>
+                            <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                                <div class="grow text-body-3">
+                                    <input name="familyofreceiver" class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="text" name="receiverLastName"
+                                        autocomplete="off" value="{{address.familyofreceiver}}"></div>
+                            </div>
+                            </label>
+                    <label class="FormComponentFrame_FormComponentFrame__PIUpy FormComponentFrame_FormComponentFrame--normal__TQSOm">
+                                <div class="flex justify-between items-center">
+                                    <p class="mb-2 mr-4 text-neutral-700 text-body-1">شماره موبایل
+                                        <span class="text-primary-500">*</span>
+                                    </p>
+                                </div>
+                                <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
+                                    <div class="grow text-body-3">
+                                        <input name="telephone" class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="number" name="mobile" autocomplete="off" value="{{address.telephone}}"></div>
+                                    </div>
+                                    <p class="pr-3 text-body-1 text-neutral-400">مثل: ۰۹۱۲۳۴۵۶۷۸۹</p>
+                                </label>
+                </div>
+            </div>
+            <div class="">
+
+                <div class="relative">
+
+
+
+                </div>
+                <button type="submit" style="width:100%; margin: 10px; padding: 10px; background-color: crimson; color: aliceblue;border-radius: 7px;"> ثبت آدرس</button>
+
+            </div>
+
+        </form>
+        <div class="">
+            <button onclick="location.href='/profile/address'" style="width:100%; margin: 10px; padding: 10px; background-color: rgba(20, 130, 220, 0.671); color: aliceblue;border-radius: 7px;">  بازگشت</button>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
