@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
+from django.http import HttpResponse,JsonResponse,HttpResponseRedirect,Http404
 from .serializer import ProductSerializer
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
@@ -110,12 +110,15 @@ def homepage(request):
     offers = Product.objects.all().exclude(offer=0)[0:10]
     magazines = Magazine.objects.all().order_by('-pk')[0:4]
 
+    bannerimg = Image.objects.filter(name='bannerimg')[0]
+
     d = {
         'categories':cats,
         'brands':brands,
         'bestsell':bestsell,
         'offers':offers,
         'magazines':magazines,
+        'bannerimg':bannerimg,
 
     }
     return render(request,'homepage.html',d)
@@ -131,7 +134,11 @@ def category(request):
 
 def checkout(request):
     cats = Category.objects.filter(slug=0)
-    chlist = Checkout.objects.filter(user= request.user ).exclude(amount=0)
+    chlist =[]
+    try:
+        chlist = Checkout.objects.filter(user= request.user ).exclude(amount=0)
+    except:
+        pass
     plist = []
     if chlist:
         for ch in chlist:
@@ -174,10 +181,14 @@ def checkoutaddress(request):
 
 
 def addtocheckout(request):
-    user=request.user
-    userprofile = Userprofile.objects.get(user= request.user)
+    try:
+        user=request.user
+        userprofile = Userprofile.objects.get(user= user)
+    except:
+        return Http404()
+
     if request.method == 'POST':
-        serialnumber = int(request.POST.get('serialnumber'))
+        serialnumber = int(request.POST['serialnumber'])
         print(serialnumber)
         product=Product.objects.get(serialnumber=serialnumber)
 
@@ -354,7 +365,7 @@ def productlist(request,searchtype=0,keyword=0):
         if keyword==0:
             products = Product.objects.all()
         else:
-            products = Product.objects.filter(category__name=keyword)
+            products = Product.objects.filter(category__name=str(keyword))
     else:
         products = Product.objects.all()
     d = {
@@ -362,6 +373,7 @@ def productlist(request,searchtype=0,keyword=0):
         'products':products,
         'numberofp':len(products),
         'article':article,
+        'keyword':keyword,
 
 
     }

@@ -1,23 +1,22 @@
 ﻿{% extends "base.html" %} {% load static %} {% block content %}
-<div class="grow bg-neutral-000 flex flex-col styles_BaseLayoutMobile__content__JgqoX">
-    <div class="styles_PageLoader--hasPageContainer__gPBo1 hidden"></div>
-    <div class="flex h-full overflow-hidden children:overscroll-none styles_content__Ekd9W">
-        <div class="bg-neutral-100 shrink-0 overflow-y-auto hide-scrollbar styles_mainMenuItemsContainer__sp1zS">
+
+    <div style="margin-top: 30px;padding: 20px;" class="flex h-full overflow-hidden children:overscroll-none styles_content__Ekd9W">
+        <div   class=" shrink-0 overflow-y-auto hide-scrollbar styles_mainMenuItemsContainer__sp1zS">
             {% for cat in categories %}
 
-            <div onclick="showitems(this.id)" id="{{cat.name}}" class="flex flex-col items-center py-3 px-2 border-complete-b-200 bg-neutral-000 styles_mainMenuItem--active__3BT4l">
+            <div style="background-color: #3ddaeb11;" onclick="showitems(this.id)" id="{{cat.name}}" class="flex flex-col items-center py-3 px-2 border-complete-b-200 bg-neutral-000 styles_mainMenuItem--active__3BT4l">
                 <!-- /////////////////////////////////categories list/////////////////////////////////// -->
-                <div class="flex mb-1">
+                <div style="border-radius: 7px;" class="flex mb-1">
                     <img style="height: 16px;width: 16px;" src="{{cat.icon.url}}">
                 </div>
-                <span class="text-caption text-center text-primary-500">{{cat.title}}</span>
+                <span style="color: #3dd9ebff;" class="text-caption text-center text-primary-500">{{cat.title}}</span>
             </div>
 
             {% endfor %}
 
         </div>
 
-        <div class="grow mr-2 overflow-y-auto hide-scrollbar">
+        <div   class="grow mr-2 overflow-y-auto hide-scrollbar">
 
             <div class="grow flex-col items-stretch px-2 flex">
                 {% for cat in categories %}
@@ -27,7 +26,7 @@
 
                     <div class="text-body1-strong border-complete-b">
                         <div class="break-words py-3 py-2 text-body1-strong text-neutral-900">
-                            <div class="flex items-center grow">
+                            <div style="background-color: #3ddaeb11;border-radius: 7px;padding: 5px;" class="flex items-center grow">
                                 <p class="grow cursor-pointer">
                                     <span class="relative">برندهای مختلف  {{cat.title}}</span>
                                 </p>
@@ -35,12 +34,12 @@
                         </div>
                         <div class="text-caption text-neutral-700">
                             <div class="grid grid-cols-3 flex-wrap">
-                                {% if cat.get_childs %}
-                                {% for brand in cat.get_childs %}
+                                {% if cat.get_brands %}
+                                {% for brand in cat.get_brands %}
                                 <a class="flex flex-col items-center p-2 text-caption text-neutral-900 text-center" href="/productlist/category/{{brand.name}}">
                                     <div class="relative flex items-center justify-center bg-neutral-100 mb-2 rounded-circle styles_categoryItemImage__cAg5_">
                                         <div style="width: 45px; height: 45px; line-height: 0;">
-                                            <img class="w-full styles_image__5lulR inline-block" src="{{brand.icon.url}}" width="45" height="45" alt="" title="" style="object-fit: contain;">
+                                            <img class="w-full styles_image__5lulR inline-block" src="{{brand.img.url}}" width="45" height="45" alt="" title="" style="object-fit: contain;">
                                         </div>
                                     </div>
                                     {{brand.title}}
@@ -63,7 +62,7 @@
         </div>
 
     </div>
-</div>
+
 
 
 <script>

@@ -60,11 +60,11 @@ class Category(models.Model):
             k = k.parent
         return ' / '.join(full_path[::-1])  
 
-    def get_childs(self):
+    def get_brands(self):
         print(self.title)
         list = []
         try:
-            list = Category.objects.filter(parent=self ).exclude(slug=0)
+            list = Brand.objects.filter(category = self )
         except:
             pass
         return list
@@ -79,6 +79,14 @@ class Brand(models.Model):
     img = models.ImageField(upload_to='brands_img')
     def __str__(self):
         return self.name
+    def get_products(self):
+        print(self.title)
+        list = []
+        try:
+            list = Product.objects.filter(brand = self )
+        except:
+            pass
+        return list
 
 class Product(models.Model):
     serialnumber = models.IntegerField(default=0)
@@ -173,7 +181,7 @@ class Picture(models.Model):
     product = models.ForeignKey( Product , on_delete=models.CASCADE )
 
     name = models.CharField(max_length=200)
-    img = models.ImageField()
+    img = models.ImageField(upload_to='product_images')
     def __str__(self):
         return self.name
 

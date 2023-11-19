@@ -257,7 +257,7 @@
 
                     <!-- //////////////////////////navbar of present//////////////////////// -->
 
-                    <div class="w-full block sticky z-2 bg-neutral-000 styles_Tabs__XG9uc mt-5" style="top: 56px;">
+                    <div class="w-full block sticky z-2 bg-neutral-000 styles_Tabs__XG9uc mt-5" style="top: 72px;">
 
                         <!--  ///////////////////////options of present///////////////////////////-->
                         <div>
@@ -584,7 +584,7 @@
                             <div class="flex align-middle "></div>
                             <div class="flex items-center lg:mt-3 ">
                                 <div class="min-w-6/12 shrink-0 ">
-                                    <button onclick="addtocheckout ( {{product.serialnumber}} ) " class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-2 styles_btn--medium__4GoNC styles_btn--primary__y0GEv rounded-medium
+                                    <button onclick="addtocheckout ( this.value) " value="{{product.serialnumber}} " class="relative flex items-center user-select-none styles_btn__Q4MvL text-button-2 styles_btn--medium__4GoNC styles_btn--primary__y0GEv rounded-medium
                                                                                     text-button-2 w-full " data-cro-id="pdp-add-to-cart " data-add-to-cart-variant-id="42421938 " data-testid="add-to-cart "><div class="flex items-center justify-center styles_btn__loading__d5Rcc ">
                               <svg width="24 " height="24 " id="e302pyQgejw1 " xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 " shape-rendering="geometricPrecision " text-rendering="geometricPrecision "><path class="styles_Loading__circle1__K7HNJ
                                                                                     " d="M0,3C0,1.343146,1.343146,0,3,0C4.656854,0,6,1.343146,6,3C6,4.656854,4.656854,6,3,6C1.343146,6,0,4.656854,0,3Z " transform="matrix(1 0 0 1 17 9) " opacity="0.9 " fill="var(--color-icon-low-emphasis)
@@ -618,7 +618,7 @@
 
 
 
-                    <div class="bg-app-background px-5 ">
+                    <div style="margin-bottom: 0px;" class="bg-app-background px-5 ">
 
                         <a class="styles_Link__RMyqc " href="">
                             <div class="flex items-center text-neutral-400 border-complete-b-200 py-3 ">
@@ -628,8 +628,7 @@
                                 </div>
                                 <p class="text-subtitle-strong ">     امکان بازگشت کالا    </p>
                                 <div class="flex mr-auto ">
-                                    <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis); "><use xlink:href="#chevronLeft "></use>
-                        </svg>
+
                                 </div>
                             </div>
                             <p class="text-center w-full text-caption py-4 text-neutral-500 text-center ">شناسه کالا: {{product.serialnumber}}</p>
@@ -702,7 +701,7 @@
                 alert(res);
             },
             error: function(res) {
-                alert(res.status);
+                location.href='/register'
             },
         });
         }

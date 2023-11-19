@@ -1,11 +1,12 @@
 ﻿ {% load static %}
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" style="--window-inner-height: 619px;background-color: #ef3b51ff;" data-intrack-useragent="Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Mobile Safari/537.36" class=" ">
+<html lang="fa" dir="rtl" style="--window-inner-height: 619px;background-color: #3dd9ebff"  data-intrack-useragent="Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Mobile Safari/537.36" class=" ">
 
 <head>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
+
     <link rel="icon" data-savepage-href="https://www.digikala.com/android-icon-192x192.png" href="data:image/png;base64,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">
     <script data-savepage-type="" type="text/plain" data-savepage-src="//digikala.api.useinsider.com/ins.js?id=10004485" defer="" id="insiderScript">
     </script>
@@ -17493,7 +17494,7 @@
 
 <body data-new-gr-c-s-check-loaded="14.1135.0" data-gr-ext-installed="" class="breakpoint" style="max-width: 650px;margin:0 auto;">
 
-    <div id="__next">
+    <div id="__next" >
 
         <svg style="display: none;">
             <symbol id="activeOutline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 .5C3.86.5.5 3.86.5 8c0 4.14 3.36 7.5 7.5 7.5 4.14 0 7.5-3.36 7.5-7.5C15.5 3.86 12.14.5 8 .5zM8 14c-3.308 0-6-2.693-6-6 0-3.308 2.692-6 6-6 3.307 0 6 2.692 6 6 0 3.307-2.693 6-6 6zm3.443-9.315L6.5 9.627 4.558 7.692 3.5 8.75l3 3 6-6-1.057-1.065z"></path></symbol>
@@ -17503,23 +17504,23 @@
             .st0{fill:#424242}
             </style><path d="M10.3 11h-6c-.6 0-1-.4-1-1V5.6c0-.7 0-1.1.2-1.5.2-.4.5-.7.9-.9.5-.2.9-.2 1.5-.2h4.4c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1zm-5-2h4V5h-4v4zM20.3 11h-6c-.6 0-1-.4-1-1V4c0-.6.4-1 1-1h4.4c.7 0 1.1 0 1.5.2.4.2.7.5.9.9.2.4.2.9.2 1.5V10c0 .6-.4 1-1 1zm-5-2h4V5.6 5h-4v4zM10.3 21H5.9c-.7 0-1.1 0-1.5-.2-.4-.2-.7-.5-.9-.9-.2-.4-.2-.9-.2-1.5V14c0-.6.4-1 1-1h6c.6 0 1 .4 1 1v6c0 .6-.4 1-1 1zm-5-6v4h4v-4h-4zM18.7 21h-4.4c-.6 0-1-.4-1-1v-6c0-.6.4-1 1-1h6c.6 0 1 .4 1 1v4.4c0 .7 0 1.1-.2 1.5-.2.4-.5.7-.9.9-.4.2-.8.2-1.5.2zm-3.4-2h4v-4h-4v4z" class="st0"></path></symbol> <symbol id="iran" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M6.797 3.545a1 1 0 01.631.584l.924 2.309.628.628 2.047.341.64-.962a1 1 0 01.59-.415l2-.5a1 1 0 01.486 0l2 .5a1 1 0 01.312.138l1.5 1A1 1 0 0119 8v2.377l.403 1.612.804.804a1 1 0 01.187 1.154l-.626 1.254 1.332.999a1 1 0 01.232.245l1 1.5a1 1 0 01-.125 1.262l-2 2a1 1 0 01-.831.285l-4-.5a1 1 0 01-.825-.676l-.164-.494-1.516.607a1 1 0 01-.926-.097l-3-2a1 1 0 01-.34-.385L7.883 16.5H6.5a1 1 0 01-.98-.804l-.441-2.203-1.786-1.786a1 1 0 01-.263-.95l.384-1.538L2.2 7.6A1 1 0 012 7V4.5a1 1 0 011.447-.894l1.481.74 1.017-.678a1 1 0 01.852-.123zM4 6.118v.549L5.3 8.4a1 1 0 01.17.843l-.363 1.45 1.6 1.6a1 1 0 01.274.51L7.32 14.5H8.5a1 1 0 01.894.553l.882 1.762 2.341 1.561 2.012-.805a1 1 0 011.32.613l.3.902 2.89.361 1.074-1.074-.45-.676L17.9 16.3a1 1 0 01-.294-1.247l.677-1.356-.49-.49a.999.999 0 01-.263-.465l-.5-2A.996.996 0 0117 10.5V8.535l-.91-.607-1.59-.397-1.382.345-.786 1.179a1 1 0 01-.996.431l-3-.5a1 1 0 01-.543-.279l-1-1a1 1 0 01-.221-.336l-.543-1.355-.474.316a1 1 0 01-1.002.062L4 6.118z" clip-rule="evenodd"></path></symbol> <symbol id="linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6.4 4h19.2C26.92 4 28 5.08 28 6.4v19.2c0 1.32-1.08 2.4-2.4 2.4H6.4C5.08 28 4 26.92 4 25.6V6.4C4 5.08 5.08 4 6.4 4zm1.2 20.4h3.6V13.6H7.6v10.8zm1.8-12.84c-1.2 0-2.16-.96-2.16-2.16 0-1.2.96-2.16 2.16-2.16 1.2 0 2.16.96 2.16 2.16 0 1.2-.96 2.16-2.16 2.16zM20.8 24.4h3.6v-6.84c0-2.28-1.92-4.2-4.2-4.2-1.08 0-2.4.72-3 1.68V13.6h-3.6v10.8h3.6v-6.36c0-.96.84-1.8 1.8-1.8.96 0 1.8.84 1.8 1.8v6.36z" clip-rule="evenodd"></path></symbol> <symbol id="newGameIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M2.78 5.374l.068.096L6 10.513V5h2v9c0 .964-1.212 1.35-1.78.626l-.068-.096L3 9.487V15H1V6c0-.924 1.113-1.318 1.706-.711l.074.085zM18 11.238V5h-2v9l.006.114c.09.855 1.188 1.215 1.762.526l1.732-2.078 1.732 2.078.078.084c.616.598 1.69.172 1.69-.724V5h-2v6.238l-.732-.878-.084-.09a1 1 0 00-1.452.09l-.732.878zM23 19v-2H1v2h22zM15 7V5h-5l-.117.007A1 1 0 009 6.003l.022 8 .007.117a1 1 0 001 .88l4.978-.035-.014-2-3.974.028-.006-1.994L14 11V9h-2.992l-.005-2H15z" clip-rule="evenodd"></path></symbol> <symbol id="oneMonthAuto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 4h1c1.1 0 2 .9 2 2v4h-2V8H4v12h9v2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h1V2h2v2h10V2h2v2zm-6 14v-8h-3v2h1v6h2z"></path><path d="M18.293 10.293l-3 3a1 1 0 000 1.414l3 3 1.414-1.414L18.414 15H19a3 3 0 11-3 3h-2a5 5 0 105-5h-.586l1.293-1.293-1.414-1.414z"></path></symbol> <symbol id="oneMonth" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h10V2h2v2h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h1V2h2zm13 6H4v12h16V8zm-7 2v8h-2v-6h-1v-2h3z"></path></symbol> <symbol id="organizationCredit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M25 16.667H15V20h10v-3.333z"></path><path fill-rule="evenodd" d="M16.667 3.333a3.333 3.333 0 00-3.334 3.334V10h-5a5 5 0 00-5 5v15a5 5 0 005 5h23.334a5 5 0 005-5V15a5 5 0 00-5-5h-5V6.667a3.333 3.333 0 00-3.334-3.334h-6.666zm6.666 3.334V10h-6.666V6.667h6.666zM6.667 15v15c0 .92.746 1.667 1.666 1.667h23.334c.92 0 1.666-.747 1.666-1.667V15c0-.92-.746-1.667-1.666-1.667H8.333c-.92 0-1.666.747-1.666 1.667z" clip-rule="evenodd"></path></symbol> <symbol id="paymentWallet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 15"><path d="M8.875 8.375a.75.75 0 100 1.5.75.75 0 000-1.5z"></path><path fill-rule="evenodd" d="M12.086 3.5l-.216-.86A2.25 2.25 0 008.976 1.05L1.406 3.54A1.5 1.5 0 00.25 5v8.25a1.5 1.5 0 001.5 1.5h10.5a1.5 1.5 0 001.5-1.5V5a1.5 1.5 0 00-1.5-1.5h-.164zM1.75 5h10.5v2.25H8.875a1.875 1.875 0 100 3.75h3.375v2.25H1.75V5zm4.622-1.5h4.167l-.124-.497-.016-.055a.75.75 0 00-.949-.474L6.372 3.5zM8.875 8h3.375v2.25H8.875a1.125 1.125 0 010-2.25z" clip-rule="evenodd"></path></symbol> <symbol id="pointIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z"></path><path d="M8.404 21.334a9.968 9.968 0 01-2.098-1.112L20.182 6.249c.458.65.84 1.357 1.134 2.109L8.404 21.334zM18.727 4.6L4.637 18.768a10.028 10.028 0 01-1.353-1.861L16.847 3.25c.679.377 1.31.83 1.88 1.349z"></path><path d="M17.657 17.657a7.999 7.999 0 01-11.314 0 7.999 7.999 0 010-11.314 8 8 0 0111.314 0 7.999 7.999 0 010 11.314z"></path><path d="M6.343 17.657a7.999 7.999 0 0011.314 0 7.999 7.999 0 000-11.314L6.343 17.657z"></path><path d="M12 6l1.18 3.896H17l-3.09 2.408 1.18 3.896L12 13.792 8.91 16.2l1.18-3.896L7 9.896h3.82L12 6z"></path><path fill-rule="evenodd" d="M13.438 6.038l.74 2.41h2.395c1.464 0 2.073 1.982.888 2.893l-1.937 1.49.74 2.409c.453 1.474-1.142 2.7-2.327 1.789L12 15.539l-1.937 1.49c-1.185.91-2.78-.315-2.327-1.789l.74-2.41-1.937-1.489c-1.185-.91-.576-2.894.888-2.894h2.395l.74-2.41a1.488 1.488 0 012.876 0zM10.816 9.97a.072.072 0 00.068-.053l1.047-3.41a.07.07 0 01.138 0l1.047 3.41c.01.032.037.053.068.053h3.388c.07 0 .1.094.043.138l-2.741 2.107a.079.079 0 00-.027.085l1.047 3.41c.022.07-.054.128-.11.085l-2.742-2.107a.069.069 0 00-.084 0l-2.742 2.107c-.056.043-.132-.015-.11-.085l1.046-3.41a.079.079 0 00-.026-.085l-2.74-2.107c-.057-.044-.028-.138.042-.138h3.388z" clip-rule="evenodd"></path></symbol> <symbol id="pos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 38"><path fill-rule="evenodd" d="M20.334 2.333c0-.92-.747-1.666-1.667-1.666H5.333c-.92 0-1.666.746-1.666 1.666V9a3.333 3.333 0 00-3.334 3.333V34a3.333 3.333 0 003.334 3.333h16.666A3.333 3.333 0 0023.668 34h6.666a3.333 3.333 0 003.334-3.333v-15a3.333 3.333 0 00-3.334-3.334h-6.666A3.333 3.333 0 0020.333 9V2.333zM3.666 34V12.333h1.667v3.334h13.333v-3.334h1.666V34H3.668zM7 4h10v5H7V4zm20 11.667h-3.333v15H27v-15zm1.667 0v15h1.666v-15h-1.666z" clip-rule="evenodd"></path><path d="M5.333 17.333h3.334v3.334H5.334v-3.334zM10.334 17.333h3.333v3.334h-3.333v-3.334zM15.334 17.333h3.333v3.334h-3.334v-3.334zM5.333 22.333h3.334v3.334H5.334v-3.334zM10.334 22.333h3.333v3.334h-3.333v-3.334zM15.334 22.333h3.333v3.334h-3.334v-3.334zM5.333 27.333h3.334v3.334H5.334v-3.334zM10.334 27.333h3.333v3.334h-3.333v-3.334zM15.334 27.333h3.333v3.334h-3.334v-3.334z"></path></symbol> <symbol id="shipByHub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M18.396 1.5c-2.676 0-4.855 2.183-4.86 4.866 0 .3.03.608.087.917l.033.159c.058.264.14.522.241.77l.119.27c.387.835 1.525 2.36 3.059 4.014l.335.356.392.41.08.066a.857.857 0 001.13-.094l.366-.382.334-.357.322-.352c1.37-1.516 2.377-2.884 2.733-3.654l.12-.273c.077-.188.142-.38.195-.577l.049-.197.027-.131.044-.257a4.87 4.87 0 00.048-.688c0-2.682-2.178-4.866-4.854-4.866zM11 6a2.75 2.75 0 00-2.745 2.582l-.005.168V9H3.5a2.75 2.75 0 00-2.745 2.582l-.005.168v7a1.75 1.75 0 001.607 1.744l.143.006h.354a2.751 2.751 0 005.292 0h7.708a2.751 2.751 0 005.292 0h.354a1.75 1.75 0 001.744-1.607l.006-.143v-6.688a.75.75 0 00-1.493-.101l-.007.101V15H10a.25.25 0 01-.243-.193l-.007-.057v-6c0-.647.492-1.18 1.122-1.244L11 7.5h1a.75.75 0 00.102-1.493L12 6h-1zm7.5 12.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM6.75 19.75a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zm.5-9.25h1v4.25a1.75 1.75 0 001.607 1.744L10 16.5h11.75v2.25a.25.25 0 01-.193.243L21.5 19h-.353a2.751 2.751 0 00-5.294 0H8.147a2.751 2.751 0 00-5.294 0H2.5a.25.25 0 01-.243-.193l-.007-.057V15.5H5.5a1.75 1.75 0 001.744-1.607l.006-.143V10.5zm-1.5 0H3.5l-.128.007A1.25 1.25 0 002.25 11.75V14H5.5l.057-.007a.25.25 0 00.193-.243V10.5zm14.929-4.143a2.29 2.29 0 00-2.286-2.286 2.29 2.29 0 00-2.285 2.286 2.29 2.29 0 002.285 2.285 2.29 2.29 0 002.286-2.285z" clip-rule="evenodd"></path></symbol> <symbol id="sixMonths" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h10V2h2v2h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h1V2h2zm13 6H4v12h16V8zm-5.5 2v2h-3.333v1H14.5v5h-5v-8h5zm-1.667 5h-1.667v1h1.667v-1z"></path></symbol> <symbol id="specialAmazing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22"><path d="M16 1.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM22 7.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15.207 8.207l6.5-6.5L20.293.293l-6.5 6.5 1.414 1.414z"></path><path fill-rule="evenodd" d="M5.793 2.293a1 1 0 011.414 0l12.5 12.5a1 1 0 01-1.414 1.414l-.553-.552-1.829.653c.058.263.089.536.089.816C16 19.304 14.169 21 12 21c-1.502 0-2.841-.813-3.524-2.037l-2.665.952a1 1 0 01-1.518 1.292l-3.5-3.5a1 1 0 011.292-1.518l4.26-11.93-.552-.552a1 1 0 010-1.414zm4.625 15.977c.359.438.922.73 1.582.73 1.145 0 2-.88 2-1.876 0-.044-.002-.088-.005-.132l-3.577 1.278zm-6.158.075l-.605-.605L7.91 5.824l8.265 8.266L4.26 18.345z" clip-rule="evenodd"></path></symbol> <symbol id="statusInProgress" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM8 12a1 1 0 11-2 0 1 1 0 012 0zm5 0a1 1 0 11-2 0 1 1 0 012 0zm4 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></symbol> <symbol id="switch" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 12"><path d="M13.552 3.881a.75.75 0 000-1.013L10.927.001 9.821 1.014l1.474 1.61H4.75v1.5h6.546L9.821 5.737l1.106 1.012 2.625-2.867zM.446 8.118a.75.75 0 000 1.013l2.625 2.867 1.106-1.012-1.475-1.611H9.25v-1.5H2.702l1.475-1.611L3.071 5.25.446 8.118z"></path></symbol> <symbol id="termsAndConditions" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 10v2H8v-2h8zM14 14H8v2h6v-2z"></path><path fill-rule="evenodd" d="M9.238 2.828a3 3 0 015.524 0L14.83 3H18l.15.005A2 2 0 0120 5v16l-.006.15A2 2 0 0118 23H6a2 2 0 01-1.995-1.85L4 21V5a2 2 0 011.85-1.995L6 3h3.17l.068-.172zM18 21V5h-1v1a2 2 0 01-2 2H9a2 2 0 01-2-2V5H6v16h12zM15 6V5h-1a1 1 0 01-.993-.883l-.014-.234a1 1 0 00-1.986 0l-.014.234A1 1 0 0110 5H9v1h6z" clip-rule="evenodd"></path></symbol> <symbol id="threeMonths" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h10V2h2v2h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h1V2h2zm13 6H4v12h16V8zm-5.5 2v8h-5v-2h3v-1h-3v-2h3v-1h-3v-2h5z"></path></symbol> <symbol id="topBrands" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24"><path d="M7.278 6.192L4.5 3.414 5.914 2l2.778 2.778-1.414 1.414z"></path><path fill-rule="evenodd" d="M14.497 4.675l1.028 3.162h3.325c2.034 0 2.88 2.603 1.234 3.799l-2.69 1.954 1.028 3.163c.628 1.934-1.586 3.543-3.232 2.347l-2.69-1.954L9.81 19.1c-1.646 1.196-3.86-.413-3.232-2.348l1.028-3.162-2.69-1.954c-1.646-1.196-.8-3.799 1.234-3.8h3.325l1.028-3.161c.629-1.935 3.365-1.935 3.994 0zm-3.641 5.162a.1.1 0 00.095-.07l1.454-4.474a.1.1 0 01.19 0l1.454 4.475a.1.1 0 00.095.069h4.706a.1.1 0 01.058.18l-3.806 2.767a.1.1 0 00-.036.111l1.453 4.476a.1.1 0 01-.153.111l-3.807-2.765a.1.1 0 00-.118 0l-3.807 2.765a.1.1 0 01-.153-.111l1.453-4.476a.1.1 0 00-.036-.111l-3.806-2.766a.1.1 0 01.058-.181h4.706z" clip-rule="evenodd"></path><path d="M19.167 15.244l3.333 2.222 1.11-1.664-3.334-2.223-1.11 1.665zM5.833 15.244L2.5 17.466l-1.11-1.664 3.334-2.223 1.11 1.665zM11.5 20v3h2v-3h-2zM18.192 6.192l2.778-2.778L19.556 2l-2.778 2.778 1.414 1.414z"></path></symbol> <symbol id="trash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.666 1.667v1.666h6.667V1.667H6.666zM3.333 5.833V4.167h13.333v1.666H3.333zm10.833.834h1.667v9.166a2.5 2.5 0 01-2.5 2.5H6.666a2.5 2.5 0 01-2.5-2.5V6.667h1.667v9.166c0 .46.373.834.833.834h6.667c.46 0 .833-.373.833-.834V6.667zm-5 0H7.5V15h1.666V6.667zm1.667 0H12.5V15h-1.667V6.667z" clip-rule="evenodd"></path></symbol> <symbol id="twelveMonths" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h10V2h2v2h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h1V2h2zm13 6H4v12h16V8zm-9.5 2v8h-2v-6h-1v-2h3zm6 0v5h-3v1h3v2h-5v-5h3v-1h-3v-2h5z"></path></symbol> <symbol id="twoMonths" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2v2h10V2h2v2h1c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h1V2h2zm13 6H4v12h16V8zm-5.5 2v5h-3v1h3v2h-5v-5h3v-1h-3v-2h5z"></path></symbol> <symbol id="voteShape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 24"><path d="M13.049 7.845a1.43 1.43 0 01-1.434 1.434 1.423 1.423 0 01-1.434-1.434c0-.785.639-1.433 1.434-1.433a1.43 1.43 0 011.434 1.433z"></path><path fill-rule="evenodd" d="M16.084 9.258l.963.963a.392.392 0 01.01.544 7.412 7.412 0 01-2.532 1.8v3.925c0 .554-.45 1.004-1.005 1.004H9.7c-.555 0-1.005-.45-1.005-1.004v-3.925a7.513 7.513 0 01-2.532-1.8.379.379 0 01.01-.534l.953-.952a.39.39 0 01.565.021 5.188 5.188 0 003.903 1.758c1.56 0 2.973-.68 3.925-1.779a.39.39 0 01.565-.02zm-3.443 5.086l.638-.628c.105-.094.042-.272-.094-.293l-.879-.125c-.063-.01-.115-.042-.136-.095l-.398-.805c-.063-.126-.25-.126-.314 0l-.397.806a.205.205 0 01-.136.094l-.89.125a.172.172 0 00-.094.293l.638.628a.182.182 0 01.053.157l-.147.88a.177.177 0 00.251.188l.796-.419c.041-.031.104-.031.157 0l.795.419a.177.177 0 00.251-.189l-.146-.879a.172.172 0 01.052-.157z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M22.698 12C22.698 5.816 17.685.802 11.5.802 5.316.802.302 5.816.302 12S5.316 23.198 11.5 23.198c6.185 0 11.198-5.014 11.198-11.198zM2.542 12a8.958 8.958 0 1117.916 0 8.958 8.958 0 01-17.916 0z" clip-rule="evenodd"></path></symbol>
      </svg>
+ 
+        <div class="flex flex-col bg-neutral-000" >
 
-        <div class="flex flex-col bg-neutral-000">
-
-            <div class="flex flex-col grow">
+            <div class="flex flex-col grow" >
                 <div class="fixed z-5 top-0 left-0 w-full z-3 bg-neutral-000" width="593" height="0">
                     <div class="overflow-hidden styles_BaseLayoutMobile__collapsibleHeader__JJtSp" id="base_layout_mobile_collapsible_header" style="height: 0px;"></div>
                     <div id="base_layout_mobile_fixed_header"></div>
                 </div>
 
 
-                <div class="sticky top-0 left-0 w-full z-3 bg-neutral-000" id="base_layout_mobile_sticky_header" style="top: 0px;">
-                    <div>
-                        <header class="p-2 relative flex items-center z-5 bg-neutral-000 shadow-1-bottom">
+                <div  class="sticky top-0 left-0 w-full z-3 bg-neutral-000" id="base_layout_mobile_sticky_header" style="top: 0px;">
+                    <div >
+                        <header  class="p-2 relative flex items-center z-5 bg-neutral-000 shadow-1-bottom">
                             <div class="relative ml-0 w-full">
-                                <div class="BaseLayoutSearch_BaseLayoutSearch__QHPTB">
+                                <div class="BaseLayoutSearch_BaseLayoutSearch__QHPTB" >
                                     
-                                    <div data-cro-id="searchbox-click" class="flex items-center SearchInput_SearchInput__HB9qi SearchInput_SearchInput__searchInput__CEpaj ellipsis bg-neutral-100 grow rounded px-2 lg:px-4 text-body-2">
+                                    <div style="background-color: rgba(61, 218, 235, 0.4);" class="flex items-center SearchInput_SearchInput__HB9qi SearchInput_SearchInput__searchInput__CEpaj ellipsis bg-neutral-100 grow rounded px-2 lg:px-4 text-body-2">
 
                                         <div class="flex items-center justify-between grow min-w-0">
 
@@ -17571,11 +17572,44 @@
 
                                         </div>
 
-
+                                        
                                     </div>                                
 
+                                    
                                 </div>
+                            </div>
+                            <div style="display: flex;flex-direction: column;" >
+                                
+                                <svg id='Security_User_Female_48' width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='48' height='48' stroke='none' fill='#000000' opacity='0'/>
 
+
+                                <g transform="matrix(0.92 0 0 0.92 24 24)" >
+                                <g style="" >
+                                <g transform="matrix(1 0 0 1 0 0)" >
+                                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,217,235); fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -24)" d="M 24 4 L 6 12 L 6 19.026 C 6 30.357 13.251 40.417 24 44 C 34.749 40.417 42 30.357 42 19.026 L 42 12 L 24 4 z" stroke-linecap="round" />
+                                </g>
+                                <g transform="matrix(1 0 0 1 0 0)" >
+                                <circle style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(215,255,254); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="11" />
+                                </g>
+                                <g transform="matrix(1 0 0 1 0 0.55)" >
+                                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(250,200,213); fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -24.55)" d="M 28.4 25.55 L 19.599999999999998 25.55 C 19.048 25.55 18.599999999999998 25.102 18.599999999999998 24.55 C 18.599999999999998 23.998 19.048 23.55 19.599999999999998 23.55 L 28.4 23.55 C 28.951999999999998 23.55 29.4 23.998 29.4 24.55 C 29.4 25.102 28.952 25.55 28.4 25.55 z" stroke-linecap="round" />
+                                </g>
+                                <g transform="matrix(1 0 0 1 0 7.55)" >
+                                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,83,118); fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -31.55)" d="M 27.325 28.096 L 20.674999999999997 28.096 C 18.502999999999997 28.096 16.631999999999998 29.556 16.067999999999998 31.609 C 18.07 33.695 20.88 35 24 35 C 27.12 35 29.93 33.695 31.932000000000002 31.609 C 31.368 29.556 29.497 28.096 27.325 28.096 z" stroke-linecap="round" />
+                                </g>
+                                <g transform="matrix(1 0 0 1 0 -0.77)" >
+                                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(250,200,213); fill-rule: nonzero; opacity: 1;" transform=" translate(-24, -23.23)" d="M 24 29.022 L 24 29.022 C 21.622 29.022 19.618000000000002 27.244999999999997 19.335 24.883 L 19.104 22.961 C 18.752 20.026 21.044 17.442999999999998 24 17.442999999999998 L 24 17.442999999999998 C 26.956 17.442999999999998 29.248 20.025999999999996 28.896 22.961 L 28.665 24.883 C 28.382 27.245 26.378 29.022 24 29.022 z" stroke-linecap="round" />
+                                </g>
+                                <g transform="matrix(1 0 0 1 4.93 -6.05)" >
+                                <circle style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,83,118); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="2.2" />
+                                </g>
+                                <g transform="matrix(1 0 0 1 1.98 -3.83)" >
+                                <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(245,83,118); fill-rule: nonzero; opacity: 1;" transform=" translate(-25.98, -20.17)" d="M 28.277 22.9 C 28.489 22.9 28.697000000000003 22.884 28.903000000000002 22.858999999999998 C 29.19 19.967 26.922 17.442999999999998 24.001 17.442999999999998 C 23.673000000000002 17.442999999999998 23.356 17.479999999999997 23.047 17.54 C 23.045 17.581 23.041 17.621 23.041 17.663 C 23.04 20.555 25.385 22.9 28.277 22.9 z" stroke-linecap="round" />
+                                </g>
+                                </g>
+                                </g>
+                                </svg>
+                                <p style="text-align: center;color: #3dd9ebff;">{{userprofile.name}}</p>
                             </div>
 
                         </header>
@@ -17727,43 +17761,43 @@
                             <div class="flex border-complete-t w-full bg-neutral-000 z-5">
                                 <a style="flex-direction:column; justify-content:center" class="flex flex-col lg:flex-row items-center flex-1 py-1 styles_navItem__mHCrk" data-savepage-href="/" href="/">
                                     <div class="flex">
-                                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-high-emphasis);"><use xlink:href="#home1Fill"></use>
+                                        <svg style="width: 24px; height: 24px; fill: #3dd9ebff"><use xlink:href="#home1Fill"></use>
                       </svg>
                                     </div>
-                                    <p class="text-caption text-neutral-900 text-caption-strong">خانه</p>
+                                    <p style="color: #3dd9ebff;" class="text-caption text-neutral-900 text-caption-strong">خانه</p>
                                 </a>
                                 <a style="flex-direction:column; justify-content:center" class="flex flex-col lg:flex-row items-center flex-1 py-1 styles_navItem__mHCrk" data-savepage-href="/categories/" href="/categories">
                                     <div class="flex">
-                                        <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#categoryOutline"></use>
+                                        <svg style="width: 24px; height: 24px; fill: #3dd9ebff;"><use xlink:href="#categoryOutline"></use>
                       </svg>
                                     </div>
-                                    <p class="text-caption text-neutral-500">دسته‌بندی</p>
+                                    <p style="color: #3dd9ebff;" class="text-caption text-neutral-500">دسته‌بندی</p>
                                 </a>
                                 <a style="flex-direction:column; justify-content:center" class="flex flex-col lg:flex-row items-center flex-1 py-1 styles_navItem__mHCrk" data-savepage-href="/profile/" href="/checkout">
                                     <div class="relative cursor-pointer">
                                         <div class="styles_BaseLayoutMiniProfile__button__DHUHQ relative  flex rounded p-0" data-cro-id="HP-profile-header">
                                             <div>
                                                 <div class="flex">
-                                                    <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#cartOff"></use>
+                                                    <svg style="width: 24px; height: 24px; fill: #3dd9ebff;"><use xlink:href="#cartOff"></use>
                                         </svg>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-caption text-neutral-500">سبد خرید</p>
+                                    <p style="color: #3dd9ebff;" class="text-caption text-neutral-500">سبد خرید</p>
                                 </a>
                                 <a style="flex-direction:column; justify-content:center" class="flex flex-col lg:flex-row items-center flex-1 py-1 styles_navItem__mHCrk" data-savepage-href="/profile/" href="/profile">
                                     <div class="relative cursor-pointer">
                                         <div class="styles_BaseLayoutMiniProfile__button__DHUHQ relative  flex rounded p-0" data-cro-id="HP-profile-header">
                                             <div>
                                                 <div class="flex">
-                                                    <svg style="width: 24px; height: 24px; fill: var(--color-icon-low-emphasis);"><use xlink:href="#profileOff"></use>
+                                                    <svg style="width: 24px; height: 24px; fill: #3dd9ebff;"><use xlink:href="#profileOff"></use>
                             </svg>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="text-caption text-neutral-500"> پروفایل من</p>
+                                    <p style="color: #3dd9ebff;" class="text-caption text-neutral-500"> پروفایل من</p>
                                 </a>
                             </div>
                         </div>
@@ -17777,7 +17811,7 @@
 
 
 </body>
-<script type="text/javascript " src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+<script type="text/javascript" src="{% static 'jquery-3.5.1.min.js' %}"></script>
 <script type="text/javascript ">
     window.CSRF_TOKEN = "{{ csrf_token }}";
     

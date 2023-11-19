@@ -26,7 +26,7 @@
               <label class="FormComponentFrame_FormComponentFrame__PIUpy w-full FormComponentFrame_FormComponentFrame--normal__TQSOm">
                 <div class="FormComponentFrame_FormComponentFrame__input-container__BHc4I px-2 flex items-center Input_InputWrapper--error__GDWAB relative text-neutral-800 bg-neutral-100 lg:bg-neutral-000 Input_InputWrapper__d_4kf">
                   <div class="grow text-body-3">
-                    <input class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="text" name="username" autocomplete="off" value="" required>
+                    <input id="usernameinput" class="px-2 TextField_TextField__input__hFMFl text-subtitle w-full TextField_TextField__bwN9_ TextField_TextField--secondary__w_vGF text-subtitle w-full py-5 lg:py-2 rounded-medium" type="text" name="username" autocomplete="off" value="" required>
                   </div>
                 </div>
                 <p class="text-body-2 text-hint-text-error">لطفا این قسمت را خالی نگذارید</p></label>
@@ -75,8 +75,11 @@
 
       <script>
         function next(){
+          let input = document.getElementById('usernameinput').value
+          if( input.length > 5){
           document.getElementById('logincontainer1').classList.add('hidden')
           document.getElementById('logincontainer2').classList.remove('hidden')
+        }
         }
 
       </script>
